@@ -110,6 +110,12 @@ const Events = () => (
         ))}
       </div>
     </div>
+    <div className={styles.events__sliderButtons}>
+      <div className={styles.events__sliderButtonsWrapper}>
+        <div className={styles.events__sliderButtonUp} />
+        <div className={styles.events__sliderButtonDown} />
+      </div>
+    </div>
   </section>
 );
 
