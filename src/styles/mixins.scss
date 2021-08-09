@@ -10,6 +10,25 @@ $breakpoints: (
   "xxs": 320px,
 );
 
+$navbarWidth: 98px;
+$bannerWidth: calc(100% - 98px);
+
+@mixin centerVertical {
+  display: flex;
+  align-items: center;
+}
+
+@mixin centerRow {
+  @include centerVertical;
+  justify-content: center;
+}
+
+@mixin centerColumn {
+  @include centerRow;
+  flex-direction: column;
+}
+
+
 @mixin mq($maxWidth, $minWidth: false, $strict: false) {
   @if map-has-key($breakpoints, $maxWidth) {
     $maxWidth: map-get($breakpoints, $maxWidth);

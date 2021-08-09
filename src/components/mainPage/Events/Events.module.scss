@@ -1,6 +1,7 @@
 .events {
   background: #2F1893;
   padding: 62px 19% 110px 11%;
+  position: relative;
 
   &__desc {
     display: flex;
@@ -121,6 +122,42 @@
     font-size: 16px;
     line-height: 21px;
     color: #FFFFFF;
+  }
+
+  &__sliderButtons {
+    width: auto;
+    height: auto;
+    position: absolute;
+    right: 23.8%;
+  }
+
+  &__sliderButtonsWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__sliderButtonDown {
+    position: relative;
+
+    &::after {
+      content: url('../../../assets/images/Events/sliderButton.png');
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__sliderButtonUp {
+    position: relative;
+    transform: rotate(0.5turn);
+
+    &::after {
+      content: url('../../../assets/images/Events/sliderButton.png');
+      position: absolute;
+      top: -19px;
+      right: 53px;
+    }
   }
 
   @media (max-width: 1440px) {
