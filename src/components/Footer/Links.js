@@ -46,15 +46,18 @@ export const chapterLinks = [
 
 export const socialLinks = [
   {
-    img: '#facebook',
+    name: 'Facebook',
+    img: 'facebook',
     link: ' ',
   },
   {
-    img: '#twitter',
+    name: 'Twitter',
+    img: 'twitter',
     link: ' ',
   },
   {
-    img: '#instagram',
+    name: 'Instagram',
+    img: 'instagram',
     link: ' ',
   },
 ];

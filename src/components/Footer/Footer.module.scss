@@ -2,7 +2,7 @@
   padding: 141px 0 209px 0;
   display: flex;
   justify-content: center;
-  background:  #F2F2F2;  
+  background:  #F2F2F2;
 
   &__wrapper {
     width: 1164px;
@@ -33,13 +33,19 @@
     flex-direction: column;
   }
 
-  &__linkLogo { 
-    margin-right: 20px;
+  &__linkLogo {
+    --width: 18px;
+    --height: 18px;
+    --color: #E9E9E9;
+    --circle-width: 33.6px;
+    --circle-height: 33.6px;
+    --circle-bg-color: #A4A4A4;
+    --margin: 20px;
     transition: all 0.2s ease;
 
     svg {
-      width: 33px;
-      height: 33px;
+      width: 21px;
+      height: 21px;
     }
 
     &:hover {
@@ -47,6 +53,7 @@
       transform: scale(1.1, 1.1);
     }
   }
+
 
   &__logo {
     margin-right: 47px;
@@ -67,12 +74,12 @@
       line-height: 30px;
       color: #828282;
     }
-    
+
     ul {
       padding: 0;
       margin-top: 19px;
     }
-  } 
+  }
 
   &__linksChapter {
     width: 317px;
@@ -106,7 +113,7 @@
 
     &:hover {
       cursor: pointer;
-      background:  #e6e6e6;  
+      background:  #e6e6e6;
     }
   }
 
@@ -119,7 +126,7 @@
     line-height: 30px;
     color: #828282;
     letter-spacing: 0.4px
-  }  
+  }
 
   &__form {
     margin-left: 86px;
@@ -151,12 +158,12 @@
 
   &__formEmail {
     margin-bottom: 33px;
-    width: 567px;  
+    width: 567px;
   }
 
   &__formEmail,
   &__formMessage {
-    width: 567px;  
+    width: 567px;
   }
 
   &__formName {
@@ -175,7 +182,7 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #828282;
-    
+
 
     input {
       padding: 12px 24px;
@@ -247,7 +254,7 @@
   }
 
   @media (max-width: 1440px) {
-    padding: 90px 0 140px 0; 
+    padding: 90px 0 140px 0;
 
     &__wrapper {
       width: 1013px;
@@ -261,20 +268,20 @@
 
     &__linksChapter {
       width: 300px;
-  
+
       ul {
         margin: 0;
       }
-  
+
       li {
         margin-bottom: 10px
       }
     }
-  
+
     &__linksChapterSite li {
       list-style-type: none;
     }
-  
+
     &__linksMenu li {
       margin-bottom: 8px
     }
@@ -290,44 +297,44 @@
       margin-left: 75px;
       width: 490px;
     }
-  
+
     &__form form {
       margin-top: 2px;
     }
-  
+
     &__formTitle {
       font-size: 32px;
       line-height: 48px;
       margin: 0 0 18px 0;
     }
-  
+
     &__formDesc {
       font-weight: normal;
       font-size: 12px;
-      line-height: 24px;  
+      line-height: 24px;
     }
-  
+
     &__formEmail {
       margin-bottom: 18px;
-      width: 567px;  
+      width: 567px;
     }
-  
+
     &__formEmail,
     &__formMessage {
-      width: 567px;  
+      width: 567px;
     }
-  
+
     &__formName {
       width: 397px;
     }
-  
+
     &__formEmail,
     &__formMessage,
     &__formName {
       font-size: 14px;
       line-height: 26px;
       letter-spacing: 2px;
-      
+
       input {
         padding: 12px 24px;
         height: auto;
@@ -335,32 +342,32 @@
         font-size: 14px;
         line-height: 24px;
       }
-  
+
       textarea {
         width: 86%;
         height: 130px;
         background: #FFFFFF;
         font-size: 14px;
         line-height:24px;
-  
+
         &::placeholder {
           color: #D3D3D3;
         }
       }
     }
-  
+
     &__formName {
       width: 100%;
       margin-right: 38px;
     }
-  
+
     &__formSubmit {
       display: flex;
       align-items: center;
       margin-top: 20px;
       width: 100%;
     }
-  
+
     &__formButton {
       margin-top: 31px;
 

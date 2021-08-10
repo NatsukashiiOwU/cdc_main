@@ -1,9 +1,11 @@
+@import '../../styles/index.scss';
+
 .navbar {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
-  width: 80px;
+  width: $navbarWidth;
   background: #2F1893;
   padding: 268px 9px 864px 9px;
 

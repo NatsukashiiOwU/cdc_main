@@ -1,9 +1,7 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable no-restricted-globals */
 import React from 'react-dom';
 import styles from './Footer.module.scss';
 import Button from '../UI/Button';
+import Icon from '../UI/Icon';
 import Sprite from '../../assets/sprites/icons.svg';
 
 import {
@@ -22,11 +20,7 @@ const Footer = () => (
           </div>
           <div className={styles.footer__linksSocial}>
             {socialLinks.map((item) => (
-              <div className={styles.footer__linkLogo}>
-                <svg>
-                  <use href={`${Sprite}${item.img}`} />
-                </svg>
-              </div>
+              <Icon inCircle className={styles.footer__linkLogo} view={item.img} />
             ))}
           </div>
         </div>
@@ -36,7 +30,7 @@ const Footer = () => (
             <ul>
               {menuLinks.map((item) => (
                 <li>
-                  <a href="#" className={styles.footer__link}>
+                  <a href={item.link} className={styles.footer__link}>
                     {item.title}
                   </a>
                 </li>
@@ -69,18 +63,18 @@ const Footer = () => (
           </span>
         </div>
         <form>
-          <label className={styles.footer__formEmail}>
+          <label htmlFor="email" className={styles.footer__formEmail}>
             e-mail
-            <input type="email" placeholder="Ваш e-mail" />
+            <input type="email" id="email" placeholder="Ваш e-mail" />
           </label>
-          <label className={styles.footer__formMessage}>
+          <label htmlFor="message" className={styles.footer__formMessage}>
             сообщение
-            <textarea placeholder="Напишите нам" />
+            <textarea id="message" placeholder="Напишите нам" />
           </label>
           <div className={styles.footer__formSubmit}>
-            <label className={styles.footer__formName}>
+            <label htmlFor="name" className={styles.footer__formName}>
               ФИО
-              <input type="name" placeholder="Ваше имя" />
+              <input type="name" id="name" placeholder="Ваше имя" />
             </label>
             <div className={styles.footer__formButton}>
               <Button type="submit" title="Отправить" />
