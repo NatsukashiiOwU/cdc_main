@@ -5,11 +5,11 @@ import cn from 'classnames';
 import styles from './Button.module.scss';
 
 const Button = ({
-  classname, title, onClick, type,
+  className, title, onClick, type,
 }) => (
   <button
     type={type}
-    className={cn(styles.button, classname)}
+    className={cn(styles.button, className)}
     onClick={onClick}
   >
     {title}

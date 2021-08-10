@@ -10,7 +10,7 @@ const Navbar = () => (
       <ul>
         {navLinks.map((item) => (
           <li>
-            <a href="#" className={styles.navbar__link} key={item.img}>
+            <a href={item.link} className={styles.navbar__link} key={item.img}>
               <div className={styles.navbar__linkIcon}>
                 <svg>
                   <use href={`${Sprite}${item.img}`} />
