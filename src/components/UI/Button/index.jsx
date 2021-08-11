@@ -1,7 +1,7 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable react/prop-types */
-import React from 'react-dom';
 import cn from 'classnames';
+import React from 'react-dom';
 import styles from './Button.module.scss';
 
 const Button = ({
