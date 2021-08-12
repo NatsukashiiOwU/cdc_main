@@ -1,0 +1,60 @@
+@import '../../../styles/index.scss';
+
+.activity {
+  width: 33%;
+  height: fit-content;
+  border: 2px solid #EBEAED;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 12px 28px 83px 26px;
+
+  &__length {
+    @include centerVertical
+  }
+
+  &__lengthTitle {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color: #1E0E62;
+    margin-right: 16px;
+  }
+
+  &__lengthNumber {
+    background: #EAEAEA;
+    border-radius: 7px;
+    padding: 13px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color: #E93A7D;
+  }
+
+  &__links {
+    li {
+      list-style-type: none;
+      position: relative;
+
+      &::before {
+        content: url('../../../assets/images/listPage/Activity/Arrow.png')
+
+      }
+    }
+  }
+
+  &__itemLink {
+    margin-left: 6px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: rgba(21, 20, 57, 0.4);
+    text-decoration: none;
+  }
+
+  &__search {
+    margin-top: 17px !important;
+    margin-right: 13px !important; 
+    width: 82% !important;
+  }
+
+}

@@ -1,18 +1,21 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/button-has-type */
 /* eslint-disable react/prop-types */
+import React from 'react';
 import cn from 'classnames';
-import React from 'react-dom';
 import styles from './Button.module.scss';
 
 const Button = ({
-  classname, title, onClick, type,
+  classname, title, onClick, type, icon,
 }) => (
   <button
     type={type}
     className={cn(styles.button, classname)}
     onClick={onClick}
   >
-    {title}
+    {icon ? (
+      <img src={icon} />
+    ) : title}
   </button>
 );
 

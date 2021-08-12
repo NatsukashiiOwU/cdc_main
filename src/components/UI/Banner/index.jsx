@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from 'react-dom';
+import React from 'react';
 import styles from './Banner.module.scss';
 
 const Banner = ({ imagePng, imageWebp, title }) => (

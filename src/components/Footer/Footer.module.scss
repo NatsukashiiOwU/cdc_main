@@ -2,7 +2,8 @@
   padding: 141px 0 209px 0;
   display: flex;
   justify-content: center;
-  background:  #F2F2F2;
+  background:  #F2F2F2;  
+  box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.25);
 
   &__wrapper {
     width: 1164px;
@@ -53,8 +54,6 @@
       transform: scale(1.1, 1.1);
     }
   }
-
-
   &__logo {
     margin-right: 47px;
 
@@ -65,7 +64,7 @@
   }
 
   &__linksMenu {
-    margin-right: 95px;
+    margin-right: 50px;
     margin-top: 7px;
 
     span {
@@ -74,7 +73,6 @@
       line-height: 30px;
       color: #828282;
     }
-
     ul {
       padding: 0;
       margin-top: 19px;
@@ -113,7 +111,6 @@
 
     &:hover {
       cursor: pointer;
-      background:  #e6e6e6;
     }
   }
 
@@ -159,6 +156,7 @@
   &__formEmail {
     margin-bottom: 33px;
     width: 567px;
+
   }
 
   &__formEmail,
@@ -183,7 +181,6 @@
     text-transform: uppercase;
     color: #828282;
 
-
     input {
       padding: 12px 24px;
       height: 50px;
@@ -204,6 +201,7 @@
     }
 
     textarea {
+
       width: 100%;
       height: 170px;
       background: #FFFFFF;
@@ -234,6 +232,9 @@
 
   &__formSubmit {
     display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    width: 102%;
     margin-top: 30px;
   }
 
@@ -254,7 +255,9 @@
   }
 
   @media (max-width: 1440px) {
-    padding: 90px 0 140px 0;
+
+    padding: 90px 0 140px 0; 
+
 
     &__wrapper {
       width: 1013px;
@@ -277,11 +280,11 @@
         margin-bottom: 10px
       }
     }
-
+  
     &__linksChapterSite li {
       list-style-type: none;
     }
-
+  
     &__linksMenu li {
       margin-bottom: 8px
     }
@@ -301,33 +304,33 @@
     &__form form {
       margin-top: 2px;
     }
-
+  
     &__formTitle {
       font-size: 32px;
       line-height: 48px;
       margin: 0 0 18px 0;
     }
-
+  
     &__formDesc {
       font-weight: normal;
       font-size: 12px;
-      line-height: 24px;
+      line-height: 24px;  
     }
-
+  
     &__formEmail {
       margin-bottom: 18px;
-      width: 567px;
+      width: 567px;  
     }
-
+  
     &__formEmail,
     &__formMessage {
-      width: 567px;
+      width: 567px;  
     }
-
+  
     &__formName {
       width: 397px;
     }
-
+  
     &__formEmail,
     &__formMessage,
     &__formName {
@@ -341,7 +344,7 @@
         width: 86%;
         font-size: 14px;
         line-height: 24px;
-      }
+      
 
       textarea {
         width: 86%;
@@ -355,6 +358,8 @@
         }
       }
     }
+  }
+
 
     &__formName {
       width: 100%;
@@ -367,7 +372,6 @@
       margin-top: 20px;
       width: 100%;
     }
-
     &__formButton {
       margin-top: 31px;
 

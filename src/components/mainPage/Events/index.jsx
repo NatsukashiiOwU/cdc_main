@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import React from 'react-dom';
+import React from 'react';
 import Button from '../../UI/Button';
 import styles from './Events.module.scss';
 

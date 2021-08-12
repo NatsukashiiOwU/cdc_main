@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import styles from './Basics.module.scss';
 
@@ -13,19 +13,15 @@ const DATA = {
     {
       title: 'Код-классы',
       description: 'Ульяновского\u00a0Государственного\u00a0Университета',
-      textContent: [
-        ['Деятельность организована в рамках реализации стратегического проекта «Развитие сообщества Код-классов партнерских школ УлГУ»'],
-        ['Код-класс — клуб программирования на базе школы или учреждения дополнительного образования региона.'],
-      ],
+      textContent: ['Деятельность организована в рамках реализации стратегического проекта «Развитие сообщества Код-классов партнерских школ УлГУ»', 'Код-класс — клуб программирования на базе школы или учреждения дополнительного образования региона.'],
       image: img1,
     },
     {
       title: '«Дом научной коллаборации» им.Ж.И.\u00a0Алфёрова',
       description: 'Лаборатории по профилям:',
-      textContent: [
-        ['- робототехника,', <br />, '- беспилотные летательные аппараты,'],
-        ['- схемотехника,', <br />, '- 3D моделирование и печать,'],
-        ['- виртуальная и дополненная реальность,', <br />, '- современные технологии.'],
+      textContent: ['- робототехника, \n - беспилотные летательные аппараты,',
+        '- схемотехника, \n - 3D моделирование и печать,',
+        '- виртуальная и дополненная реальность, \n - современные технологии.',
       ],
       contacts: ['e-mail: cio@ulsu.ru', '+7(8422)32-84-66'],
       image: img2,
@@ -51,7 +47,8 @@ const DATA = {
 };
 
 const Basics = () => {
-  const [imagePosition, setImagePosition] = useState(0);
+  const [imagePosition, setImagePosition] = React.useState(0);
+
   return (
     <section className={styles.basics}>
       <div className={styles.basics__pictureWrapper}>
@@ -128,4 +125,4 @@ const Basics = () => {
   );
 };
 
-export default (Basics);
+export default Basics;

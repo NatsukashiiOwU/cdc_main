@@ -10,10 +10,7 @@
   padding: 268px 9px 864px 9px;
 
   &__links {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+   @include centerColumn;
 
     ul {
       padding: 0;
@@ -27,12 +24,9 @@
   }
 
   &__link {
+    @include centerColumn;
     width: 79px;
     height: 79px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-decoration: none;
   }
 
