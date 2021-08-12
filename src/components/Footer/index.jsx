@@ -1,4 +1,7 @@
-import React from 'react-dom';
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable no-restricted-globals */
+import React from 'react';
 import styles from './Footer.module.scss';
 import Button from '../UI/Button';
 import Icon from '../UI/Icon';
@@ -30,7 +33,7 @@ const Footer = () => (
             <ul>
               {menuLinks.map((item) => (
                 <li>
-                  <a href={item.link} className={styles.footer__link}>
+                  <a href="#" className={styles.footer__link}>
                     {item.title}
                   </a>
                 </li>

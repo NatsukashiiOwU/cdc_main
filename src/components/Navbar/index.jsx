@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react-dom';
+import React from 'react';
 import styles from './Navbar.module.scss';
 import Sprite from '../../assets/sprites/icons.svg';
 import navLinks from './Links';

@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from 'react-dom';
+import React from 'react';
 import styles from './Layout.module.scss';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';

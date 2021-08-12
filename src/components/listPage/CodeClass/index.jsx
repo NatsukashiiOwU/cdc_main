@@ -1,5 +1,6 @@
+/* eslint-disable import/no-named-as-default-member */
 /* eslint-disable react/prop-types */
-import React from 'react-dom';
+import React from 'react';
 import Button from '../../UI/Button';
 import Sprite from '../../../assets/sprites/icons.svg';
 import styles from './CodeClass.module.scss';

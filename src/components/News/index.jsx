@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import React from 'react-dom';
+import React from 'react';
 // eslint-disable-next-line import/no-unresolved
 import Image from '../../assets/images/news_image.png';
 import Sprite from '../../assets/sprites/icons.svg';
