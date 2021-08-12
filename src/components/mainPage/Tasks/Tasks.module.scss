@@ -1,10 +1,9 @@
 .tasks {
   min-height: 535px;
   position: relative;
-  padding-top: 161px;
-  padding-bottom: 6px;
+  padding-top: 184px;
   background-color: #F2F6F9;
-  z-index: -1000;
+  z-index: -1;
   padding-left: 6px;
 
   &__container {
@@ -12,7 +11,7 @@
     margin: 0 auto;
   }
 
-  &__title h2{
+  &__title h2 {
     font-family: "DM Sans", sans-serif;
     color: #4F4F4F;
     font-weight: 500;

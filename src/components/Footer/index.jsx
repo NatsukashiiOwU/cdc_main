@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable no-restricted-globals */
+
 import React from 'react';
 import styles from './Footer.module.scss';
 import Button from '../UI/Button';
@@ -23,14 +23,7 @@ const Footer = () => (
           </div>
           <div className={styles.footer__linksSocial}>
             {socialLinks.map((item) => (
-              <>
-                <div className={styles.footer__linkLogo}>
-                  <svg>
-                    <use href={`${Sprite}${item.img}`} />
-                  </svg>
-                </div>
-                <Icon inCircle className={styles.footer__linkLogo} view={item.img} />
-              </>
+              <Icon inCircle className={styles.footer__linkLogo} view={item.img} />
             ))}
           </div>
         </div>
@@ -59,18 +52,12 @@ const Footer = () => (
             </ul>
           </div>
         </div>
-        <div className={styles.footer__copyright}>
-          {copyright}
-        </div>
+        <div className={styles.footer__copyright}>{copyright}</div>
       </div>
       <div className={styles.footer__form}>
         <div className={styles.footer__formText}>
-          <h3 className={styles.footer__formTitle}>
-            Напишите нам
-          </h3>
-          <span className={styles.footer__formDesc}>
-            Мы всегда рады ответить на ваши вопросы
-          </span>
+          <h3 className={styles.footer__formTitle}>Напишите нам</h3>
+          <span className={styles.footer__formDesc}>Мы всегда рады ответить на ваши вопросы</span>
         </div>
         <form>
           <label htmlFor="email" className={styles.footer__formEmail}>
