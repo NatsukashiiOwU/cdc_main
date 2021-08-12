@@ -2,7 +2,7 @@
   padding: 141px 0 209px 0;
   display: flex;
   justify-content: center;
-  background:  #F2F2F2;  
+  background-color: #f2f2f2;
   box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.25);
 
   &__wrapper {
@@ -35,25 +35,24 @@
   }
 
   &__linkLogo {
-    --width: 18px;
-    --height: 18px;
-    --color: #E9E9E9;
-    --circle-width: 33.6px;
-    --circle-height: 33.6px;
-    --circle-bg-color: #A4A4A4;
-    --margin: 20px;
-    transition: all 0.2s ease;
+    transition: transform 0.2s ease;
+    background-color: #a4a4a4;
+    color: #e9e9e9;
+
+    & + & {
+      margin-left: 20px;
+    }
 
     svg {
-      width: 21px;
-      height: 21px;
+      color: #f2f2f2;
     }
 
     &:hover {
       cursor: pointer;
-      transform: scale(1.1, 1.1);
+      transform: scale(1.1);
     }
   }
+
   &__logo {
     margin-right: 47px;
 
@@ -88,7 +87,7 @@
     }
 
     li {
-      margin-bottom: 14px
+      margin-bottom: 14px;
     }
   }
 
@@ -97,7 +96,7 @@
   }
 
   &__linksMenu li {
-    margin-bottom: 11px
+    margin-bottom: 11px;
   }
 
   &__link {
@@ -111,6 +110,7 @@
 
     &:hover {
       cursor: pointer;
+      background-color: #e6e6e6;
     }
   }
 
@@ -122,7 +122,7 @@
     font-size: 16px;
     line-height: 30px;
     color: #828282;
-    letter-spacing: 0.4px
+    letter-spacing: 0.4px;
   }
 
   &__form {
@@ -150,13 +150,11 @@
     color: #828282;
     letter-spacing: 0.6px;
     width: 567px;
-
   }
 
   &__formEmail {
     margin-bottom: 33px;
     width: 567px;
-
   }
 
   &__formEmail,
@@ -167,7 +165,6 @@
   &__formName {
     width: 397px;
   }
-
 
   &__formEmail,
   &__formMessage,
@@ -185,10 +182,10 @@
       padding: 12px 24px;
       height: 50px;
       width: 100%;
-      border: 2px solid #EBEAED;
+      border: 2px solid #ebeaed;
       box-sizing: border-box;
       border-radius: 100px;
-      background: transparent;
+      background-color: transparent;
       font-weight: 500;
       font-size: 18px;
       line-height: 26px;
@@ -201,11 +198,10 @@
     }
 
     textarea {
-
       width: 100%;
       height: 170px;
-      background: #FFFFFF;
-      border: 2px solid #EBEAED;
+      background-color: #fff;
+      border: 2px solid #ebeaed;
       box-sizing: border-box;
       border-radius: 10px;
       font-weight: 400;
@@ -216,11 +212,11 @@
       padding: 10px 19px;
       margin-top: 10px;
       letter-spacing: 0.5px;
-      outline:none;
+      outline: none;
       resize: none;
 
       &::placeholder {
-        color: #D3D3D3;
+        color: #d3d3d3;
       }
     }
   }
@@ -244,20 +240,18 @@
     button {
       width: 132px;
       height: 50px;
-      background: #25DAC5;
+      background-color: #25dac5;
       border-radius: 100px;
       border: none;
       font-weight: 500;
       font-size: 18px;
       line-height: 26px;
-      color: #FFFFFF;
+      color: #fff;
     }
   }
 
   @media (max-width: 1440px) {
-
-    padding: 90px 0 140px 0; 
-
+    padding: 90px 0 140px 0;
 
     &__wrapper {
       width: 1013px;
@@ -277,16 +271,16 @@
       }
 
       li {
-        margin-bottom: 10px
+        margin-bottom: 10px;
       }
     }
-  
+
     &__linksChapterSite li {
       list-style-type: none;
     }
-  
+
     &__linksMenu li {
-      margin-bottom: 8px
+      margin-bottom: 8px;
     }
 
     &__copyright {
@@ -304,33 +298,33 @@
     &__form form {
       margin-top: 2px;
     }
-  
+
     &__formTitle {
       font-size: 32px;
       line-height: 48px;
       margin: 0 0 18px 0;
     }
-  
+
     &__formDesc {
       font-weight: normal;
       font-size: 12px;
-      line-height: 24px;  
+      line-height: 24px;
     }
-  
+
     &__formEmail {
       margin-bottom: 18px;
-      width: 567px;  
+      width: 567px;
     }
-  
+
     &__formEmail,
     &__formMessage {
-      width: 567px;  
+      width: 567px;
     }
-  
+
     &__formName {
       width: 397px;
     }
-  
+
     &__formEmail,
     &__formMessage,
     &__formName {
@@ -344,22 +338,20 @@
         width: 86%;
         font-size: 14px;
         line-height: 24px;
-      
 
-      textarea {
-        width: 86%;
-        height: 130px;
-        background: #FFFFFF;
-        font-size: 14px;
-        line-height:24px;
+        textarea {
+          width: 86%;
+          height: 130px;
+          background-color: #fff;
+          font-size: 14px;
+          line-height: 24px;
 
-        &::placeholder {
-          color: #D3D3D3;
+          &::placeholder {
+            color: #d3d3d3;
+          }
         }
       }
     }
-  }
-
 
     &__formName {
       width: 100%;
@@ -374,7 +366,6 @@
     }
     &__formButton {
       margin-top: 31px;
-
     }
   }
 }
