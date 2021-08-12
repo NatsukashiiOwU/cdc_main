@@ -1,22 +1,18 @@
+/* eslint-disable react/prop-types */
+
 import cn from 'classnames';
 import React from 'react';
-
-import styles from './Icon.module.scss';
-
-// eslint-disable-next-line import/no-unresolved
 import Sprite from '../../../assets/sprites/icons.svg';
+import styles from './styles.module.scss';
 
-// eslint-disable-next-line react/prop-types
-const Icon = ({ className, view, inCircle }) => (
-  <div className={cn(className, styles.icon)}>
-    <div className={inCircle && styles.icon__circle}>
-      <div className={styles.icon__icon}>
-        <svg>
-          <use href={`${Sprite}#${view}`} />
-        </svg>
-      </div>
-    </div>
-  </div>
+const Icon = ({
+  className, link, view, inCircle,
+}) => (
+  <a href={link || '#'} className={cn(className, styles.icon, inCircle && styles.icon_circle)}>
+    <svg>
+      <use href={`${Sprite}#${view}`} />
+    </svg>
+  </a>
 );
 
 export default React.memo(Icon);

@@ -1,6 +1,7 @@
 .newsMap {
   display: flex;
   align-items: center;
+  margin: 22px 0;
 
   &__text {
     font-weight: 500;
@@ -49,7 +50,7 @@
       width: 10px;
       height: 10px;
       transform: rotate(-45deg);
-      transition: border-color .3s ease-in-out;
+      transition: border-color 0.3s ease-in-out;
       cursor: pointer;
     }
 
@@ -57,7 +58,7 @@
       border-top: 2px solid rgba(0, 0, 0, 0.54);
       border-left: 2px solid rgba(0, 0, 0, 0.54);
     }
-  
+
     &_arrowNext::after {
       border-bottom: 2px solid rgba(0, 0, 0, 0.54);
       border-right: 2px solid rgba(0, 0, 0, 0.54);
