@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { } from 'react';
 import Adresses from '../../components/UI/Adresses';
 import Search from '../../components/UI/Search';
 import NewsCard from '../../components/NewsCard';
@@ -74,4 +74,4 @@ const NewsPage = () => (
   </>
 );
 
-export default memo(NewsPage);
+export default NewsPage;

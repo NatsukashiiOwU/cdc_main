@@ -5,11 +5,11 @@ import React from 'react-dom';
 import styles from './Button.module.scss';
 
 const Button = ({
-  className, title, onClick, type,
+  classname, title, onClick, type,
 }) => (
   <button
     type={type}
-    className={cn(styles.button, className)}
+    className={cn(styles.button, classname)}
     onClick={onClick}
   >
     {title}
