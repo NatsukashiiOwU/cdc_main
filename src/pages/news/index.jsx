@@ -19,7 +19,7 @@ const NewsPage = () => (
     />
     <div className={styles.news}>
       <div className={styles.news__content}>
-        <Adresses adresses={['Главная', 'Главная', 'новости']} className={styles.news__newsMap} />
+        <Adresses adresses={['Главная', 'Новости']} className={styles.news__newsMap} />
         <Search placeholder="Поиск" className={styles.news__search} />
         <div>
           <NewsCard

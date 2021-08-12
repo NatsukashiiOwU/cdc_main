@@ -14,7 +14,7 @@ const PageEvents = () => (
     <Banner imagePng={BannerHead} title="Мероприятия" />
     <div className={styles.events}>
       <div className={styles.events__content}>
-        <Adresses adresses={['Главная', 'МЕРОПРИЯТИЯ']} className={styles.events__map} />
+        <Adresses adresses={['Главная', 'Мероприятия']} className={styles.events__map} />
         <Search placeholder="Поиск" className={styles.events__search} />
         {dataCardsEvent.map((card) => (
           <CardEvent
