@@ -26,7 +26,7 @@ const NewsCard = ({
         <div className={styles.newsCard__textContent}>{ description }</div>
       </div>
       <div className={styles.newsCard__buttonWrapper}>
-        <Button className={styles.newsCard__button} title="Читать" />
+        <Button classname={styles.newsCard__button} title="Читать" />
         <div className={styles.newsCard__icons}>
           {
             ICON.map((icon, index) => (

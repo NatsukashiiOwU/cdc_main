@@ -1,4 +1,4 @@
-import React, { useState, memo } from 'react';
+import React, { useState } from 'react';
 import cn from 'classnames';
 import styles from './Basics.module.scss';
 
@@ -128,4 +128,4 @@ const Basics = () => {
   );
 };
 
-export default memo(Basics);
+export default (Basics);
