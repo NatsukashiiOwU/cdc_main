@@ -23,7 +23,14 @@ const Footer = () => (
           </div>
           <div className={styles.footer__linksSocial}>
             {socialLinks.map((item) => (
-              <Icon inCircle className={styles.footer__linkLogo} view={item.img} />
+              <>
+                <div className={styles.footer__linkLogo}>
+                  <svg>
+                    <use href={`${Sprite}${item.img}`} />
+                  </svg>
+                </div>
+                <Icon inCircle className={styles.footer__linkLogo} view={item.img} />
+              </>
             ))}
           </div>
         </div>
@@ -87,7 +94,6 @@ const Footer = () => (
       </div>
     </div>
   </footer>
-
 );
 
 export default Footer;

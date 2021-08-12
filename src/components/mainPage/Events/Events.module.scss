@@ -6,10 +6,10 @@
   &__desc {
     display: flex;
     justify-content: space-between;
-  }  
+  }
 
   &__titleBlock {
-    padding: 0 0 0 164px;    
+    padding: 0 0 0 164px;
     color: #FFFFFF;
     margin-bottom: 63px;
   }
@@ -164,13 +164,13 @@
     padding: 62px 19% 110px 11%;
 
     &__titleBlock {
-      padding: 0 0 0 110px;    
+      padding: 0 0 0 110px;
     }
 
     &__titleBlock h3 {
       margin-bottom: 10px;
       font-size: 34px;
-      line-height: 42px;  
+      line-height: 42px;
     }
 
     &__text {
@@ -181,7 +181,7 @@
     &__buttonWrap {
       margin-top: 30px;
     }
-  
+
     &__button {
       font-weight: 500;
       font-size: 15px;
@@ -193,63 +193,63 @@
     &__itemDate {
       display: flex;
     }
-  
+
     &__itemDate {
       align-items: center;
-  
+
     }
-  
+
     &__item {
       margin-bottom: 15px;
     }
-  
+
     &__blockImage {
       margin: 0px 47px 0 12px;
     }
-  
+
     &__itemDesc {
       margin-left: 25px;
     }
-  
+
     &__itemImage {
       width: 73%;
     }
-  
+
     &__itemDate {
       margin-bottom: 15px;
     }
-  
+
     &__itemTitleBlock {
       margin: 10px 0;
       align-items: center;
     }
-  
+
     &__eventList {
       width: 670px;
       padding: 10px 0 0 0px;
     }
-  
+
     &__ItemDateNumber {
       font-size: 36px;
       line-height: 42px;
       color: #FFFFFF;
     }
-  
+
     &__itemDateMonths {
       font-size: 15px;
       line-height: 17px;
     }
-  
+
     &__itemLogo {
       width: 63px;
     }
-  
+
     &__itemTitle {
       padding: 0 18px;
       font-size: 12px;
       line-height: 18px;
     }
-  
+
     &__itemDescription {
       padding: 0 3px;
       font-size: 10px;
