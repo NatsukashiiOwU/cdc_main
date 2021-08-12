@@ -27,7 +27,6 @@ const Activity = () => (
     </div>
     <Search className={styles.activity__search} placeholder="Поиск" />
   </div>
-
 );
 
 export default Activity;

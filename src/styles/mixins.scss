@@ -28,7 +28,6 @@ $bannerWidth: calc(100% - 98px);
   flex-direction: column;
 }
 
-
 @mixin mq($maxWidth, $minWidth: false, $strict: false) {
   @if map-has-key($breakpoints, $maxWidth) {
     $maxWidth: map-get($breakpoints, $maxWidth);
