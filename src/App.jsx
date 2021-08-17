@@ -10,7 +10,7 @@ import './styles/components.scss';
 import './App.css';
 
 const App = () => (
-  <BrowserRouter>
+  <BrowserRouter basename={process.env.REACT_APP_ROUTER_BASENAME}>
     <Layout>
       <Switch>
         <Route component={MainPage} exact path="/" />

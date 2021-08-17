@@ -13,6 +13,9 @@ pages:
   artifacts:
     paths:
       - public
+  variables:
+    PUBLIC_URL: "https://mst-dev-ops.gitlab.io/cdc/"
+    REACT_APP_ROUTER_BASENAME: "/cdc"
   environment:
     name: staging
     url: https://mst-dev-ops.gitlab.io/cdc
