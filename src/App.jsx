@@ -11,15 +11,15 @@ import './App.css';
 
 const App = () => (
   <BrowserRouter>
-    <Switch>
-      <Layout>
+    <Layout>
+      <Switch>
         <Route component={MainPage} exact path="/" />
         <Route component={NewsPage} exact path="/news" />
         <Route component={PageEvents} exact path="/events" />
         <Route component={ListPage} exact path="/code-classes" />
         <Route component={massMediaAboutPage} exact path="/about" />
-      </Layout>
-    </Switch>
+      </Switch>
+    </Layout>
   </BrowserRouter>
 );
 

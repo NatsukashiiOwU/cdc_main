@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/prop-types */
-/* eslint-disable react/require-default-props */
 import React from 'react-dom';
 import cn from 'classnames';
 import styles from './Article.module.scss';
