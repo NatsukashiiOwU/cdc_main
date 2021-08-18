@@ -51,7 +51,7 @@ const CodeClass = ({
           </div>
         </div>
         <div className={styles.codeClass__buttons}>
-          <Button classname={styles.codeClass__button} title="ПОДРОБНЕЕ" />
+          <Button classname={styles.codeClass__button} title="ПОДРОБНЕЕ" href="/code-classes/detail/news" />
           <Button classname={styles.codeClass__buttonContextMenu} icon={buttonImage} />
         </div>
       </div>

@@ -1,4 +1,6 @@
 .newsCard {
+  $self: &;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +25,7 @@
     font-size: 22px;
     line-height: 32px;
     margin-bottom: 18px;
-    color: #1e0e62;
+    color: #1E0E62;
   }
 
   &__areaWrapper {
@@ -59,21 +61,22 @@
   &__buttonWrapper {
     display: flex;
     align-items: center;
+    margin-left: -10px;
   }
 
   div > &__button {
     display: flex;
     align-items: center;
     text-align: center;
-    padding: 12px 48px;
-    margin-right: 38px;
+    padding: 12px 54px;
+    margin-right: 45px;
     font-weight: 500;
     font-size: 18px;
     line-height: 26px;
     text-transform: uppercase;
     background: transparent;
-    border: 2px solid #ebeaed;
-    color: #1e0e62;
+    border: 2px solid #EBEAED;
+    color: #1E0E62;
   }
 
   &__icons {
@@ -83,8 +86,49 @@
   }
 
   &__circleIcon {
-    & + & {
-      margin-left: 20px;
+    --width: 18px;
+    --height: 18px;
+    --color: #1E0E62;
+    --circle-width: 33.6px;
+    --circle-height: 33.6px;
+    --circle-bg-color: white;
+    --margin: 22.2px;
+
+    
+    :last-of-type {
+      --margin: 0;
+    }
+  }
+
+  &__isSmall {
+    #{$self}__content {
+      flex: 0 0 350px;
+      width: 350px;
+    }
+  
+    #{$self}__textContent {
+      margin-bottom: 2px;
+  
+      &:last-child {
+        margin-bottom: 20px;
+      }
+    }
+  
+    #{$self}__title {
+      margin-bottom: 10px;
+    }
+  
+    #{$self}__buttonWrapper {
+      justify-content: space-between;
+    }
+
+    #{$self}__circleIcon {
+      margin-left: 22px;
+    }
+  
+    div > #{$self}__button {
+      padding: 12px 26px;
+      margin-right: 35px;
     }
   }
 }
