@@ -1,4 +1,6 @@
 .cardEvent {
+  $self: &;
+
   display: flex;
   border: 1px solid #d0d0d0;
   border-radius: 10px;
@@ -87,6 +89,18 @@
   &__circleIcon {
     & + & {
       margin-left: 20px;
+    }
+  }
+
+  &__isSmall {
+    
+    #{$self}__image {
+      width: 170px;
+      height: 197px;
+    }
+
+    #{$self}__members {
+      margin-right: 230px;
     }
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import cn from 'classnames';
@@ -8,18 +9,20 @@ import Icon from '../UI/Icon';
 const ICON = ['facebook', 'vk', 'instagram', 'share'];
 
 const NewsCard = ({
-  className, title, area, date, description, image, smallImage,
+  className, title, area, date, description, image, smallImage, isSmall,
 }) => (
-  <div className={cn(styles.newsCard, className)}>
-    <img className={styles.newsCard__image} src={image} alt="news" />
+  <div className={cn(styles.newsCard, className, isSmall && styles.newsCard__isSmall)}>
+    <img className={styles.newsCard__image} src={image} alt={title} />
     <div className={styles.newsCard__content}>
       <div className={styles.newsCard__title}>
         { title }
       </div>
+      {!isSmall && (
       <div className={styles.newsCard__areaWrapper}>
-        <img className={styles.newsCard__iconImage} src={smallImage} alt="icon" />
+        <img className={styles.newsCard__iconImage} src={smallImage} alt={title} />
         <div className={styles.newsCard__area}>{ area }</div>
       </div>
+      )}
       <div>
         <div className={styles.newsCard__textContent}>{ date }</div>
         <div className={styles.newsCard__textContent}>{ description }</div>
