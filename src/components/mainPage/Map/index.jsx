@@ -29,14 +29,11 @@ const Map = () => (
           <span>КОД</span>
         </div>
         <div className={styles.map__contentButton}>
-          <Button
-            type="submit"
-            title="весь список код-классов"
-          />
+          <Button>весь список код-классов</Button>
         </div>
       </div>
     </div>
   </div>
 );
 
-export default Map;
+export default React.memo(Map);

@@ -1,5 +1,3 @@
-/* eslint-disable react/button-has-type */
-/* eslint-disable react/prop-types */
 import React from 'react';
 import cn from 'classnames';
 import styles from './NewsCard.module.scss';
@@ -28,21 +26,21 @@ const NewsCard = ({
         <div className={styles.newsCard__textContent}>{ description }</div>
       </div>
       <div className={styles.newsCard__buttonWrapper}>
-        <Button classname={styles.newsCard__button} title="Читать" />
+        <Button classname={styles.newsCard__button}>
+          Читать
+        </Button>
         <div className={styles.newsCard__icons}>
-          {
-            ICON.map((icon, index) => (
-              ICON.length - 1 !== index ? (
-                <Icon inCircle className={styles.newsCard__circleIcon} view={icon} />
-              ) : (
-                <Icon className={styles.newsCard__circleIcon} view={icon} />
-              )
-            ))
-          }
+          {ICON.map((icon, index) => (
+            ICON.length - 1 !== index ? (
+              <Icon inCircle className={styles.newsCard__circleIcon} view={icon} />
+            ) : (
+              <Icon className={styles.newsCard__circleIcon} view={icon} />
+            )
+          ))}
         </div>
       </div>
     </div>
   </div>
 );
 
-export default NewsCard;
+export default React.memo(NewsCard);

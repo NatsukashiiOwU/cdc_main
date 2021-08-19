@@ -1,0 +1,67 @@
+@import '../../../styles/index.scss';
+
+.input {
+  @include centerRow;
+  background: #FFFFFF;
+  border: 1px solid #EEEEEE;
+  box-sizing: border-box;
+  border-radius: 30px;
+  width: 307px;
+  height: 60px;
+  padding: 20px 0 21px 29px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+
+  &_error {
+    background: #FCD9D9;
+    border: 1px solid #EB5757;
+  }
+
+  &__label {
+    position: relative;
+    cursor: default;
+  }
+
+  &__errorText {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;    
+    color: #EB5757;
+    margin-left: 194px;
+    text-transform: uppercase;
+  }
+  
+  &__img svg {
+    width: 20px;
+    height: 19px;
+    margin-right: 10px;
+  }
+
+  &__content {
+    @include centerRow;
+    width: max-content;
+  }
+
+  &__placeholder {
+    position: absolute;
+    bottom: 16px;
+    left: 29px;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease;
+    color: #333333;
+    opacity: 0.3;
+    pointer-events: none;
+
+    &_text {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+    }
+
+    &_none {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}

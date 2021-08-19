@@ -8,7 +8,7 @@ const Adress = ({ className, adresses }) => (
   <div className={cn(className, styles.adresses)}>
     {
       adresses.map((address) => (
-        <div className={styles.adresses__adress} key={123}>
+        <div className={styles.adresses__adress} key={address}>
           { address }
         </div>
       ))

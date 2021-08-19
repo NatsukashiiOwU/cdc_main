@@ -1,9 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import styles from './Basics.module.scss';
-
-// eslint-disable-next-line import/no-unresolved
-import Sprite from '../../assets/sprites/icons.svg';
+import sprite from '../../assets/sprites/icons.svg';
 
 import img1 from '../../assets/images/Basics/img.png';
 import img2 from '../../assets/images/Basics/img2.png';
@@ -108,10 +106,11 @@ const Basics = () => {
       </div>
       <div className={styles.basics__info}>
         {DATA.items.map((item) => (
-          <div className={styles.basics__infoItem}>
+          <div className={styles.basics__infoItem} key={item.sprite}>
             <div className={styles.basics__infoCircle}>
               <svg>
-                <use href={`${Sprite}#${item.sprite}`} />
+                <use href={`${sprite}#${item.sprite}`} />
+
               </svg>
             </div>
             <div className={styles.basics__itemContent}>
@@ -125,4 +124,4 @@ const Basics = () => {
   );
 };
 
-export default Basics;
+export default React.memo(Basics);

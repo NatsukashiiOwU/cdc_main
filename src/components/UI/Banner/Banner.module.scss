@@ -30,7 +30,6 @@
   &__textWrapper {
     @include centerColumn;
     margin-top: -7px;
-    margin-left: 8px;
     width: 100%;
     height: 100%;
   }
@@ -60,7 +59,7 @@
   &__pageTitle {
     text-align: center;
     margin-top: 2.5%;
-    font-weight: normal;
+    font-weight: 400;
     font-size: 3.1em;
     line-height: 0.5em;
   }

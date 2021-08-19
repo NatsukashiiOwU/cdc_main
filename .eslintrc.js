@@ -18,5 +18,10 @@ module.exports = {
     'react',
   ],
   rules: {
+    'react/prop-types': 'off',
+    'no-restricted-globals': 'off',
+    'react/button-has-type': 'off',
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'react/jsx-props-no-spreading': 'off',
   },
 };

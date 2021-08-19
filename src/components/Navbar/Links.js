@@ -1,34 +1,34 @@
-const navLinks = [
+const LINKS = [
   {
-    img: '#home',
+    icon: 'home',
     title: 'ГЛАВНАЯ',
     link: '/',
   },
   {
-    img: '#news',
+    icon: 'news',
     title: 'НОВОСТИ',
     link: '/news',
   },
   {
-    img: '#events',
+    icon: 'events',
     title: 'МЕРОПРИЯТИЯ',
     link: '/events',
   },
   {
-    img: '#code-classes',
+    icon: 'code-classes',
     title: 'КОД-КЛАССЫ',
-    link: '/code-classes',
+    link: '/code-class',
   },
   {
-    img: '#smi',
+    icon: 'smi',
     title: 'СМИ О НАС',
     link: '/about',
   },
   {
-    img: '#login',
+    icon: 'login',
     title: '',
-    link: '/login',
+    link: '',
   },
 ];
 
-export default navLinks;
+export default LINKS;

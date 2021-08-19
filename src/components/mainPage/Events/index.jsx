@@ -14,7 +14,7 @@ import img3_png from '../../../assets/images/Events/img3.png';
 import logo_webp from '../../../assets/images/Events/logo.webp';
 import logo_png from '../../../assets/images/Events/logo.png';
 
-const arrData = [
+const EVENTS = [
   {
     dateNumber: '31-23',
     dateMonth_one: 'апреля',
@@ -62,7 +62,9 @@ const Events = () => (
         </span>
       </div>
       <div className={styles.events__buttonWrap}>
-        <Button classname={styles.events__button} title="все мероприятия" />
+        <Button classname={styles.events__button}>
+          все мероприятия
+        </Button>
       </div>
     </div>
     <div className={styles.events__wrapper}>
@@ -73,12 +75,12 @@ const Events = () => (
         </picture>
       </div>
       <div className={styles.events__eventList}>
-        {arrData.map((item) => (
-          <div className={styles.events__item}>
+        {EVENTS.map((item) => (
+          <div className={styles.events__item} key={item.imgWebp}>
             <div className={styles.events__itemImage}>
               <picture>
                 <source srcSet={item.imgWebp} type="image/webp" />
-                <img src={item.imgPng} alt="описание" />
+                <img src={item.imgPng} alt={item.title} />
               </picture>
             </div>
             <div className={styles.events__itemDesc}>

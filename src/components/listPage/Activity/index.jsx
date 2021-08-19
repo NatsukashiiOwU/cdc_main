@@ -4,7 +4,7 @@ import styles from './Activity.module.scss';
 
 import Search from '../../UI/Search';
 
-const links = ['Активность', 'Новые', 'По алфавиту'];
+const LINKS = ['Активность', 'Новые', 'По алфавиту'];
 
 const Activity = () => (
   <div className={styles.activity}>
@@ -18,8 +18,8 @@ const Activity = () => (
     </div>
     <div className={styles.activity__links}>
       <ul>
-        {links.map(((item) => (
-          <li>
+        {LINKS.map(((item) => (
+          <li key={item}>
             <a href="#" className={styles.activity__itemLink}>{item}</a>
           </li>
         )))}

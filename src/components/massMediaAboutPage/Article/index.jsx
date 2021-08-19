@@ -1,13 +1,16 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable react/prop-types */
-import React from 'react-dom';
+import React from 'react';
 import cn from 'classnames';
 import styles from './Article.module.scss';
 
 import Vector from '../../../assets/images/SMI/Vector.png';
 
 const Article = ({
-  title, date, cityName, textTitle, textDescription, image,
+  title,
+  date,
+  cityName,
+  textTitle,
+  textDescription,
+  image,
 }) => (
   <div className={styles.article}>
     <div className={styles.article__wrapper}>
@@ -15,7 +18,7 @@ const Article = ({
         {title}
       </h3>
       <div className={styles.article__date}>
-        <img src={Vector} />
+        <img src={Vector} alt="vector" />
         <div className={styles.article__dateText}>
           {date}
         </div>
