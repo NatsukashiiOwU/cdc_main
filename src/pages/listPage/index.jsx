@@ -9,7 +9,7 @@ import styles from './ListPage.module.scss';
 import BannerPng from '../../assets/images/listPage/Banner/Banner.png';
 import BannerWebp from '../../assets/images/listPage/Banner/Banner.webp';
 
-import data from '../../components/listPage/CodeClass/data';
+import DATA from '../../components/listPage/CodeClass/data';
 
 const ListPage = () => (
   <>
@@ -22,8 +22,9 @@ const ListPage = () => (
       <Adresses adresses={['Главная', 'Код-классы']} className={styles.codeClasses__codeClassesMap} />
       <div className={styles.codeClasses__wrapper}>
         <div className={styles.codeClasses__items}>
-          {data.map((item) => (
+          {DATA.map((item) => (
             <CodeClass
+              key={item.title}
               imageWebp={item.imageWebp}
               imagePng={item.imagePng}
               title={item.title}

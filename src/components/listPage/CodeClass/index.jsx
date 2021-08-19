@@ -2,7 +2,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import Button from '../../UI/Button';
-import Sprite from '../../../assets/sprites/icons.svg';
+
+import Icon from '../../UI/Icon';
+
 import styles from './CodeClass.module.scss';
 
 import buttonImage from '../../../assets/images/listPage/CodeClass/buttomImage.png';
@@ -21,9 +23,7 @@ const CodeClass = ({
     <div className={styles.codeClass__image}>
       {color ? (
         <div className={styles.codeClass__svg} style={{ backgroundColor: color, width: '100%', height: '100%' }}>
-          <svg>
-            <use href={`${Sprite}#classes`} />
-          </svg>
+          <Icon view="classes" className={styles.codeClass__svgItem} />
         </div>
       ) : (
         <picture>
@@ -51,12 +51,16 @@ const CodeClass = ({
           </div>
         </div>
         <div className={styles.codeClass__buttons}>
-          <Button classname={styles.codeClass__button} title="ПОДРОБНЕЕ" href="/code-classes/detail/news" />
-          <Button classname={styles.codeClass__buttonContextMenu} icon={buttonImage} />
+          <Button classname={styles.codeClass__button} href="/code-classes/detail/news">
+            подробнее
+          </Button>
+          <Button classname={styles.codeClass__buttonContextMenu}>
+            <img src={buttonImage} alt="contextMenu" />
+          </Button>
         </div>
       </div>
     </div>
   </div>
 );
 
-export default CodeClass;
+export default React.memo(CodeClass);

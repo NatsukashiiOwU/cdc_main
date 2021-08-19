@@ -36,8 +36,7 @@
       position: relative;
 
       &::before {
-        content: url('../../../assets/images/listPage/Activity/Arrow.png')
-
+        content: url('../../../assets/images/listPage/Activity/arrow.svg')
       }
     }
   }
@@ -52,8 +51,8 @@
   }
 
   &__search {
-    margin-top: 17px !important;
-    margin-right: 13px !important;
-    width: 82% !important;
+    margin-top: 17px;
+    margin-right: 13px; 
+    width: 82%;
   }
 }

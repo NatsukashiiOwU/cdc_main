@@ -1,14 +1,11 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Footer.module.scss';
 import Button from '../UI/Button';
 import Icon from '../UI/Icon';
-import Sprite from '../../assets/sprites/icons.svg';
 
 import {
-  menuLinks, chapterLinks, copyright, socialLinks,
+  MENULINKS, CHAPTERLINKS, COPYRIGHT, SOCIALLINKS,
 } from './Links';
 
 const Footer = () => (
@@ -17,13 +14,11 @@ const Footer = () => (
       <div className={styles.footer__links}>
         <div className={styles.footer__icons}>
           <div className={styles.footer__logo}>
-            <svg>
-              <use href={`${Sprite}#logo`} />
-            </svg>
+            <Icon view="logo" />
           </div>
           <div className={styles.footer__linksSocial}>
-            {socialLinks.map((item) => (
-              <Icon inCircle className={styles.footer__linkLogo} view={item.img} />
+            {SOCIALLINKS.map((item) => (
+              <Icon inCircle className={styles.footer__linkLogo} view={item.img} key={item.img} />
             ))}
           </div>
         </div>
@@ -31,35 +26,37 @@ const Footer = () => (
           <div className={styles.footer__linksMenu}>
             <span>Меню</span>
             <ul>
-              {menuLinks.map((item) => (
-                <li>
-                  <a href="#" className={styles.footer__link}>
+              {MENULINKS.map((item) => (
+                <li key={item.title}>
+                  <Link to={item.link} className={styles.footer__link}>
                     {item.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
           <div className={styles.footer__linksChapter}>
             <ul>
-              {chapterLinks.map((item) => (
-                <li>
-                  <a href={item.link} className={styles.footer__link}>
+              {CHAPTERLINKS.map((item) => (
+                <li key={item.title}>
+                  <Link to={item.link} className={styles.footer__link}>
                     {item.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
         </div>
-        <div className={styles.footer__copyright}>{copyright}</div>
+        <div className={styles.footer__copyright}>
+          {COPYRIGHT}
+        </div>
       </div>
       <div className={styles.footer__form}>
         <div className={styles.footer__formText}>
           <h3 className={styles.footer__formTitle}>Напишите нам</h3>
           <span className={styles.footer__formDesc}>Мы всегда рады ответить на ваши вопросы</span>
         </div>
-        <form>
+        <form onSubmit={(e) => e.preventDefault()}>
           <label htmlFor="email" className={styles.footer__formEmail}>
             e-mail
             <input type="email" id="email" placeholder="Ваш e-mail" />
@@ -74,7 +71,7 @@ const Footer = () => (
               <input type="name" id="name" placeholder="Ваше имя" />
             </label>
             <div className={styles.footer__formButton}>
-              <Button type="submit" title="Отправить" />
+              <Button type="submit">Отправить </Button>
             </div>
           </div>
         </form>
@@ -83,4 +80,4 @@ const Footer = () => (
   </footer>
 );
 
-export default Footer;
+export default React.memo(Footer);

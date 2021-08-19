@@ -1,4 +1,4 @@
-import React from 'react-dom';
+import React from 'react';
 import Banner from '../../components/UI/Banner';
 
 import BannerPng from '../../assets/images/SMI/Banner/Banner.png';
@@ -38,4 +38,4 @@ const massMediaAboutPage = () => (
   </>
 );
 
-export default massMediaAboutPage;
+export default React.memo(massMediaAboutPage);

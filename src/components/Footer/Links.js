@@ -1,4 +1,4 @@
-export const menuLinks = [
+export const MENULINKS = [
   {
     title: 'Главная',
     link: '/',
@@ -21,7 +21,7 @@ export const menuLinks = [
   },
 ];
 
-export const chapterLinks = [
+export const CHAPTERLINKS = [
   {
     title: 'Ульяновский косударственный университет',
     link: '#',
@@ -44,7 +44,7 @@ export const chapterLinks = [
   },
 ];
 
-export const socialLinks = [
+export const SOCIALLINKS = [
   {
     name: 'Facebook',
     img: 'facebook',
@@ -62,4 +62,4 @@ export const socialLinks = [
   },
 ];
 
-export const copyright = 'Copyright © Ульяновский государственный университет, 1995-2020';
+export const COPYRIGHT = 'Copyright © Ульяновский государственный университет, 1995-2020';

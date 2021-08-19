@@ -13,7 +13,7 @@ const NewsMap = ({
     </div>
     <select className={styles.newsMap__select}>
       { numbers.map((number) => (
-        <option value={number}>{number}</option>
+        <option value={number} key={number}>{number}</option>
       )) }
     </select>
     <div className={cn(styles.newsMap__text, styles.newsMap__text_number)}>

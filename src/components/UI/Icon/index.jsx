@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 import cn from 'classnames';
 import React from 'react';
 import Sprite from '../../../assets/sprites/icons.svg';

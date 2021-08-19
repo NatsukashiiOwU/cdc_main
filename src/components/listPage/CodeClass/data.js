@@ -15,7 +15,7 @@ import img7Png from '../../../assets/images/listPage/CodeClass/img7.png';
 import img8Webp from '../../../assets/images/listPage/CodeClass/img8.webp';
 import img8Png from '../../../assets/images/listPage/CodeClass/img8.png';
 
-const data = [{
+const DATA = [{
   color: '#627EFD',
   imageWebp: null,
   imagePng: null,
@@ -87,4 +87,4 @@ const data = [{
 },
 ];
 
-export default data;
+export default DATA;

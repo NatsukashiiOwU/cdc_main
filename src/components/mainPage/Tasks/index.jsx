@@ -36,7 +36,7 @@ const Tasks = () => (
       </div>
       <ul className={styles.tasks__list}>
         {TasksContent.map((item) => (
-          <li className={styles.tasks__listItem}>
+          <li className={styles.tasks__listItem} key={item.id}>
             <span className={styles.tasks__listItem_number}>{item.id}</span>
             <p className={styles.tasks__listItem_content}>{item.content}</p>
           </li>
