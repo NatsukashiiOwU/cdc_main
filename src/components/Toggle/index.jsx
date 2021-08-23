@@ -26,8 +26,8 @@ const Toggle = ({ items, className }) => (
       </ul>
     </nav>
     <Switch>
-      {items.map(({ Page, path, index }) => (
-        <Route key={index} path={path} exact component={Page} />
+      {items.map(({ Page, path, exact = true }) => (
+        <Route key={path} path={path} exact={exact} component={Page} />
       ))}
     </Switch>
   </div>

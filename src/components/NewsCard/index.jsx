@@ -1,16 +1,35 @@
+/* eslint-disable react/button-has-type */
+/* eslint-disable react/prop-types */
 import React from 'react';
 import cn from 'classnames';
 import styles from './NewsCard.module.scss';
-import Button from '../UI/Button';
 import Icon from '../UI/Icon';
+import Button from '../UI/Button';
 
 const ICON = ['facebook', 'vk', 'instagram', 'share'];
 
 const NewsCard = ({
-  className, title, area, date, description, image, smallImage, isSmall,
+  className, title, area, date, description, image, smallImage, isSmall, auth, check,
 }) => (
   <div className={cn(styles.newsCard, className, isSmall && styles.newsCard__isSmall)}>
-    <img className={styles.newsCard__image} src={image} alt={title} />
+    {!check ? (
+      <img className={styles.newsCard__image} src={image} alt={title} />
+    ) : (
+      <div className={styles.newsCard__checkBlock}>
+        <img className={styles.newsCard__checkImage} src={image} alt={title} />
+        <div className={styles.newsCard__checkText}>
+          <div className={cn(styles.newsCard__userAuthBlock, styles.newsCard__deleteIconBlock)}>
+            <span className={cn(styles.newsCard__userAuthIcon, styles.newsCard__deleteIcon)}>
+              &#65794;
+            </span>
+            <span className={cn(styles.newsCard__captionIcon, styles.newsCard__captionDeleteIcon)}>
+              Удалить
+            </span>
+          </div>
+          <h3>ваша новость на модерации</h3>
+        </div>
+      </div>
+    )}
     <div className={styles.newsCard__content}>
       <div className={styles.newsCard__title}>
         { title }
@@ -25,20 +44,34 @@ const NewsCard = ({
         <div className={styles.newsCard__textContent}>{ date }</div>
         <div className={styles.newsCard__textContent}>{ description }</div>
       </div>
-      <div className={styles.newsCard__buttonWrapper}>
-        <Button classname={styles.newsCard__button}>
-          Читать
-        </Button>
-        <div className={styles.newsCard__icons}>
-          {ICON.map((icon, index) => (
-            ICON.length - 1 !== index ? (
-              <Icon inCircle className={styles.newsCard__circleIcon} view={icon} />
-            ) : (
-              <Icon className={styles.newsCard__circleIcon} view={icon} />
-            )
-          ))}
+      {(!auth && !check) && (
+        <div className={styles.newsCard__buttonWrapper}>
+          <Button classname={styles.newsCard__button} title="Читать" />
+          <div className={styles.newsCard__icons}>
+            {
+              ICON.map((icon, index) => (
+                ICON.length - 1 !== index ? (
+                  <Icon key={+index} inCircle className={styles.newsCard__circleIcon} view={icon} />
+                ) : (
+                  <Icon key={+index} className={styles.newsCard__circleIcon} view={icon} />
+                )
+              ))
+            }
+          </div>
         </div>
-      </div>
+      )}
+      {(auth && !check) && (
+        <div className={styles.newsCard__iconsAuth}>
+          <div className={styles.newsCard__userAuthBlock}>
+            <Icon className={styles.newsCard__userAuthIcon} view="editing" />
+            <span className={styles.newsCard__captionIcon}>Редактировать</span>
+          </div>
+          <div className={styles.newsCard__userAuthBlock}>
+            <Icon className={styles.newsCard__userAuthIcon} view="delete" />
+            <span className={styles.newsCard__captionIcon}>Удалить</span>
+          </div>
+        </div>
+      )}
     </div>
   </div>
 );

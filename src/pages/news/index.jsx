@@ -1,9 +1,9 @@
 import React, { } from 'react';
 import Adresses from '../../components/UI/Adresses';
 import Search from '../../components/UI/Search';
-import NewsCard from '../../components/NewsCard';
 import NewsMap from '../../components/NewsMap';
 import Banner from '../../components/UI/Banner';
+import NewsCard from '../../components/NewsCard';
 
 import BannerPng from '../../assets/images/News/Banner/Banner.png';
 import img from '../../assets/images/NewsPage/img.png';

@@ -49,6 +49,42 @@
     color: rgba(21, 20, 57, 0.4);
   }
 
+  &__captionIcon {
+    position: absolute;
+    display: none;
+    width: 110px;
+    top: -40px;
+    height: 50px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 3px;
+    background: url('../../assets/images/caption.svg') no-repeat;
+    background-size: cover;
+    color: #AEB0C2;
+  }
+
+  &__userAuthBlock {
+    position: relative;
+    margin-left: -10px;
+  }
+
+  &__userAuthBlock:hover &__captionIcon {
+    display: flex;
+    justify-content: center;
+    padding-top: 12px;
+  }
+
+  &__iconsAuth{
+    margin-right: -20px;
+    display: flex;
+    a {
+      margin: 0;
+    }
+    a:nth-child(1) {
+      margin-right: 20px;
+    }
+  }
+
   &__interactive {
     display: flex;
     align-items: center;
@@ -82,6 +118,7 @@
 
   &__icons {
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
   }
@@ -92,8 +129,15 @@
     }
   }
 
+  &__userAuthIcon {
+    margin-bottom: 20px;
+  }
+
+  &__authInteractive {
+    justify-content: space-between;
+  }
+
   &__isSmall {
-    
     #{$self}__image {
       width: 170px;
       height: 197px;

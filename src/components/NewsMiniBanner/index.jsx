@@ -1,19 +1,38 @@
+/* eslint-disable camelcase */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import cn from 'classnames';
+
 import styles from './NewsMiniBanner.module.scss';
-import bannerIcon from '../../assets/images/News/Banner/iconBanner.png';
+
+import star from '../../assets/images/star.png';
+import banner_icon from '../../assets/images/News/Banner/iconBanner.png';
 
 const NewsMiniBanner = ({
-  imagePng, title, text,
+  imagePng, title, text, banner = false,
 }) => (
-  <section className={styles.newsMiniBanner} style={{ backgroundImage: `url(${imagePng})` }}>
+  <section className={cn(styles.newsMiniBanner, !imagePng && styles.newsMiniBanner__gradient)} style={imagePng && { backgroundImage: `url(${imagePng})` }}>
     <div className={styles.newsMiniBanner__contentWrapper}>
-      <div className={styles.newsMiniBanner__image}>
-        <img src={bannerIcon} alt={title} />
-      </div>
+      {banner ? (
+        <div className={styles.newsMiniBanner__image}>
+          <img src={banner_icon} alt={title} />
+        </div>
+      ) : (
+        <div className={styles.newsMiniBanner__notImg}>
+          <img src={star} alt={title} />
+        </div>
+      )}
       <div className={styles.newsMiniBanner__text}>
-        <h1>{title}</h1>
-        <span>{text}</span>
+        {title ? (
+          <h1>{title}</h1>
+        ) : (
+          <h1 className={styles.newsMiniBanner__textOpacity}>Название код класса</h1>
+        )}
+        {text ? (
+          <span>{text}</span>
+        ) : (
+          <span className={styles.newsMiniBanner__textOpacity}>Название школы</span>
+        )}
       </div>
     </div>
   </section>

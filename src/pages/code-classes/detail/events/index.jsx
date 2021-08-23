@@ -1,20 +1,26 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
+
+import dataCardsEvent from '../../../events/dataCardsEvent';
+import NewsMap from '../../../../components/NewsMap';
+import CardEvent from '../../../../components/CardEvent';
+import AddCard from '../../../../components/AddCard';
 
 import styles from './events.module.scss';
 
-import CardEvent from '../../../../components/CardEvent';
-import dataCardsEvent from '../../../events/dataCardsEvent';
-import NewsMap from '../../../../components/NewsMap';
-
 const NUMBERS = [1, 10];
 
-const Events = () => (
+const Events = ({ isAuth = true }) => (
   <>
+    {isAuth && (
+      <AddCard className={styles.events__addCard} exact title="+ Добавить новое мероприятие" href="/code-classes/detail/events/add-events" />
+    )}
     {dataCardsEvent.map((card) => (
       <CardEvent
         key={card.id}
         title={card.title}
         isSmall
+        auth
         className={styles.events__cardEvent}
         description={card.description}
         image={card.image}

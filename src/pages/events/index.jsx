@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import Adresses from '../../components/UI/Adresses';
 import Search from '../../components/UI/Search';
-import CardEvent from '../../components/CardEvent';
 import NewsMap from '../../components/NewsMap';
+import CardEvent from '../../components/CardEvent';
 import Banner from '../../components/UI/Banner';
 import BannerHead from '../../assets/images/pageEvents/banner.png';
 import styles from './styles.module.scss';
@@ -18,6 +18,7 @@ const PageEvents = () => (
         <Search placeholder="Поиск" className={styles.events__search} />
         {dataCardsEvent.map((card) => (
           <CardEvent
+            auth
             className={styles.events__card}
             title={card.title}
             description={card.description}
