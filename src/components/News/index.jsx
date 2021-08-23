@@ -9,7 +9,7 @@ const DATA = [
     img: Image,
     date: '20 апреля 2021',
     description: 'В Барыше прошёл день открытых дверей Центра ДНК',
-    src: 'https://vk.com/damirvolkov',
+    src: 'https://vk.com/',
   },
   {
     img: Image,

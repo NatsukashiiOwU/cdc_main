@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
-import cn from 'classnames';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import cn from 'classnames';
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.scss';
 import Modal from '../UI/Modal';

@@ -1,19 +1,28 @@
+/* eslint-disable camelcase */
 /* eslint-disable react/prop-types */
 import React, { memo } from 'react';
 import cn from 'classnames';
 import styles from './DirectorCard.module.scss';
 
+import avatar from '../../assets/images/avatar.png';
+
 const DirectorCard = ({
   place, img, name, textSchcool, adress, eventCount, userCount,
 }) => (
-  <div className={styles.directorCard}>
+  <div className={cn(styles.directorCard, !img && styles.directorCard__empty)}>
     <div className={styles.directorCard__container}>
       <div className={styles.directorCard__title}>
         <h3>{place}</h3>
       </div>
       <div className={cn(styles.directorCard__individual, styles.directorCard__block)}>
-        <div className={styles.directorCard__individualImg}>
-          <img src={img} alt={name} />
+        <div className={styles.directorCard__individualAvatar}>
+          {img ? (
+            <img className={styles.directorCard__individualImg} src={img} alt={name} />
+          ) : (
+            <div className={styles.directorCard__notAvatar}>
+              <img className={styles.directorCard__notAvatarImg} src={avatar} alt={name} />
+            </div>
+          )}
         </div>
         <div className={styles.directorCard__text}>
           <span>{name}</span>

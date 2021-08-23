@@ -1,68 +1,71 @@
 /* eslint-disable camelcase */
 import React, { memo } from 'react';
 import Banner from '../../../components/UI/Banner';
+import Toggle from '../../../components/Toggle';
 import Adresses from '../../../components/UI/Adresses';
 
 import img_banner_png from '../../../assets/images/News/Banner/BannerCdc.png';
 import img_banner_webp from '../../../assets/images/News/Banner/BannerCdc.webp';
 import img_mini from '../../../assets/images/News/Banner/NewsBannerMini.png';
-import avatar from '../../../assets/images/NewsPage/directorAvatar.png';
 import NewsMiniBanner from '../../../components/NewsMiniBanner';
 import DirectorCard from '../../../components/DirectorCard';
-import Toggle from '../../../components/Toggle';
 
 import styles from './NewsCdc.module.scss';
-import Events from './events';
-import News from './news';
+import RouteAddNews from '../../../components/RouteAddNews';
+import RouteAddEvents from '../../../components/RouteAddEvents';
+import Profile from './profile';
 
 const route = [
   {
     id: '0',
     title: 'Мероприятия',
     path: '/code-classes/detail/events',
-    Page: Events,
+    exact: false,
+    Page: RouteAddEvents,
   },
   {
     id: '1',
     title: 'Новости',
+    exact: false,
     path: '/code-classes/detail/news',
-    Page: News,
+    Page: RouteAddNews,
+  },
+  {
+    id: '2',
+    title: 'Профиль',
+    exact: false,
+    path: '/code-classes/detail/profile',
+    Page: Profile,
   },
 ];
 
 const ADDRESS_TITLE = ['Главная', 'Код классы', 'МОУ СОШ п. Поливаново МО " Барышский район', 'Новости Код-класса'];
 
 const CodeClassesDetail = () => (
-  <div className={styles.newsCdc}>
+  <div className={styles.codeClassesDetail}>
     <Banner
       imagePng={img_banner_png}
       imageWebp={img_banner_webp}
       title="Список КОД-КЛАССОВ"
     />
-    <div className={styles.newsCdc__container}>
-      <Adresses className={styles.newsCdc__adress} adresses={ADDRESS_TITLE} />
-      <div className={styles.newsCdc__wrapper}>
-        <div className={styles.newsCdc__banners}>
+    <div className={styles.codeClassesDetail__container}>
+      <Adresses className={styles.codeClassesDetail__adress} adresses={ADDRESS_TITLE} />
+      <div className={styles.codeClassesDetail__wrapper}>
+        <div className={styles.codeClassesDetail__banners}>
           <NewsMiniBanner
-            imagePng={img_mini}
             imgBanWebp={img_mini}
-            title="Код класс “СОВЯТА"
-            text="МБОУ «Средняя школа №72 с углубленным изучением отдельных предметов» Ульяновск"
           />
           <Toggle
             items={route}
-            className={styles.newsCdc__toggle}
+            className={styles.codeClassesDetail__toggle}
           />
         </div>
-        <div className={styles.newsCdc__card}>
+        <div className={styles.codeClassesDetail__card}>
           <DirectorCard
             place="Руководитель клуба"
-            img={avatar}
-            name="Газизова Лениза Ривальевна"
-            textSchcool="МБОУ «Средняя школа №72 с углубленным изучением отдельных предметов» Ульяновск"
-            adress="г. Ульяновск, ул. Карбышева, д. 26"
-            eventCount="25"
-            userCount="14257"
+            name="ФИО"
+            eventCount="0"
+            userCount="0"
           />
         </div>
       </div>
