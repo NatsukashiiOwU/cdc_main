@@ -48,7 +48,7 @@ const FormRegistration = ({ classname }) => {
             text={university}
             error="Заполните поле"
           />
-          <Button classname={styles.formRegistration__submit} title="">
+          <Button classname={styles.formRegistration__submit}>
             Создать КОД-КЛАСС
           </Button>
         </form>

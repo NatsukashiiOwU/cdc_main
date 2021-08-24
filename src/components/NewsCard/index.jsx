@@ -46,7 +46,9 @@ const NewsCard = ({
       </div>
       {(!auth && !check) && (
         <div className={styles.newsCard__buttonWrapper}>
-          <Button classname={styles.newsCard__button} title="Читать" />
+          <Button classname={styles.newsCard__button}>
+            Читать
+          </Button>
           <div className={styles.newsCard__icons}>
             {
               ICON.map((icon, index) => (

@@ -4,10 +4,10 @@ import cn from 'classnames';
 import styles from './Button.module.scss';
 
 const Button = ({
-  classname, title, onClick, type, icon, href,
+  children, classname, onClick, type, icon, href,
 }) => (
   href ? (
-    <Link className={cn(styles.button, styles.button__link, classname)} to={href}>{title}</Link>
+    <Link className={cn(styles.button, styles.button__link, classname)} to={href}>{children}</Link>
   ) : (
     <button
       type={type}
@@ -15,8 +15,8 @@ const Button = ({
       onClick={onClick}
     >
       {icon ? (
-        <img src={icon} alt={title} />
-      ) : title}
+        <img src={icon} alt={children} />
+      ) : children}
     </button>
   )
 );

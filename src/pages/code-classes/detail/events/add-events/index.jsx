@@ -32,10 +32,14 @@ const AddEvents = () => (
     </div>
     <div className={styles.addEvents__block}>
       <h4 className={styles.addEvents__blockTitle}>Добавить обложку *:</h4>
-      <Button type="file" classname={styles.addEvents__addImg} title="выбрать фото" />
+      <Button type="file" classname={styles.addEvents__addImg}>
+        выбрать фото
+      </Button>
     </div>
     <div className={styles.addEvents__blockSubmit}>
-      <Button classname={styles.addEvents__submitForm} title="ОПУБЛИКОВАТЬ" type="addEvents" />
+      <Button classname={styles.addEvents__submitForm} type="addEvents">
+        ОПУБЛИКОВАТЬ
+      </Button>
     </div>
     <p className={styles.addEvents__subTitleForm}> * Обязательное поле ввода</p>
   </form>

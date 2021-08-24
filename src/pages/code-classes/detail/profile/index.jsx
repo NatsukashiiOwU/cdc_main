@@ -39,18 +39,26 @@ const Profile = () => (
     </div>
     <div className={styles.profile__block}>
       <h4 className={styles.profile__blockTitle}>Аватар *:</h4>
-      <Button type="file" classname={styles.profile__addImg} title="выбрать фото" />
+      <Button type="file" classname={styles.profile__addImg}>
+        выбрать фото
+      </Button>
     </div>
     <div className={styles.profile__block}>
       <h4 className={styles.profile__blockTitle}>Обложка *:</h4>
-      <Button type="file" classname={styles.profile__addImg} title="выбрать фото" />
+      <Button type="file" classname={styles.profile__addImg}>
+        выбрать фото
+      </Button>
     </div>
     <div className={styles.profile__block}>
       <h4 className={styles.profile__blockTitle}>Логотип / эмблема / герб код класса *:</h4>
-      <Button type="file" classname={styles.profile__addImg} title="выбрать фото" />
+      <Button type="file" classname={styles.profile__addImg}>
+        выбрать фото
+      </Button>
     </div>
     <div className={styles.profile__blockSubmit}>
-      <Button classname={styles.profile__submitForm} title="ИЗМЕНИТЬ ПРОФИЛЬ" type="profile" />
+      <Button classname={styles.profile__submitForm} type="profile">
+        ИЗМЕНИТЬ ПРОФИЛЬ
+      </Button>
     </div>
     <p className={styles.profile__subTitleForm}> * Обязательное поле ввода</p>
   </form>

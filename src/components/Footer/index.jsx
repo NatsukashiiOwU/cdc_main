@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../assets/images/logo.png';
 import styles from './Footer.module.scss';
 import Button from '../UI/Button';
 import Icon from '../UI/Icon';
@@ -13,9 +14,7 @@ const Footer = () => (
     <div className={styles.footer__wrapper}>
       <div className={styles.footer__links}>
         <div className={styles.footer__icons}>
-          <div className={styles.footer__logo}>
-            <Icon view="logo" />
-          </div>
+          <img className={styles.footer__logo} src={logo} alt="logo" />
           <div className={styles.footer__linksSocial}>
             {SOCIALLINKS.map((item) => (
               <Icon inCircle className={styles.footer__linkLogo} view={item.img} key={item.img} />
