@@ -1,4 +1,4 @@
-export const MENULINKS = [
+export const MENU_LINKS = [
   {
     title: 'Главная',
     link: '/',
@@ -21,7 +21,7 @@ export const MENULINKS = [
   },
 ];
 
-export const CHAPTERLINKS = [
+export const CHAPTER_LINKS = [
   {
     title: 'Ульяновский косударственный университет',
     link: '#',
@@ -44,7 +44,7 @@ export const CHAPTERLINKS = [
   },
 ];
 
-export const SOCIALLINKS = [
+export const SOCIAL_LINKS = [
   {
     name: 'Facebook',
     img: 'facebook',

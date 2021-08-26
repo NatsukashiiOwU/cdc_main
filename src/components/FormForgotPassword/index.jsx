@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import cn from 'classnames';
 import Input from '../UI/Input';
 import Button from '../UI/Button';
@@ -7,6 +7,14 @@ import styles from './FormForgotPassword.module.scss';
 const FormForgotPassword = ({ classname }) => {
   const [newPassword, setNewPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
+
+  const enterNewPassword = useCallback((e) => {
+    setNewPassword(e.target.value);
+  }, [newPassword]);
+
+  const repeatNewPassword = useCallback((e) => {
+    setRepeatPassword(e.target.value);
+  }, [repeatPassword]);
 
   return (
     <div className={cn(styles.formForgotPassword, classname)}>
@@ -21,7 +29,7 @@ const FormForgotPassword = ({ classname }) => {
             name="password"
             icon="inputPassword"
             placeholder="Новый пароль"
-            onChange={(e) => setNewPassword(e.target.value)}
+            onChange={enterNewPassword}
             text={newPassword}
             error="Заполните поле"
           />
@@ -30,7 +38,7 @@ const FormForgotPassword = ({ classname }) => {
             name="repeatPassword"
             icon="inputPassword"
             placeholder="Повторите новый пароль"
-            onChange={(e) => setRepeatPassword(e.target.value)}
+            onChange={repeatNewPassword}
             text={repeatPassword}
             error="Заполните поле"
           />

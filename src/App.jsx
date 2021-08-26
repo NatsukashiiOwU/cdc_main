@@ -7,6 +7,7 @@ import PageEvents from './pages/events';
 import CodeClassesDetail from './pages/code-classes/detail';
 
 import massMediaAboutPage from './pages/massMediaAboutPage';
+
 import Layout from './layout';
 import './styles/components.scss';
 import './App.css';

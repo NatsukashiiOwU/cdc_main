@@ -1,38 +1,52 @@
 import React from 'react';
 import cn from 'classnames';
-import Sprite from '../../../assets/sprites/icons.svg';
+import Icon from '../Icon';
 import styles from './Input.module.scss';
 
 const Input = ({
   type,
   name,
   icon,
+  className,
   placeholder,
   onChange,
   text,
   error,
+  labelClassName,
+  filePlaceholder,
+  classNamePlaceholder,
   props,
 }) => (
   <div className={styles.input__label}>
-    {!text && <span className={styles.input__errorText}>{error}</span>}
-    <input
-      {...props}
-      type={type}
-      className={cn(styles.input, !text && styles.input_error)}
-      onChange={onChange}
-      name={name}
-      value={text}
-    />
+    {!text && !!error && <span className={styles.input__errorText}>{error}</span>}
+    {type === 'textarea' ? (
+      <textarea
+        {...props}
+        className={cn(styles.input, !text && styles.input_error, className)}
+        onChange={onChange}
+        name={name}
+        value={text}
+      />
+    ) : (
+      <label htmlFor={name} className={labelClassName}>
+        {!text ? filePlaceholder : null}
+        <input
+          {...props}
+          id={name}
+          type={type}
+          className={cn(styles.input, !text && styles.input_error, className)}
+          onChange={onChange}
+          name={name}
+          value={text}
+        />
+      </label>
+    )}
     <div className={cn(styles.input__placeholder,
       !!text && styles.input__placeholder_none)}
     >
       <div className={styles.input__content}>
-        <div className={styles.input__img}>
-          <svg>
-            <use href={`${Sprite}#${icon}`} />
-          </svg>
-        </div>
-        <div className={styles.input__placeholder_text}>
+        <Icon classname={styles.input__img} view={icon} />
+        <div className={cn(styles.input__placeholder_text, classNamePlaceholder)}>
           {placeholder}
         </div>
       </div>

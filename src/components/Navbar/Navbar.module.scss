@@ -10,10 +10,34 @@
   padding: 268px 9px 864px 9px;
   transition: all 0.3s ease;
 
+  &__authWrapper {
+    padding: 0 9px 864px 9px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+
   &_fixed {
     position: fixed;
     padding: 106px 9px 864px 9px;
   }
+
+  &__authLinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__authUser {
+    margin-top: 308px !important;
+  }
+
+  &__userButton {
+    background: transparent !important;
+  }
+
 
   &__links {
    @include centerColumn;
@@ -39,17 +63,30 @@
     }
   }
 
+
   &__link {
     @include centerColumn;
     width: 79px;
     height: 79px;
     text-decoration: none;
+    @include centerColumn;
   }
 
-  &__links li:last-child {
+  &__openModal {
+    background: #2F1893; 
+    margin-bottom: 193px;
+  }
+
+  &__authLinksWrap li:last-child {
     background: #4A31B7;
     border-radius: 10px;
     margin-top: 282px;
+  }
+
+  &__links li:last-child {
+    background: #2F1893;
+    border-radius: 10px;
+    margin-top: 0;
   }
 
   &__linkIcon {
@@ -107,6 +144,27 @@
       opacity: 0;
       transition: opacity 0.3s ease;
     }
+  }
+  
+  &__modalMenu {
+    margin-left: $navbarWidth;
+  }
+
+  &__modalItem {
+    padding: 17px 0 21px 0;
+    border-top: 2px solid #EBEAED;
+  }
+
+  &__modalItem:last-child {
+    border-bottom: 2px solid #EBEAED;
+  }
+
+  &__modalLink {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    color: #FFFFFF;
+    text-decoration: none;
   }
 }
 

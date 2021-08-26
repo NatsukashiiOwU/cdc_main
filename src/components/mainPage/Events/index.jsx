@@ -121,4 +121,4 @@ const Events = () => (
   </section>
 );
 
-export default Events;
+export default React.memo(Events);

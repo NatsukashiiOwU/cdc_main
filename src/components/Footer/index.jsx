@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/images/logo.png';
 import styles from './Footer.module.scss';
 import Button from '../UI/Button';
 import Icon from '../UI/Icon';
+import SocialIcon from '../UI/SocialIcon';
 
 import {
-  MENULINKS, CHAPTERLINKS, COPYRIGHT, SOCIALLINKS,
+  MENU_LINKS, CHAPTER_LINKS, COPYRIGHT, SOCIAL_LINKS,
 } from './Links';
 
 const Footer = () => (
@@ -14,10 +14,17 @@ const Footer = () => (
     <div className={styles.footer__wrapper}>
       <div className={styles.footer__links}>
         <div className={styles.footer__icons}>
-          <img className={styles.footer__logo} src={logo} alt="logo" />
+          <div className={styles.footer__logo}>
+            <Icon view="logo" className={styles.footer__icon} />
+          </div>
           <div className={styles.footer__linksSocial}>
-            {SOCIALLINKS.map((item) => (
-              <Icon inCircle className={styles.footer__linkLogo} view={item.img} key={item.img} />
+            {SOCIAL_LINKS.map((item) => (
+              <SocialIcon
+                inCircle
+                className={styles.footer__linkLogo}
+                view={item.img}
+                key={item.img}
+              />
             ))}
           </div>
         </div>
@@ -25,7 +32,7 @@ const Footer = () => (
           <div className={styles.footer__linksMenu}>
             <span>Меню</span>
             <ul>
-              {MENULINKS.map((item) => (
+              {MENU_LINKS.map((item) => (
                 <li key={item.title}>
                   <Link to={item.link} className={styles.footer__link}>
                     {item.title}
@@ -36,7 +43,7 @@ const Footer = () => (
           </div>
           <div className={styles.footer__linksChapter}>
             <ul>
-              {CHAPTERLINKS.map((item) => (
+              {CHAPTER_LINKS.map((item) => (
                 <li key={item.title}>
                   <Link to={item.link} className={styles.footer__link}>
                     {item.title}

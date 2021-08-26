@@ -1,16 +1,15 @@
-import cn from 'classnames';
 import React from 'react';
-import Sprite from '../../../assets/sprites/icons.svg';
-import styles from './styles.module.scss';
+import sprite from '../../../assets/sprites/icons.svg';
 
 const Icon = ({
-  className, link, view, inCircle,
+  className,
+  view,
 }) => (
-  <a href={link || '#'} className={cn(className, styles.icon, inCircle && styles.icon_circle)}>
+  <div className={className}>
     <svg>
-      <use href={`${Sprite}#${view}`} />
+      <use href={`${sprite}#${view}`} />
     </svg>
-  </a>
+  </div>
 );
 
 export default React.memo(Icon);

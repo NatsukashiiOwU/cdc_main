@@ -1,12 +1,18 @@
-/* eslint-disable react/button-has-type */
-/* eslint-disable react/prop-types */
 import React from 'react';
 import cn from 'classnames';
 import styles from './styles.module.scss';
-import Icon from '../UI/Icon';
+import Icon from '../UI/SocialIcon';
 
 const CardEvent = ({
-  className, title, description, image, area, socialLinks, members, isSmall, auth,
+  className,
+  title,
+  description,
+  image,
+  area,
+  socialLinks,
+  members,
+  isSmall,
+  auth,
 }) => (
   <div className={cn(styles.cardEvent, className, isSmall && styles.cardEvent__isSmall)}>
     <img className={styles.cardEvent__image} src={image} alt="eventImage" />
@@ -50,4 +56,4 @@ const CardEvent = ({
   </div>
 );
 
-export default CardEvent;
+export default React.memo(CardEvent);

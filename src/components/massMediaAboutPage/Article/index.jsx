@@ -49,4 +49,4 @@ const Article = ({
   </div>
 );
 
-export default Article;
+export default React.memo(Article);

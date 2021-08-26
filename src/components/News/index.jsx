@@ -9,7 +9,7 @@ const DATA = [
     img: Image,
     date: '20 апреля 2021',
     description: 'В Барыше прошёл день открытых дверей Центра ДНК',
-    src: 'https://vk.com/',
+    src: 'https://vk.com/damirvolkov',
   },
   {
     img: Image,
@@ -71,7 +71,7 @@ const News = () => (
         </div>
         <div className={styles.news__semiItemsWrapper}>
           {DATA.map((item) => (
-            <div className={styles.news__semiItem}>
+            <div className={styles.news__semiItem} key={item.img}>
               <div className={styles.news__semiItemPic}>
                 <img src={item.img} alt="news" />
                 <div className={cn(styles.news__picDesc, styles.news__picDesc_semi)}>
