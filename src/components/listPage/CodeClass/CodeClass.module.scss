@@ -10,7 +10,8 @@
     display: block;
     width: 169px;
     height: auto;
-    border-radius: 9px 0px 0px 9px;
+    border-radius: 9px 0 0 9px;
+    flex-shrink: 0;
 
     img {
       width: 100%;
@@ -27,8 +28,8 @@
 
   &__svg {
     padding: 71px 42px;
-    border-radius: 9px 0px 0px 9px;
-    
+    border-radius: 9px 0 0 9px;
+
     svg {
       width: 85px;
       height: 69px;

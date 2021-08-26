@@ -62,7 +62,8 @@
 
   &__mainItem {
     position: relative;
-    width: 569px;
+    max-width: 569px;
+    width: 100%;
     margin-right: 29px;
     background-color: #FFFFFF;
     border-radius: 24px;
@@ -181,7 +182,8 @@
   &__semiItem {
     display: flex;
     align-items: center;
-    width: 569px;
+    max-width: 569px;
+    width: 100%;
     border-radius: 24px;
     background-color: white;
   }

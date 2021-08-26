@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import { Link } from 'react-router-dom';
 import React from 'react';
 import Image from '../../assets/images/news_image.png';
 import Icon from '../UI/Icon';
@@ -60,13 +61,13 @@ const News = () => (
               <div className={styles.news__dateIcon}>
                 <Icon view="date" />
               </div>
-              <div className={styles.news__date}>
+              <d1iv className={styles.news__date}>
                 20 апреля 2021
-              </div>
+              </d1iv>
             </div>
-            <button type="button" className={cn(styles.news__button, styles.news__button_itemButton)}>
+            <Link to="/news" className={cn(styles.news__button, styles.news__button_itemButton)}>
               Читать
-            </button>
+            </Link>
           </div>
         </div>
         <div className={styles.news__semiItemsWrapper}>
@@ -97,9 +98,9 @@ const News = () => (
                     {item.description}
                   </div>
                 </div>
-                <button type="button" className={cn(styles.news__button, styles.news__button_itemButton)}>
+                <Link to="/news" className={cn(styles.news__button, styles.news__button_itemButton)}>
                   Читать
-                </button>
+                </Link>
               </div>
             </div>
           ))}
