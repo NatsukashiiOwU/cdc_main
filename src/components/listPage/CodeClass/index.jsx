@@ -1,10 +1,6 @@
-/* eslint-disable import/no-named-as-default-member */
-/* eslint-disable react/prop-types */
 import React from 'react';
 import Button from '../../UI/Button';
-
 import Icon from '../../UI/Icon';
-
 import styles from './CodeClass.module.scss';
 
 import buttonImage from '../../../assets/images/listPage/CodeClass/buttomImage.png';
@@ -55,7 +51,7 @@ const CodeClass = ({
             подробнее
           </Button>
           <Button classname={styles.codeClass__buttonContextMenu}>
-            <img src={buttonImage} alt="contextMenu" />
+            <img src={buttonImage} alt="context menu" />
           </Button>
         </div>
       </div>

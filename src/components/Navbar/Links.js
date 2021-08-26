@@ -1,4 +1,4 @@
-const LINKS = [
+export const LINKS = [
   {
     icon: 'home',
     title: 'ГЛАВНАЯ',
@@ -31,4 +31,44 @@ const LINKS = [
   },
 ];
 
-export default LINKS;
+export const ADMIN_LINKS = [
+  {
+    title: 'Настройка профиля',
+    link: '#',
+  },
+  {
+    title: 'Добавить мероприятие',
+    link: '/code-classes/detail/events',
+  },
+  {
+    title: 'Добавить новость',
+    link: '/code-classes/detail/news',
+  },
+  {
+    title: 'Добавить статьи',
+    link: '#',
+  },
+  {
+    title: 'Модерация',
+    link: '/code-classes/detail/moderation',
+  },
+  {
+    title: 'Управление',
+    link: '#',
+  },
+];
+
+export const AUTH_LINKS = [
+  {
+    title: 'Настройка профиля',
+    link: '#',
+  },
+  {
+    title: 'Добавить мероприятие',
+    link: '/code-classes/detail/events',
+  },
+  {
+    title: 'Добавить новость',
+    link: '/code-classes/detail/news',
+  },
+];

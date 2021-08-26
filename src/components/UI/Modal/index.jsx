@@ -5,16 +5,16 @@ import styles from './Modal.module.scss';
 const Modal = ({
   children,
   classname,
-  isFull,
+  isAuth,
   isOpen,
 }) => (
   <section className={cn(styles.modal,
-    isFull && styles.modal__auth,
-    !isFull && styles.modal__menu,
+    isAuth && styles.modal__auth,
+    !isAuth && styles.modal__menu,
     isOpen && styles.modal__isOpen,
     classname)}
   >
-    <div className={isFull ? styles.modal__auth_wrapper : styles.modal__menu_wrapper}>
+    <div className={isAuth ? styles.modal__auth_wrapper : styles.modal__menu_wrapper}>
       <div className={styles.modal__content}>
         {children}
       </div>

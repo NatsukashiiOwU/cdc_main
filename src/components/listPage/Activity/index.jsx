@@ -29,4 +29,4 @@ const Activity = () => (
   </div>
 );
 
-export default Activity;
+export default React.memo(Activity);

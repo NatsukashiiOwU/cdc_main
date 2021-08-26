@@ -1,6 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable react/prop-types */
 import React from 'react';
 import cn from 'classnames';
 import {
@@ -27,7 +24,7 @@ const Toggle = ({ items, className }) => (
     </nav>
     <Switch>
       {items.map(({ Page, path, exact = true }) => (
-        <Route key={path} path={path} exact={exact} component={Page} />
+        <Route path={path} component={Page} key={path} exact={exact} />
       ))}
     </Switch>
   </div>

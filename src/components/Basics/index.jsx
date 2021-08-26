@@ -85,7 +85,7 @@ const Basics = () => {
                   { item.contacts && (
                     <div className={styles.basics__contacts}>
                       {item.contacts.map((contact) => (
-                        <p className={styles.basics__contact}>
+                        <p key={contact} className={styles.basics__contact}>
                           { contact }
                         </p>
                       ))}
@@ -110,7 +110,6 @@ const Basics = () => {
             <div className={styles.basics__infoCircle}>
               <svg>
                 <use href={`${sprite}#${item.sprite}`} />
-
               </svg>
             </div>
             <div className={styles.basics__itemContent}>

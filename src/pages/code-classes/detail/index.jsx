@@ -3,6 +3,7 @@ import React, { memo } from 'react';
 import Banner from '../../../components/UI/Banner';
 import Toggle from '../../../components/Toggle';
 import Adresses from '../../../components/UI/Adresses';
+import Moderation from '../../../components/Moderation';
 
 import img_banner_png from '../../../assets/images/News/Banner/BannerCdc.png';
 import img_banner_webp from '../../../assets/images/News/Banner/BannerCdc.webp';
@@ -26,9 +27,16 @@ const route = [
   {
     id: '1',
     title: 'Новости',
-    exact: false,
     path: '/code-classes/detail/news',
     Page: RouteAddNews,
+    exact: false,
+  },
+  {
+    id: '2',
+    title: 'Модерация',
+    path: '/code-classes/detail/moderation',
+    Page: Moderation,
+    exact: false,
   },
   {
     id: '2',
