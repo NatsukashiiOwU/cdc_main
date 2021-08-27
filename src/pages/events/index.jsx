@@ -1,13 +1,15 @@
 import React, { memo } from 'react';
 import Adresses from '../../components/UI/Adresses';
 import Search from '../../components/UI/Search';
-import NewsMap from '../../components/NewsMap';
 import CardEvent from '../../components/CardEvent';
+import NewsMap from '../../components/UI/NewsMap';
 import Banner from '../../components/UI/Banner';
 import BannerHead from '../../assets/images/pageEvents/banner.png';
 import styles from './styles.module.scss';
 
 import dataCardsEvent from './dataCardsEvent';
+
+const NUMBERS = [3, 5, 10];
 
 const PageEvents = () => (
   <>
@@ -28,7 +30,7 @@ const PageEvents = () => (
             members={card.members}
           />
         ))}
-        <NewsMap title="Код классов на странице" numbers={[3, 5, 10]} max="13" />
+        <NewsMap title="Код классов на странице" numbers={NUMBERS} max="13" />
       </div>
     </div>
   </>

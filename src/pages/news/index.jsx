@@ -1,9 +1,9 @@
-import React, { } from 'react';
+import React from 'react';
 import Adresses from '../../components/UI/Adresses';
 import Search from '../../components/UI/Search';
-import NewsMap from '../../components/NewsMap';
-import Banner from '../../components/UI/Banner';
 import NewsCard from '../../components/NewsCard';
+import NewsMap from '../../components/UI/NewsMap';
+import Banner from '../../components/UI/Banner';
 
 import BannerPng from '../../assets/images/News/Banner/Banner.png';
 import img from '../../assets/images/NewsPage/img.png';
@@ -11,7 +11,7 @@ import img2 from '../../assets/images/NewsPage/img2.png';
 
 import styles from './News.module.scss';
 
-const NewsPage = () => (
+const News = () => (
   <>
     <Banner
       imagePng={BannerPng}
@@ -74,4 +74,4 @@ const NewsPage = () => (
   </>
 );
 
-export default NewsPage;
+export default News;

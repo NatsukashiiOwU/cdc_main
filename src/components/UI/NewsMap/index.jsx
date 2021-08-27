@@ -1,6 +1,6 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { memo } from 'react';
 import cn from 'classnames';
 import styles from './NewsMap.module.scss';
 
@@ -32,4 +32,4 @@ const NewsMap = ({
   </div>
 );
 
-export default NewsMap;
+export default memo(NewsMap);
