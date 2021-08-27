@@ -5,9 +5,9 @@ import styles from './news.module.scss';
 
 import img from '../../../../assets/images/NewsPage/img.png';
 
-import NewsMap from '../../../../components/NewsMap';
 import AddCard from '../../../../components/AddCard';
 import NewsCard from '../../../../components/NewsCard';
+import NewsMap from '../../../../components/UI/NewsMap';
 
 const DATA_CARD = [
   {

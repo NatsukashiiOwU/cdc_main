@@ -130,6 +130,7 @@
   }
 
   &__circleIcon {
+    --margin: 0;
     --width: 18px;
     --height: 18px;
     --color: #1E0E62;
@@ -138,9 +139,13 @@
     --circle-bg-color: white;
     --margin: 22.2px;
 
-    
-    :last-of-type {
+
+    &:last-of-type {
       --margin: 0;
+    }
+
+    & + & {
+      margin-left: 20px;
     }
   }
 
