@@ -46,7 +46,7 @@ const Input = ({
       !!text && styles.input__placeholder_none)}
     >
       <div className={styles.input__content}>
-        <Icon classname={styles.input__img} view={icon} />
+        <Icon className={styles.input__icon} view={icon} />
         <div className={cn(styles.input__placeholder_text, classNamePlaceholder)}>
           {placeholder}
         </div>
