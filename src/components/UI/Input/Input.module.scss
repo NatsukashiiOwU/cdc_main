@@ -31,17 +31,6 @@
     text-transform: uppercase;
   }
 
-  &__icon {
-    width: 20px;
-    height: 19px;
-    margin-right: 10px;
-
-    svg {
-      width: 100%;
-      height: 100%;
-    }
-  }
-
   &__content {
     @include centerRow;
     width: max-content;

@@ -9,9 +9,9 @@ const FormRegistration = ({ classname }) => {
   const [email, setEmail] = useState('');
   const [university, setUniversity] = useState('');
 
-  const enterName = useCallback((e) => setName(e.target.value), []);
-  const enterEmail = useCallback((e) => setEmail(e.target.value), []);
-  const enterUniversity = useCallback((e) => setUniversity(e.target.value), []);
+  const enterName = useCallback((e) => setName(e.target.value), [name]);
+  const enterEmail = useCallback((e) => setEmail(e.target.value), [email]);
+  const enterUniversity = useCallback((e) => setUniversity(e.target.value), [university]);
 
   return (
     <div className={cn(styles.formRegistration, classname)}>
