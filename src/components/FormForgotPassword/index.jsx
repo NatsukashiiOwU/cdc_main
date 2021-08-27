@@ -10,11 +10,11 @@ const FormForgotPassword = ({ classname }) => {
 
   const enterNewPassword = useCallback((e) => {
     setNewPassword(e.target.value);
-  }, [newPassword]);
+  }, []);
 
   const repeatNewPassword = useCallback((e) => {
     setRepeatPassword(e.target.value);
-  }, [repeatPassword]);
+  }, []);
 
   return (
     <div className={cn(styles.formForgotPassword, classname)}>
@@ -23,7 +23,7 @@ const FormForgotPassword = ({ classname }) => {
         <span>Введите новый пароль</span>
       </div>
       <div className={styles.formForgotPassword__form}>
-        <form onSubmit={(e) => e.preventDefault}>
+        <form onSubmit={(e) => e.preventDefault()}>
           <Input
             type="password"
             name="password"

@@ -3,40 +3,33 @@
 .modal {
   position: fixed;
   top: 0;
-  left: -100%;
-  bottom: 0;
+  left: 0;
   width: 100%;
   z-index: 11;
-  transition: all 0.5s ease; 
+  transition: transform 0.5s ease;
+  transform: translateX(-100%);
 
-  &__isOpen {
-    left: 0;
+  &_isOpen {
+    transform: translateX($navbarWidth);
   }
 
-  &__menu {
+  &_full {
     right: 0;
     background: rgba(100, 78, 193, 0.82);
     backdrop-filter: blur(75px);
-
-    &_wrapper {
-      @include centerRow;
-      width: 100%;
-      height: 100vh;
-      margin-top: 69px;
-      margin-left: 7px;
-    }
+    @include centerRow;
+    width: 100%;
+    height: 100vh;
+    padding-top: 69px;
+    padding-left: 7px;
   }
 
-  &__auth {
+  &_small {
+    @include centerRow;
     width: auto;
+    height: 100vh;
     padding: 0 114px 0 92px;
     background: rgba(100, 78, 193, 0.82);
     backdrop-filter: blur(75px);
-    
-    &_wrapper {
-      @include centerRow;
-      height: 100vh;
-    }
   }
-  
 }

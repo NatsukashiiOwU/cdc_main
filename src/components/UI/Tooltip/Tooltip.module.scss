@@ -2,8 +2,13 @@
 
 .tooltip {
   position: absolute;
+  left: 80px;
+  bottom: -25px;
+  background: #fff;
+  box-shadow: 0 0 4px 2px #0d1025;
   border-radius: 15px;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
   transition: opacity .3s ease-in-out;
 
@@ -12,20 +17,20 @@
     position: absolute;
     width: 0;
     height: 0;
+    bottom: 35px;
+    left: -20px;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 20px solid #fff;
   }
 
-  &_right {
-    &:after {
-      border-top: var(--semi-border) solid transparent;
-      border-bottom: var(--semi-border) solid transparent;
-      border-right: var(--main-border) solid var(--border-color);
-    }
+  &_open {
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 0.95;
   }
-
-  &_top {
-    &:after {
-      border-left: var(--semi-border) solid transparent;
-      border-right: var(--semi-border) solid transparent;
+}
+nt;
       border-top: var(--main-border) solid var(--border-color);
     }
   }
