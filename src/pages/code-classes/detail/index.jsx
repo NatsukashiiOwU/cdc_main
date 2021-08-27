@@ -14,6 +14,8 @@ import DirectorCard from '../../../components/DirectorCard';
 import styles from './NewsCdc.module.scss';
 import RouteAddNews from '../../../components/RouteAddNews';
 import RouteAddEvents from '../../../components/RouteAddEvents';
+import Press from '../../../components/Press';
+import Management from '../../../components/Management';
 import Profile from './profile';
 
 const route = [
@@ -39,11 +41,25 @@ const route = [
     exact: false,
   },
   {
+    id: '3',
+    title: 'Пресса',
+    exact: false,
+    path: '/code-classes/detail/press',
+    Page: Press,
+  },
+  {
     id: '2',
     title: 'Профиль',
     exact: false,
     path: '/code-classes/detail/profile',
     Page: Profile,
+  },
+  {
+    id: '6',
+    title: 'Управление',
+    exact: false,
+    path: '/code-classes/detail/management',
+    Page: Management,
   },
 ];
 
