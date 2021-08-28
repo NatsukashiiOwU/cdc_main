@@ -2,7 +2,7 @@
 import React from 'react';
 
 import dataCardsEvent from '../../../events/dataCardsEvent';
-import NewsMap from '../../../../components/NewsMap';
+import NewsMap from '../../../../components/UI/NewsMap';
 import CardEvent from '../../../../components/CardEvent';
 import AddCard from '../../../../components/AddCard';
 

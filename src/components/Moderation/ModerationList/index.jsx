@@ -2,7 +2,7 @@
 import React from 'react';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
-import NewsMap from '../../NewsMap';
+import NewsMap from '../../UI/NewsMap';
 import styles from './ModerationList.module.scss';
 
 import avatarPng from '../../../assets/images/ModerationEdit/avatarPng.png';

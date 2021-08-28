@@ -7,22 +7,25 @@ import styles from './News.module.scss';
 
 const DATA = [
   {
+    id: 0,
     img: Image,
     date: '20 апреля 2021',
     description: 'В Барыше прошёл день открытых дверей Центра ДНК',
-    src: 'https://vk.com/damirvolkov',
+    src: '',
   },
   {
+    id: 1,
     img: Image,
     date: '20 апреля 2021',
     description: 'В Барыше прошёл день открытых дверей Центра ДНК',
-    src: 'https://vk.com/damirvolkov',
+    src: '',
   },
   {
+    id: 2,
     img: Image,
     date: '20 апреля 2021',
     description: 'В Барыше прошёл день открытых дверей Центра ДНК',
-    src: 'https://vk.com/damirvolkov',
+    src: '',
   },
 ];
 
@@ -72,7 +75,7 @@ const News = () => (
         </div>
         <div className={styles.news__semiItemsWrapper}>
           {DATA.map((item) => (
-            <div className={styles.news__semiItem} key={item.img}>
+            <div key={item.id} className={styles.news__semiItem}>
               <div className={styles.news__semiItemPic}>
                 <img src={item.img} alt="news" />
                 <div className={cn(styles.news__picDesc, styles.news__picDesc_semi)}>

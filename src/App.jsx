@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import MainPage from './pages/main';
-import NewsPage from './pages/news';
-import ListPage from './pages/listPage';
 import PageEvents from './pages/events';
 import CodeClassesDetail from './pages/code-classes/detail';
-
+import ListPage from './pages/listPage';
+import News from './pages/news';
+import NewsPage from './pages/NewsPage';
 import massMediaAboutPage from './pages/massMediaAboutPage';
 
 import Layout from './layout';

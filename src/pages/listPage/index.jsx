@@ -3,7 +3,7 @@ import Banner from '../../components/UI/Banner';
 import CodeClass from '../../components/listPage/CodeClass';
 import Activity from '../../components/listPage/Activity';
 import Adresses from '../../components/UI/Adresses';
-import NewsMap from '../../components/NewsMap';
+import NewsMap from '../../components/UI/NewsMap';
 
 import styles from './ListPage.module.scss';
 import BannerPng from '../../assets/images/listPage/Banner/Banner.png';

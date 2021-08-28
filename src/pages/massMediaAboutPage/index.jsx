@@ -3,13 +3,15 @@ import Banner from '../../components/UI/Banner';
 
 import BannerPng from '../../assets/images/SMI/Banner/Banner.png';
 import BannerWebp from '../../assets/images/SMI/Banner/Banner.webp';
-import NewsMap from '../../components/NewsMap';
+import NewsMap from '../../components/UI/NewsMap';
 
 import Article from '../../components/massMediaAboutPage/Article';
 import Adresses from '../../components/UI/Adresses';
 import data from '../../components/massMediaAboutPage/Article/data';
 
 import styles from './MassMediaAboutPage.module.scss';
+
+const NUMBERS = [1, 10];
 
 const massMediaAboutPage = () => (
   <>
@@ -33,7 +35,7 @@ const massMediaAboutPage = () => (
           />
         ))}
       </div>
-      <NewsMap title="Статей на странице" numbers={[1, 10]} max="13" className={styles.smiAboutUsMap__smiAboutUsMap} />
+      <NewsMap title="Статей на странице" numbers={NUMBERS} max="13" className={styles.smiAboutUsMap__smiAboutUsMap} />
     </section>
   </>
 );

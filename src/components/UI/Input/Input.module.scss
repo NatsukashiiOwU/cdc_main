@@ -25,16 +25,10 @@
   &__errorText {
     font-weight: 400;
     font-size: 12px;
-    line-height: 14px;    
+    line-height: 14px;
     color: #EB5757;
     margin-left: 194px;
     text-transform: uppercase;
-  }
-  
-  &__img svg {
-    width: 20px;
-    height: 19px;
-    margin-right: 10px;
   }
 
   &__content {
@@ -44,19 +38,26 @@
 
   &__placeholder {
     position: absolute;
-    bottom: 16px;
+    bottom: 50%;
     left: 29px;
-    opacity: 1;
     visibility: visible;
     transition: all 0.3s ease;
     color: #333333;
     opacity: 0.3;
+    transform: translateY(50%);
     pointer-events: none;
+
+    &_img svg {
+      width: 20px;
+      height: 19px;
+      margin-right: 10px;
+      margin-bottom: -3px;
+    }
 
     &_text {
       font-weight: 400;
       font-size: 14px;
-      line-height: 21px;
+      line-height: 14px;
     }
 
     &_none {
