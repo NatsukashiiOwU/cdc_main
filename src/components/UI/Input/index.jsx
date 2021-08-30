@@ -4,7 +4,6 @@ import Icon from '../Icon';
 import styles from './Input.module.scss';
 
 const Input = ({
-  classname,
   type,
   name,
   icon,
@@ -52,7 +51,7 @@ const Input = ({
         </div>
       </div>
     </div>
-  </>
+  </div>
 );
 
 export default React.memo(Input);

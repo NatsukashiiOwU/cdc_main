@@ -4,7 +4,6 @@ import MainPage from './pages/main';
 import PageEvents from './pages/events';
 import CodeClassesDetail from './pages/code-classes/detail';
 import ListPage from './pages/listPage';
-import News from './pages/news';
 import NewsPage from './pages/NewsPage';
 import massMediaAboutPage from './pages/massMediaAboutPage';
 

@@ -64,9 +64,9 @@ const News = () => (
               <div className={styles.news__dateIcon}>
                 <Icon view="date" />
               </div>
-              <d1iv className={styles.news__date}>
+              <div className={styles.news__date}>
                 20 апреля 2021
-              </d1iv>
+              </div>
             </div>
             <Link to="/news" className={cn(styles.news__button, styles.news__button_itemButton)}>
               Читать
