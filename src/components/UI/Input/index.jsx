@@ -4,7 +4,6 @@ import Icon from '../Icon';
 import styles from './Input.module.scss';
 
 const Input = ({
-  classname,
   type,
   name,
   icon,
@@ -18,7 +17,7 @@ const Input = ({
   classNamePlaceholder,
   props,
 }) => (
-  <div className={cn(styles.input__label, classname)}>
+  <div className={cn(styles.input__label, className)}>
     {!text && !!error && <span className={styles.input__errorText}>{error}</span>}
     {type === 'textarea' ? (
       <textarea

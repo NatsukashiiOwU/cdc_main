@@ -2,10 +2,10 @@ import React, { useState, useCallback, useEffect } from 'react';
 import cn from 'classnames';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { useStore } from 'react-redux';
+import { Link } from 'react-router-dom';
 import styles from './Navbar.module.scss';
 import Modal from '../UI/Modal';
 import Icon from '../UI/Icon';
-import SocialIcon from '../UI/SocialIcon';
 import FormRegistration from '../FormRegistration';
 import FormForgotPassEmail from '../FormForgotPassEmail';
 import FormForgotPassword from '../FormForgotPassword';
@@ -84,14 +84,14 @@ const Navbar = () => {
           <ul>
             {LINKS.map((item) => (
               <li>
-                <a href={item.link} className={styles.navbar__link} key={item.img}>
-                  <SocialIcon className={styles.navbar__linkIcon} view={item.icon} />
+                <Link to={item.link} className={styles.navbar__link} key={item.img}>
+                  <Icon className={styles.navbar__linkIcon} view={item.icon} />
                   {!!item.title && (
                     <div className={styles.navbar__linkTitle}>
                       {item.title}
                     </div>
                   )}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -175,7 +175,7 @@ const Navbar = () => {
             >
               <FormRegistration
                 changeForm={setOpenForm}
-                classname={styles.navbar__formRegistration}
+                className={styles.navbar__formRegistration}
               />
             </CSSTransition>
           )}
@@ -195,7 +195,7 @@ const Navbar = () => {
             >
               <FormForgotPassEmail
                 changeForm={setOpenForm}
-                classname={styles.navbar__formForgotPassEmail}
+                className={styles.navbar__formForgotPassEmail}
               />
             </CSSTransition>
           )}
@@ -216,7 +216,7 @@ const Navbar = () => {
               {user.isAuth ? <FormChangePassword /> : (
                 <FormForgotPassword
                   changeForm={setOpenForm}
-                  classname={styles.navbar__formForgotPassword}
+                  className={styles.navbar__formForgotPassword}
                 />
               )}
             </CSSTransition>

@@ -85,7 +85,7 @@ const NewsPageBody = () => (
           </div>
         </div>
       ))}
-      <Button classname={styles.newsPageBody__button}>Показать больше</Button>
+      <Button className={styles.newsPageBody__button}>Показать больше</Button>
     </div>
   </div>
 );

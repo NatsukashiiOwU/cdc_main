@@ -1,7 +1,7 @@
 .tasks {
   min-height: 535px;
   position: relative;
-  padding-top: 184px;
+  padding-top: 170px;
   background-color: #F2F6F9;
   z-index: -1;
   padding-left: 6px;
@@ -12,7 +12,6 @@
   }
 
   &__title h2 {
-    font-family: "DM Sans", sans-serif;
     color: #4F4F4F;
     font-weight: 500;
     font-size: 36px;
@@ -42,7 +41,7 @@
     }
 
     &:nth-child(3) {
-      margin-right: 0px;
+      margin-right: 0;
       width: 350px;
     }
 
@@ -51,7 +50,7 @@
     }
 
     &:nth-child(6) {
-        margin-right: 0px;
+        margin-right: 0;
     }
 
     &_content {
@@ -62,7 +61,6 @@
     }
 
     &_number {
-      font-family: "DM Sans", sans-serif;
       font-weight: 500;
       font-size: 96px;
       line-height: 150%;

@@ -7,7 +7,7 @@ import styles from './AddCard.module.scss';
 
 const AddCard = ({ title, className, href }) => (
   <div className={cn(styles.addCard, className)}>
-    <Button classname={styles.addCard__button} href={href}>
+    <Button className={styles.addCard__button} href={href}>
       { title }
     </Button>
   </div>

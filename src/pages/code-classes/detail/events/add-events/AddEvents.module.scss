@@ -19,11 +19,10 @@
       align-items: center;
     }
   }
-  
+
   &__addImg {
-    background-color: none;
-    color: #9A9CAD;
-    border: 1px solid #9A9CAD;
+    color: #9a9cad;
+    border: 1px solid #9a9cad;
     background-color: #fff;
     font-weight: 500;
     font-size: 18px;
@@ -50,8 +49,8 @@
   &__dateInput {
     &::placeholder {
       opacity: 0.75;
-      color:#9A9CAD;
-      overflow: none;
+      color: #9a9cad;
+      overflow: initial;
       transform: translateX(20px);
     }
   }
@@ -61,8 +60,8 @@
     height: 43.53px;
     &::placeholder {
       opacity: 0.4;
-      color:#9A9CAD;
-      overflow: none;
+      color: #9a9cad;
+      overflow: initial;
       transform: translateX(20px);
     }
   }

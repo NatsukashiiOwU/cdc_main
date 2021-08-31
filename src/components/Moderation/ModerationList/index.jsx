@@ -17,19 +17,19 @@ import photo2Webp from '../../../assets/images/ModerationEdit/photo2.webp';
 const TABLE_HEADERS = [
   {
     title: 'События',
-    classname: 'title',
+    className: 'title',
   },
   {
     title: 'Руководитель',
-    classname: 'author',
+    className: 'author',
   },
   {
     title: 'Код класс',
-    classname: 'codeClass',
+    className: 'codeClass',
   },
   {
     title: 'Дата',
-    classname: 'date',
+    className: 'date',
   },
 ];
 

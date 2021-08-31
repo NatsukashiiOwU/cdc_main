@@ -3,10 +3,11 @@
   display: flex;
   justify-content: center;
   background-color: #f2f2f2;
-  box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.25);
 
   &__wrapper {
-    width: 1164px;
+    max-width: 1164px;
+    width: 100%;
     display: flex;
   }
 
@@ -76,7 +77,8 @@
   }
 
   &__linksChapter {
-    width: 317px;
+    max-width: 317px;
+    width: 100%;
     margin-top: 6px;
 
     ul {
@@ -112,7 +114,8 @@
   }
 
   &__copyright {
-    width: 445px;
+    max-width: 445px;
+    width: 100%;
     margin-top: 136px;
     margin-left: 3px;
     font-weight: 500;
@@ -124,7 +127,8 @@
 
   &__form {
     margin-left: 86px;
-    width: 567px;
+    max-width: 567px;
+    width: 100%;
   }
 
   &__form form {
@@ -146,21 +150,25 @@
     line-height: 26px;
     color: #828282;
     letter-spacing: 0.6px;
-    width: 567px;
+    max-width: 567px;
+    width: 100%;
   }
 
   &__formEmail {
     margin-bottom: 33px;
-    width: 567px;
+    max-width: 567px;
+    width: 100%;
   }
 
   &__formEmail,
   &__formMessage {
-    width: 567px;
+    max-width: 567px;
+    width: 100%;
   }
 
   &__formName {
-    width: 397px;
+    max-width: 567px;
+    width: 100%;
   }
 
   &__formEmail,
@@ -227,7 +235,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
-    width: 102%;
+    width: 100%;
     margin-top: 30px;
   }
 
@@ -251,7 +259,7 @@
     padding: 90px 0 140px 0;
 
     &__wrapper {
-      width: 1013px;
+      max-width: 1013px;
       display: flex;
     }
 
@@ -289,7 +297,8 @@
 
     &__form {
       margin-left: 75px;
-      width: 490px;
+      max-width: 490px;
+      width: 100%;
     }
 
     &__form form {
@@ -310,16 +319,19 @@
 
     &__formEmail {
       margin-bottom: 18px;
-      width: 567px;
+      max-width: 567px;
+      width: 100%;
     }
 
     &__formEmail,
     &__formMessage {
-      width: 567px;
+      max-width: 567px;
+      width: 100%;
     }
 
     &__formName {
-      width: 397px;
+      max-width: 397px;
+      width: 100%;
     }
 
     &__formEmail,

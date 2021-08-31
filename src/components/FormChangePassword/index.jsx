@@ -41,7 +41,7 @@ const FormChangePassword = () => {
               error="Заполните поле"
             />
             <Button
-              classname={cn(styles.formChangePassword__submit, !/(.+)@(.+)/.test(email) && styles.formChangePassword__submit_disabled)}
+              className={cn(styles.formChangePassword__submit, !/(.+)@(.+)/.test(email) && styles.formChangePassword__submit_disabled)}
               onClick={() => setNext(1)}
             >
               Далее
@@ -70,7 +70,7 @@ const FormChangePassword = () => {
               error="Заполните поле"
             />
             <Button
-              classname={cn(styles.formChangePassword__submit, next !== 0 && !/(.+)@(.+)/.test(email) && styles.formChangePassword__submit_disabled)}
+              className={cn(styles.formChangePassword__submit, next !== 0 && !/(.+)@(.+)/.test(email) && styles.formChangePassword__submit_disabled)}
             >
               Изменить пароль
             </Button>

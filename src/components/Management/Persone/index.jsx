@@ -63,14 +63,14 @@ const Persone = ({
         {isFirst
           ? 'Действия'
           : (
-            <div>
-              <Icon view="burger" />
+            <>
+              <Icon className={styles.persone__burger} view="burger" />
               <ToolTip isOpen={isMenuOpen} className={styles.persone__tooltipMenu} type="right">
-                <Button classname={styles.persone__tooltipButton} type="button" title="Сообщение" />
-                <Button classname={styles.persone__tooltipButton} type="button" title="Сбросить пароль" />
-                <Button classname={styles.persone__tooltipButton} type="button" title="Удалить" />
+                <Button className={styles.persone__tooltipButton} type="button">Сообщение</Button>
+                <Button className={styles.persone__tooltipButton} type="button">Сбросить пароль</Button>
+                <Button className={styles.persone__tooltipButton} type="button">Удалить</Button>
               </ToolTip>
-            </div>
+            </>
           )}
       </div>
     </label>

@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Footer.module.scss';
 import Button from '../UI/Button';
-import Icon from '../UI/Icon';
 import SocialIcon from '../UI/SocialIcon';
+import logoImg from '../../assets/images/logo.png';
 
 import {
   MENU_LINKS, CHAPTER_LINKS, COPYRIGHT, SOCIAL_LINKS,
@@ -14,9 +14,7 @@ const Footer = () => (
     <div className={styles.footer__wrapper}>
       <div className={styles.footer__links}>
         <div className={styles.footer__icons}>
-          <div className={styles.footer__logo}>
-            <Icon view="logo" className={styles.footer__icon} />
-          </div>
+          <img className={styles.footer__logo} src={logoImg} alt="logo" />
           <div className={styles.footer__linksSocial}>
             {SOCIAL_LINKS.map((item) => (
               <SocialIcon

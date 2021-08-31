@@ -32,6 +32,7 @@
 
   &__buttonWrap {
     margin-top: 60px;
+    margin-right: 12px;
   }
 
   &__button {
@@ -60,7 +61,7 @@
   }
 
   &__blockImage {
-    margin: 0px 47px 0 12px;
+    margin: 0 47px 0 12px;
   }
 
   &__itemDesc {
@@ -82,7 +83,7 @@
 
   &__eventList {
     width: 670px;
-    padding: 16px 0 0 0px;
+    padding-top: 16px;
   }
 
   &__ItemDateNumber {
@@ -116,7 +117,7 @@
   }
 
   &__itemDescription {
-    padding: 0px 6px;
+    padding: 0 6px;
     letter-spacing: 0.4px;
     font-weight: 500;
     font-size: 16px;
@@ -204,7 +205,7 @@
     }
 
     &__blockImage {
-      margin: 0px 47px 0 12px;
+      margin: 0 47px 0 12px;
     }
 
     &__itemDesc {
@@ -226,7 +227,7 @@
 
     &__eventList {
       width: 670px;
-      padding: 10px 0 0 0px;
+      padding-top: 10px;
     }
 
     &__ItemDateNumber {
