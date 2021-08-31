@@ -9,7 +9,6 @@ import NewsPage from './pages/NewsPage';
 import massMediaAboutPage from './pages/massMediaAboutPage';
 
 import Layout from './layout';
-import './styles/components.scss';
 import './App.css';
 import store from './store';
 

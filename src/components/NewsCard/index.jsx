@@ -2,6 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import styles from './NewsCard.module.scss';
 import Icon from '../UI/Icon';
+import SocialIcon from '../UI/SocialIcon';
 import Button from '../UI/Button';
 
 const ICON = ['facebook', 'vk', 'instagram', 'share'];
@@ -51,9 +52,18 @@ const NewsCard = ({
             {
               ICON.map((icon, index) => (
                 ICON.length - 1 !== index ? (
-                  <Icon key={+index} inCircle className={styles.newsCard__circleIcon} view={icon} />
+                  <SocialIcon
+                    key={+index}
+                    inCircle
+                    className={styles.newsCard__circleIcon}
+                    view={icon}
+                  />
                 ) : (
-                  <Icon key={+index} className={styles.newsCard__circleIcon} view={icon} />
+                  <SocialIcon
+                    key={+index}
+                    className={styles.newsCard__circleIcon}
+                    view={icon}
+                  />
                 )
               ))
             }

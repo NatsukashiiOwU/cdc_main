@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/mouse-events-have-key-events */
 import React, { useState, useCallback, useEffect } from 'react';
-import Button from '../../UI/Button';
 import Input from '../../UI/Input';
+import Button from '../../UI/Button';
 import FormImage from '../../UI/FormImage';
 import styles from './ModerationEdit.module.scss';
 
