@@ -18,7 +18,7 @@ const Input = ({
   classNamePlaceholder,
   props,
 }) => (
-  <div className={styles.input__label}>
+  <div className={cn(styles.input__label, classname)}>
     {!text && !!error && <span className={styles.input__errorText}>{error}</span>}
     {type === 'textarea' ? (
       <textarea
@@ -46,13 +46,13 @@ const Input = ({
       !!text && styles.input__placeholder_none)}
     >
       <div className={styles.input__content}>
-        <Icon classname={styles.input__img} view={icon} />
+        <Icon className={styles.input__icon} view={icon} />
         <div className={cn(styles.input__placeholder_text, classNamePlaceholder)}>
           {placeholder}
         </div>
       </div>
     </div>
-  </>
+  </div>
 );
 
 export default React.memo(Input);

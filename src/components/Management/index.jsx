@@ -2,7 +2,7 @@ import React, { memo, useState } from 'react';
 import cn from 'classnames';
 import Button from '../UI/Button';
 import styles from './Management.module.scss';
-import NewsMap from '../NewsMap';
+import NewsMap from '../UI/NewsMap';
 import Persone from './Persone';
 
 const CONTENT = [
