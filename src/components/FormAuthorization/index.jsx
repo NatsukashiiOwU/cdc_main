@@ -1,8 +1,10 @@
 import React, { useState, useCallback } from 'react';
 import cn from 'classnames';
+import { useDispatch } from 'react-redux';
 import Input from '../UI/Input';
 import Button from '../UI/Button';
 import styles from './FormAuthorization.module.scss';
+import { logIn } from '../../store/action';
 
 const LINKS = [
   {
@@ -16,6 +18,7 @@ const LINKS = [
 ];
 
 const FormAuthorization = ({ changeForm, classname }) => {
+  const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -34,7 +37,7 @@ const FormAuthorization = ({ changeForm, classname }) => {
         <span>с возвращением</span>
       </div>
       <div className={styles.formAuthorization__form}>
-        <form>
+        <form onSubmit={(event) => { event.preventDefault(); dispatch(logIn()); }}>
           <Input
             type="e-mail"
             name="email"
@@ -53,7 +56,7 @@ const FormAuthorization = ({ changeForm, classname }) => {
             text={password}
             error="Заполните поле"
           />
-          <Button classname={styles.formAuthorization__submit}>
+          <Button type="submit" classname={styles.formAuthorization__submit}>
             Вход
           </Button>
         </form>

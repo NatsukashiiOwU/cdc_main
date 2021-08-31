@@ -9,7 +9,7 @@ const FormForgotPassEmail = ({ changeForm, classname }) => {
 
   const enterEmail = useCallback((e) => {
     setEmail(e.target.value);
-  }, [email]);
+  }, []);
 
   const checkEmail = useCallback((e) => {
     e.preventDefault();
