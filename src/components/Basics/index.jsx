@@ -111,7 +111,7 @@ const Basics = () => {
       <div className={styles.basics__info}>
         {DATA.items.map((item) => (
           <div key={item.id} className={styles.basics__infoItem}>
-            <Icon inCircle className={styles.basics__infoCircle} view={item.sprite} />
+            <Icon className={styles.basics__infoCircle} view={item.sprite} />
             <div className={styles.basics__itemContent}>
               <div className={styles.basics__itemTitle}>{item.title}</div>
               <div className={styles.basics__itemDescription}>{item.description}</div>

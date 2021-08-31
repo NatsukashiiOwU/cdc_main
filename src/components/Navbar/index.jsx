@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useCallback, useEffect } from 'react';
 import cn from 'classnames';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
@@ -5,6 +6,7 @@ import { useStore } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.scss';
 import Modal from '../UI/Modal';
+import SmallModal from '../UI/SmallModal';
 import Icon from '../UI/Icon';
 import FormRegistration from '../FormRegistration';
 import FormForgotPassEmail from '../FormForgotPassEmail';
@@ -25,6 +27,7 @@ const Navbar = () => {
   const [isOpenToolTip, setIsOpenToolTip] = useState(false);
   const label = useClickOutside(() => setIsOpenToolTip(false));
   const [openForm, setOpenForm] = useState('');
+  const [isOpenSmallModal, setIsOpenSmallModal] = useState(false);
   const [menu, setMenu] = useState([]);
   const [user, setUser] = useState([]);
   store.subscribe(() => setUser(store.getState()));
@@ -85,7 +88,11 @@ const Navbar = () => {
             {LINKS.map((item) => (
               <li>
                 <Link to={item.link} className={styles.navbar__link} key={item.img}>
-                  <Icon className={styles.navbar__linkIcon} view={item.icon} />
+                  <Icon
+                    className={styles.navbar__linkIcon}
+                    view={item.icon}
+                  />
+
                   {!!item.title && (
                     <div className={styles.navbar__linkTitle}>
                       {item.title}
@@ -223,6 +230,16 @@ const Navbar = () => {
           )}
         </TransitionGroup>
       </Modal>
+      <SmallModal isOpen={isOpenSmallModal}>
+        <div className={styles.navbar__smallModalWrapper}>
+          <h3 className={styles.navbar__smallModalTitle}>Спасибо!</h3>
+          <span className={styles.navbar__smallModalText}>
+            После одобрения вашего запроса вы получите реквизиты доступа к вашему КОД-КЛАССУ
+            на
+            <p><a href="mailto:angar.ulsu@gmail.com">angar.ulsu@gmail.com</a></p>
+          </span>
+        </div>
+      </SmallModal>
     </>
   );
 };

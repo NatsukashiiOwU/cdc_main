@@ -8,9 +8,6 @@
   }
 
   &__menuItem {
-    margin-left: 6px;
-    margin-right: 37px;
-
     a {
       padding: 12px 23px;
       text-decoration: none;
@@ -21,6 +18,10 @@
       align-items: center;
       line-height: 28px;
       color: #1E0E62;
+    }
+
+    &_small a {
+      padding: 12px;
     }
   }
 

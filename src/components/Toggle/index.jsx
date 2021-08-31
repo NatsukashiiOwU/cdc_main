@@ -11,7 +11,9 @@ import styles from './Toggle.module.scss';
 const Toggle = ({ items, className }) => (
   <div className={styles.toggle}>
     <nav className={cn(styles.toggle__menu, className)}>
-      <ul className={styles.toggle__menuItems}>
+      <ul
+        className={cn(styles.toggle__menuItems, items.length > 4 && styles.toggle__menuItem_small)}
+      >
         {items.map((item) => (
           <li
             key={item.id}

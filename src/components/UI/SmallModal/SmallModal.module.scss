@@ -1,6 +1,6 @@
-.blockThanks {
+.smallModal {
   position: fixed;
-  top: 25%;
+  top: 10%;
   left: 22.5%;
   right: 0;
   width: 100%;
@@ -11,27 +11,14 @@
   backdrop-filter: blur(76px);
   border-radius: 24px;
   padding: 255px 363px 280px 364px;
-  z-index: 1;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
 
-  &__text {
-    h3 {
-      font-weight: bold;
-      font-size: 26px;
-      line-height: 39px;
-      color: #FFFFFF;
-      margin-bottom: 22px;
-    }
-
-    span {
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 27px;
-      color: #FFFFFF;
-
-      a {
-        color: #FFFFFF;
-      }
-    }
+  &_open {
+    opacity: 1;
+    visibility: visible;
   }
 
   @media (max-width: 1440px) {

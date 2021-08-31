@@ -79,4 +79,35 @@
     flex-direction: column;
     margin-bottom: 38px;
   }
+
+  &__modalContent {
+    width: 87%;
+    color: #FFFFFF;
+
+    h3 {
+      font-weight: bold;
+      font-size: 26px;
+      line-height: 39px;
+    }
+
+    p {
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 27px;
+    }
+  }
+
+  &__modalButtons {
+    margin-top: 20px;
+  }
+
+  &__modalButton {
+    background: #25DAC5;
+    border-radius: 100px;
+    color: #FFF;
+    text-transform: uppercase;
+    margin-right: 11px;
+  }
+
+
 }

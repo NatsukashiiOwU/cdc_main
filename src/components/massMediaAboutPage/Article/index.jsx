@@ -1,5 +1,4 @@
 import React from 'react';
-import cn from 'classnames';
 import styles from './Article.module.scss';
 
 import Vector from '../../../assets/images/SMI/Vector.png';
@@ -35,15 +34,14 @@ const Article = ({
         dangerouslySetInnerHTML={{ __html: textDescription }}
       />
     </div>
-    <div className={cn(styles.article__pictureWrapper, {
-      [styles.article__manyPictureWrapper]: image.length > 3,
-    })}
-    >
+    <div className={styles.article__pictureWrapper}>
       {image.map((img) => (
-        <picture>
-          <source srcSet={img.imgWebp} type="image/webp" />
-          <img src={img.imgPng} alt={title} />
-        </picture>
+        <div key={img.imgWebp} className={styles.article__pictureItem}>
+          <picture>
+            <source srcSet={img.imgWebp} type="image/webp" />
+            <img src={img.imgPng} alt={title} />
+          </picture>
+        </div>
       ))}
     </div>
   </div>

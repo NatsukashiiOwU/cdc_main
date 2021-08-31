@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useState, useCallback } from 'react';
 import cn from 'classnames';
 import styles from './Persone.module.scss';
 import Icon from '../../UI/Icon';
@@ -6,12 +6,16 @@ import ToolTip from '../../UI/Tooltip';
 import Button from '../../UI/Button';
 
 const Persone = ({
-  isFirst, codeClass, director, email,
+  isFirst, codeClass, director, email, setIsDelete, isDelete,
 }) => {
   const [cutDirector] = useState(director.split(' '));
   const [checked, setChecked] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isNameOpen, setIsNameOpen] = useState(false);
+
+  const showModal = useCallback(() => {
+    setIsDelete(!isDelete);
+  }, [isDelete]);
   return (
     // eslint-disable-next-line jsx-a11y/label-has-associated-control
     <label className={styles.persone}>
@@ -68,7 +72,7 @@ const Persone = ({
               <ToolTip isOpen={isMenuOpen} className={styles.persone__tooltipMenu} type="right">
                 <Button className={styles.persone__tooltipButton} type="button">Сообщение</Button>
                 <Button className={styles.persone__tooltipButton} type="button">Сбросить пароль</Button>
-                <Button className={styles.persone__tooltipButton} type="button">Удалить</Button>
+                <Button className={styles.persone__tooltipButton} onClick={showModal} type="button">Удалить</Button>
               </ToolTip>
             </>
           )}

@@ -8,8 +8,8 @@ import styles from './Search.module.scss';
 import Sprite from '../../../assets/sprites/icons.svg';
 
 const Search = ({ className, placeholder }) => (
-  <div className={styles.search}>
-    <input className={cn(styles.search__input, className)} type="search" placeholder={placeholder} />
+  <div className={cn(styles.search, className)}>
+    <input className={styles.search__input} type="search" placeholder={placeholder} />
     <div className={styles.search__circle}>
       <svg>
         <use href={`${Sprite}#search`} />

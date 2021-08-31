@@ -1,4 +1,4 @@
-@import '../../../styles/index.scss';
+@import '../../../styles/mixins.scss';
 
 .activity {
   width: 33%;
@@ -52,7 +52,5 @@
 
   &__search {
     margin-top: 17px;
-    margin-right: 13px; 
-    width: 82%;
   }
 }

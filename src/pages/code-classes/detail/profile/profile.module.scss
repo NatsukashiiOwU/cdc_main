@@ -29,10 +29,16 @@
 
   &__selectArrow {
     position: absolute;
-    right: 0;
+    right: 13px;
     z-index: 20;
     top: 50%;
-    transform: translateY(-20%);
+    transform: translateY(-50%);
+    width: 9px;
+    height: 6px;
+
+    svg {
+      display: block;
+    }
   }
 
   &__addImg {
@@ -64,10 +70,12 @@
   &__nameInput {
     width: 570px;
     height: 43.53px;
+    padding-left: 22px;
+    padding-right: 22px;
+
     &::placeholder {
       color:#9A9CAD;
       opacity: 0.4;
-      transform: translateX(20px);
     }
   }
 
@@ -75,12 +83,12 @@
     width: 570px;
     height: 80px;
     resize: none;
+    padding: 15px 22px;
 
     &::placeholder {
       opacity: 0.4;
       color: #9a9cad;
       overflow: initial;
-      transform: translateX(20px);
     }
   }
 
