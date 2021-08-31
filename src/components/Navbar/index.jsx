@@ -1,129 +1,152 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import cn from 'classnames';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-
-import { Link } from 'react-router-dom';
+import { useStore } from 'react-redux';
 import styles from './Navbar.module.scss';
 import Modal from '../UI/Modal';
 import Icon from '../UI/Icon';
-import Button from '../UI/Button';
-import FormAuthorization from '../FormAuthorization';
+import SocialIcon from '../UI/SocialIcon';
 import FormRegistration from '../FormRegistration';
 import FormForgotPassEmail from '../FormForgotPassEmail';
 import FormForgotPassword from '../FormForgotPassword';
-
+import FormAuthorization from '../FormAuthorization';
+import ProfileMenu from '../ProfileMenu';
+import FormChangePassword from '../FormChangePassword';
+import Tooltip from '../UI/Tooltip';
 import { LINKS, AUTH_LINKS, ADMIN_LINKS } from './Links';
 
-import AvatarUser from '../../assets/images/listPage/CodeClass/img8.png';
+import useClickOutside from '../../hooks/useClickOutside';
+
+import img from '../../assets/images/NewsPage/img2.png';
 
 const Navbar = () => {
+  const store = useStore();
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isOpenToolTip, setIsOpenToolTip] = useState(false);
+  const label = useClickOutside(() => setIsOpenToolTip(false));
   const [openForm, setOpenForm] = useState('');
-  const [isAuth, setIsAuth] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [menu, setMenu] = useState([]);
+  const [user, setUser] = useState([]);
+  store.subscribe(() => setUser(store.getState()));
 
   useEffect(() => {
-    setIsAuth(true);
-    setIsAdmin(true);
-  }, []);
+    setMenu(AUTH_LINKS);
+    if (user.isAuth) {
+      setMenu((prev) => ([...prev, ...ADMIN_LINKS]));
+    }
+  }, [user]);
 
-  const openModal = useCallback(() => {
-    setIsOpenModal(!isOpenModal);
-    setOpenForm('');
+  const openModal = useCallback((type) => {
+    new Promise((resolve) => {
+      if (!isOpenModal) {
+        resolve();
+        return;
+      }
+
+      setIsOpenModal(false);
+
+      if (type === 'close') {
+        return;
+      }
+
+      setTimeout(() => resolve(), 500);
+    }).then(() => {
+      setIsOpenModal(true);
+      setOpenForm(type || '');
+    });
   }, [isOpenModal, openForm]);
+
+  const USER_BUTTONS = [
+    {
+      text: 'Настройки профиля',
+    },
+    {
+      text: 'Смена пароля',
+      onClick: () => {
+        openModal('changePassword');
+        setIsOpenToolTip(false);
+      },
+    }, {
+      text: 'Выйти',
+    },
+  ];
 
   return (
     <>
-      <nav className={cn(styles.navbar,
-        isOpenModal && !isAuth && styles.navbar_fixed,
-        isAuth && styles.navbar__authWrapper)}
+      <nav
+        className={
+          cn(styles.navbar,
+            isOpenModal && styles.navbar_fixed,
+            user.isAuth && styles.navbar_isAuth)
+        }
       >
-        <div className={cn(styles.navbar__links, isAuth && styles.navbar__authLinksWrap)}>
-          <ul className={isAuth && styles.navbar__authLinks}>
-            {isAuth && (
-            <li>
-              <Button
-                classname={cn(styles.navbar__auth, isAuth && styles.navbar__openModal)}
-                onClick={openModal}
-              >
-                {isAuth ? (
-                  <Icon className={styles.navbar__linkIcon} view={isOpenModal ? 'closeMenu' : 'burger'} />
-                ) : (
-                  <Icon className={styles.navbar__linkIcon} view="closeMenu" />
-                )}
-              </Button>
-            </li>
-            )}
+        <div className={styles.navbar__links}>
+          <ul>
             {LINKS.map((item) => (
-              item.title !== '' ? (
-                <li key={item.icon} className={styles.navbar__linkWrapper}>
-                  <Link to={item.link} className={styles.navbar__link} key={item.icon}>
-                    <Icon className={styles.navbar__linkIcon} view={item.icon} />
-                    {!!item.title && (
-                      <div className={styles.navbar__linkTitle}>
-                        {item.title}
-                      </div>
-                    )}
-                  </Link>
-                </li>
-              ) : (
-                <li
-                  key={item.icon}
-                  className={isAuth && styles.navbar__authUser}
-                >
-                  <Button
-                    classname={cn(styles.navbar__auth, isAuth && styles.navbar__userButton)}
-                    key={item.icon}
-                    onClick={isAuth ? null : openModal}
-                  >
-                    {isAuth ? (
-                      <img src={AvatarUser} alt="пользователь" />
-                    ) : (
-                      <Icon className={styles.navbar__linkIcon} view={item.icon} />
-
-                    )}
-                  </Button>
-                </li>
-              )
+              <li>
+                <a href={item.link} className={styles.navbar__link} key={item.img}>
+                  <SocialIcon className={styles.navbar__linkIcon} view={item.icon} />
+                  {!!item.title && (
+                    <div className={styles.navbar__linkTitle}>
+                      {item.title}
+                    </div>
+                  )}
+                </a>
+              </li>
             ))}
           </ul>
         </div>
+        <button
+          className={
+            cn(
+              styles.navbar__modalButton,
+              user.isAuth && styles.navbar__modalButton_isAuth,
+              styles.navbar__button,
+            )
+          }
+          type="button"
+          onClick={() => openModal(isOpenModal ? 'close' : '')}
+        >
+          { !user.isAuth && <Icon className={styles.navbar__icon} view="login" /> }
+          { user.isAuth && <Icon className={cn(styles.navbar__icon, styles[`navbar__icon_${isOpenModal ? 'cross' : 'burder'}`])} view={isOpenModal ? 'closeMenu' : 'burger'} /> }
+        </button>
+        {user.isAuth && (
+          <div ref={label} className={styles.navbar__profileWrapper}>
+            <button className={styles.navbar__profile} type="button" onClick={() => setIsOpenToolTip(!isOpenToolTip)}>
+              <img src={img} alt="Аватар" />
+            </button>
+            <Tooltip className={styles.navbar__tooltip} isOpen={isOpenToolTip}>
+              <div className={styles.navbar__tooltipHeader}>
+                <img className={styles.navbar__tooltipIcon} src={img} alt="Аватар" />
+                <div className={styles.navbar__tooltipName}>
+                  <div>Костишко</div>
+                  <div>Алла Евгеньевна</div>
+                </div>
+              </div>
+              <a className={styles.navbar__tooltipLink} href="http://cdc.ulsu.ru/users/lenizahotbox-ru/">http://cdc.ulsu.ru/users/lenizahotbox-ru/</a>
+              <div className={styles.navbar__tooltipUserButtons}>
+                {
+                  USER_BUTTONS.map((item) => (
+                    <button onClick={item.onClick} type="button" className={styles.navbar__tooltipUserButton}>
+                      {item.text}
+                    </button>
+                  ))
+                }
+              </div>
+            </Tooltip>
+          </div>
+        )}
       </nav>
-      {isAuth ? (
-        <Modal
-          isOpen={isOpenModal}
-          classname={styles.navbar__modalMenu}
-          isAuth
-        >
-          <ul>
-            {isAdmin ? (
-              ADMIN_LINKS.map((item) => (
-                <li key={item.title} className={styles.navbar__modalItem}>
-                  <Link to={item.link} className={styles.navbar__modalLink}>
-                    {item.title}
-                  </Link>
-                </li>
-              ))
-            ) : (
-              AUTH_LINKS.map((item) => (
-                <li key={item.title} className={styles.navbar__modalItem}>
-                  <Link to={item.link} className={styles.navbar__modalLink}>
-                    {item.title}
-                  </Link>
-                </li>
-              )))}
-          </ul>
-        </Modal>
-      ) : (
-        <Modal
-          classname={styles.navbar__modal}
-          isOpen={isOpenModal}
-        >
-          <TransitionGroup className={styles.navbar__form}>
-            {openForm === '' && (
+      <Modal
+        isOpen={isOpenModal}
+        isFull={!(user.isAuth && openForm === '')}
+      >
+        <TransitionGroup className={styles.navbar__form}>
+          {openForm === '' && (
             <CSSTransition
               key={openForm}
               timeout={300}
+              unmountOnExit
               classNames={{
                 enterActive: styles.navbar__form_enterActive,
                 enterDone: styles.navbar__form_enterDone,
@@ -131,13 +154,16 @@ const Navbar = () => {
                 exitDone: styles.navbar__form_exitDone,
               }}
             >
-              <FormAuthorization changeForm={setOpenForm} />
+              {user.isAuth
+                ? <ProfileMenu content={menu} />
+                : <FormAuthorization changeForm={setOpenForm} />}
             </CSSTransition>
-            )}
-            {openForm === 'registration' && (
+          )}
+          {openForm === 'registration' && (
             <CSSTransition
               key={openForm}
               timeout={300}
+              unmountOnExit
               classNames={{
                 enter: styles.navbar__form_enter,
                 enterActive: styles.navbar__form_enterActive,
@@ -152,11 +178,12 @@ const Navbar = () => {
                 classname={styles.navbar__formRegistration}
               />
             </CSSTransition>
-            )}
-            {openForm === 'changePasswordEmail' && (
+          )}
+          {openForm === 'changePasswordEmail' && (
             <CSSTransition
               key={openForm}
               timeout={300}
+              unmountOnExit
               classNames={{
                 enter: styles.navbar__form_enter,
                 enterActive: styles.navbar__form_enterActive,
@@ -171,11 +198,12 @@ const Navbar = () => {
                 classname={styles.navbar__formForgotPassEmail}
               />
             </CSSTransition>
-            )}
-            {openForm === 'changePassword' && (
+          )}
+          {openForm === 'changePassword' && (
             <CSSTransition
               key={openForm}
               timeout={300}
+              unmountOnExit
               classNames={{
                 enter: styles.navbar__form_enter,
                 enterActive: styles.navbar__form_enterActive,
@@ -185,15 +213,16 @@ const Navbar = () => {
                 exitDone: styles.navbar__form_exitDone,
               }}
             >
-              <FormForgotPassword
-                changeForm={setOpenForm}
-                classname={styles.navbar__formForgotPassword}
-              />
+              {user.isAuth ? <FormChangePassword /> : (
+                <FormForgotPassword
+                  changeForm={setOpenForm}
+                  classname={styles.navbar__formForgotPassword}
+                />
+              )}
             </CSSTransition>
-            )}
-          </TransitionGroup>
-        </Modal>
-      )}
+          )}
+        </TransitionGroup>
+      </Modal>
     </>
   );
 };

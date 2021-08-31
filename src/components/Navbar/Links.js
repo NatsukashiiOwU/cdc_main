@@ -24,11 +24,6 @@ export const LINKS = [
     title: 'СМИ О НАС',
     link: '/about',
   },
-  {
-    icon: 'login',
-    title: '',
-    link: '',
-  },
 ];
 
 export const ADMIN_LINKS = [

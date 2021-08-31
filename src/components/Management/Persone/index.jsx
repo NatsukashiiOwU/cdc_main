@@ -2,7 +2,7 @@ import React, { memo, useState } from 'react';
 import cn from 'classnames';
 import styles from './Persone.module.scss';
 import Icon from '../../UI/Icon';
-import ToolTip from '../../UI/ToolTip';
+import ToolTip from '../../UI/Tooltip';
 import Button from '../../UI/Button';
 
 const Persone = ({
