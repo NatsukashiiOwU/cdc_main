@@ -19,8 +19,7 @@ const App = () => (
       <Layout>
         <Switch>
           <Route component={MainPage} exact path="/" />
-          <Route component={News} exact path="/news" />
-          <Route component={NewsPage} exact path="/news-page" />
+          <Route component={NewsPage} exact path="/news" />
           <Route component={PageEvents} exact path="/events" />
           <Route component={ListPage} exact path="/code-class" />
           <Route component={massMediaAboutPage} exact path="/about" />

@@ -39,24 +39,24 @@ const Profile = () => (
     </div>
     <div className={styles.profile__block}>
       <h4 className={styles.profile__blockTitle}>Аватар *:</h4>
-      <Button type="file" classname={styles.profile__addImg}>
+      <Button type="file" className={styles.profile__addImg}>
         выбрать фото
       </Button>
     </div>
     <div className={styles.profile__block}>
       <h4 className={styles.profile__blockTitle}>Обложка *:</h4>
-      <Button type="file" classname={styles.profile__addImg}>
+      <Button type="file" className={styles.profile__addImg}>
         выбрать фото
       </Button>
     </div>
     <div className={styles.profile__block}>
       <h4 className={styles.profile__blockTitle}>Логотип / эмблема / герб код класса *:</h4>
-      <Button type="file" classname={styles.profile__addImg}>
+      <Button type="file" className={styles.profile__addImg}>
         выбрать фото
       </Button>
     </div>
     <div className={styles.profile__blockSubmit}>
-      <Button classname={styles.profile__submitForm} type="profile">
+      <Button className={styles.profile__submitForm} type="profile">
         ИЗМЕНИТЬ ПРОФИЛЬ
       </Button>
     </div>

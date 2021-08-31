@@ -25,18 +25,18 @@ const AddNews = () => (
     </div>
     <div className={styles.addNews__block}>
       <h4 className={styles.addNews__blockTitle}>Обложка *:</h4>
-      <Button type="file" classname={styles.addNews__addImg}>
+      <Button type="file" className={styles.addNews__addImg}>
         выбрать фото
       </Button>
     </div>
     <div className={styles.addNews__block}>
       <h4 className={styles.addNews__blockTitle}>Добавить фото *:</h4>
-      <Button type="file" classname={styles.addNews__addImg}>
+      <Button type="file" className={styles.addNews__addImg}>
         выбрать фото
       </Button>
     </div>
     <div className={styles.addNews__blockSubmit}>
-      <Button classname={styles.addNews__submitForm} type="addnews">
+      <Button className={styles.addNews__submitForm} type="addnews">
         ОТПРАВИТЬ НА МОДЕРАЦИЮ
       </Button>
     </div>

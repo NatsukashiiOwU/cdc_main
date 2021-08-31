@@ -4,7 +4,7 @@ import styles from './Modal.module.scss';
 
 const Modal = ({
   children,
-  classname,
+  className,
   isFull,
   isOpen,
 }) => (
@@ -12,7 +12,7 @@ const Modal = ({
     !isFull && styles.modal_small,
     isFull && styles.modal_full,
     isOpen && styles.modal_isOpen,
-    classname)}
+    className)}
   >
     <div className={styles.modal__content}>
       {children}

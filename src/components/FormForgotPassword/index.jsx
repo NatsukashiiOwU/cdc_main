@@ -4,7 +4,7 @@ import Input from '../UI/Input';
 import Button from '../UI/Button';
 import styles from './FormForgotPassword.module.scss';
 
-const FormForgotPassword = ({ classname }) => {
+const FormForgotPassword = ({ className }) => {
   const [newPassword, setNewPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
 
@@ -17,7 +17,7 @@ const FormForgotPassword = ({ classname }) => {
   }, []);
 
   return (
-    <div className={cn(styles.formForgotPassword, classname)}>
+    <div className={cn(styles.formForgotPassword, className)}>
       <div className={styles.formForgotPassword__title}>
         <h2>Смена пароля</h2>
         <span>Введите новый пароль</span>
@@ -42,7 +42,7 @@ const FormForgotPassword = ({ classname }) => {
             text={repeatPassword}
             error="Заполните поле"
           />
-          <Button classname={styles.formForgotPassword__submit}>
+          <Button className={styles.formForgotPassword__submit}>
             Вход
           </Button>
         </form>

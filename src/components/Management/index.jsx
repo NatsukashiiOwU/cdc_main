@@ -1,9 +1,9 @@
 import React, { memo, useState } from 'react';
 import cn from 'classnames';
 import Button from '../UI/Button';
-import styles from './Management.module.scss';
 import NewsMap from '../UI/NewsMap';
 import Persone from './Persone';
+import styles from './Management.module.scss';
 
 const CONTENT = [
   {
@@ -46,7 +46,9 @@ const Management = () => {
 
   return (
     <div className={cn(styles.management, isMailOpen && styles.management_letterOpen)}>
-      <Button classname={styles.management__button} onClick={() => setIsMailOpen(true)} title="ОТПРАВИТЬ ПИСЬМО участникам " />
+      <Button className={styles.management__button} onClick={() => setIsMailOpen(true)}>
+        ОТПРАВИТЬ ПИСЬМО участникам
+      </Button>
       <div className={cn(styles.management__letter, isMailOpen && styles.management__letter_open)}>
         <div className={styles.management__letterTitle}>
           Отправка письма партнерам
@@ -66,9 +68,9 @@ const Management = () => {
         />
         <div className={styles.management__addFiles}>
           Файлы:
-          <Button type="file" classname={styles.management__buttonFile} title="выбрать файл" />
-          <Button type="file" classname={styles.management__buttonFile} title="выбрать файл" />
-          <Button type="file" classname={styles.management__buttonFile} title="выбрать файл" />
+          <Button type="file" className={styles.management__buttonFile}>выбрать файл</Button>
+          <Button type="file" className={styles.management__buttonFile}>выбрать файл</Button>
+          <Button type="file" className={styles.management__buttonFile}>выбрать файл</Button>
         </div>
       </div>
       <div className={styles.management__content}>

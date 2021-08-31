@@ -4,7 +4,7 @@ import Input from '../UI/Input';
 import Button from '../UI/Button';
 import styles from './FormRegistration.module.scss';
 
-const FormRegistration = ({ classname }) => {
+const FormRegistration = ({ className }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [university, setUniversity] = useState('');
@@ -14,7 +14,7 @@ const FormRegistration = ({ classname }) => {
   const enterUniversity = useCallback((e) => setUniversity(e.target.value), []);
 
   return (
-    <div className={cn(styles.formRegistration, classname)}>
+    <div className={cn(styles.formRegistration, className)}>
       <div className={styles.formRegistration__title}>
         <h2>Здраствуйте!</h2>
         <span>для создания нового КОД-КЛАССА введите информацию </span>
@@ -48,7 +48,7 @@ const FormRegistration = ({ classname }) => {
             text={university}
             error="Заполните поле"
           />
-          <Button classname={styles.formRegistration__submit}>
+          <Button className={styles.formRegistration__submit}>
             Создать КОД-КЛАСС
           </Button>
         </form>

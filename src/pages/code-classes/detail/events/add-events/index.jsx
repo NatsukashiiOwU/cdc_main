@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
 import cn from 'classnames';
 
-import styles from './AddEvents.module.scss';
-
 import Button from '../../../../../components/UI/Button';
 import Icon from '../../../../../components/UI/Icon';
+
+import styles from './AddEvents.module.scss';
 
 const AddEvents = () => (
   <form id="addEvents" className={styles.addEvents}>
@@ -32,12 +32,12 @@ const AddEvents = () => (
     </div>
     <div className={styles.addEvents__block}>
       <h4 className={styles.addEvents__blockTitle}>Добавить обложку *:</h4>
-      <Button type="file" classname={styles.addEvents__addImg}>
+      <Button type="file" className={styles.addEvents__addImg}>
         выбрать фото
       </Button>
     </div>
     <div className={styles.addEvents__blockSubmit}>
-      <Button classname={styles.addEvents__submitForm} type="addEvents">
+      <Button className={styles.addEvents__submitForm} type="addEvents">
         ОПУБЛИКОВАТЬ
       </Button>
     </div>

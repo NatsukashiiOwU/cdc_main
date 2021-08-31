@@ -4,14 +4,14 @@ import cn from 'classnames';
 import styles from './Button.module.scss';
 
 const Button = ({
-  children, classname, onClick, type, icon, href,
+  children, className, onClick, type, icon, href,
 }) => (
   href ? (
-    <Link className={cn(styles.button, styles.button__link, classname)} to={href}>{children}</Link>
+    <Link className={cn(styles.button, styles.button__link, className)} to={href}>{children}</Link>
   ) : (
     <button
       type={type}
-      className={cn(styles.button, classname)}
+      className={cn(styles.button, className)}
       onClick={onClick}
     >
       {icon ? (

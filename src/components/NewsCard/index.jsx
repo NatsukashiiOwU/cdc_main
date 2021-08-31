@@ -44,7 +44,7 @@ const NewsCard = ({
       </div>
       {(!auth && !check) && (
         <div className={styles.newsCard__buttonWrapper}>
-          <Button classname={styles.newsCard__button}>
+          <Button className={styles.newsCard__button}>
             Читать
           </Button>
           <div className={styles.newsCard__icons}>

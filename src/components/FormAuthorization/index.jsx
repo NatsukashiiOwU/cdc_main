@@ -17,7 +17,7 @@ const LINKS = [
   },
 ];
 
-const FormAuthorization = ({ changeForm, classname }) => {
+const FormAuthorization = ({ changeForm, className }) => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -31,7 +31,7 @@ const FormAuthorization = ({ changeForm, classname }) => {
   }, [password]);
 
   return (
-    <div className={cn(styles.formAuthorization, classname)}>
+    <div className={cn(styles.formAuthorization, className)}>
       <div className={styles.formAuthorization__title}>
         <h2>Еще раз Здравствуйте!</h2>
         <span>с возвращением</span>
@@ -56,7 +56,7 @@ const FormAuthorization = ({ changeForm, classname }) => {
             text={password}
             error="Заполните поле"
           />
-          <Button type="submit" classname={styles.formAuthorization__submit}>
+          <Button type="submit" className={styles.formAuthorization__submit}>
             Вход
           </Button>
         </form>

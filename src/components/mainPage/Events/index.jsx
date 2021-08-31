@@ -62,7 +62,7 @@ const Events = () => (
         </span>
       </div>
       <div className={styles.events__buttonWrap}>
-        <Button classname={styles.events__button}>
+        <Button className={styles.events__button}>
           все мероприятия
         </Button>
       </div>

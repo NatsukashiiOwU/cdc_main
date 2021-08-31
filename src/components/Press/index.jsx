@@ -53,7 +53,7 @@ const Press = () => {
         />
         <Icon className={styles.press__icon} view="calendar" />
       </div>
-      <Button classname={styles.press__button} title="ОПУБЛИКОВАТЬ СТАТЬЮ" />
+      <Button className={styles.press__button}>ОПУБЛИКОВАТЬ СТАТЬЮ</Button>
     </div>
   );
 };

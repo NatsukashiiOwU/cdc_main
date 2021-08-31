@@ -4,7 +4,7 @@ import Input from '../UI/Input';
 import Button from '../UI/Button';
 import styles from './FormForgotPassEmail.module.scss';
 
-const FormForgotPassEmail = ({ changeForm, classname }) => {
+const FormForgotPassEmail = ({ changeForm, className }) => {
   const [email, setEmail] = useState('');
 
   const enterEmail = useCallback((e) => {
@@ -17,7 +17,7 @@ const FormForgotPassEmail = ({ changeForm, classname }) => {
   }, []);
 
   return (
-    <div className={cn(styles.formForgotPassEmail, classname)}>
+    <div className={cn(styles.formForgotPassEmail, className)}>
       <div className={styles.formForgotPassEmail__title}>
         <h2>Смена пароля</h2>
         <span>Для смены пароля введите ваш Email</span>
@@ -32,7 +32,7 @@ const FormForgotPassEmail = ({ changeForm, classname }) => {
             onChange={enterEmail}
             text={email}
           />
-          <Button classname={styles.formForgotPassEmail__submit}>
+          <Button className={styles.formForgotPassEmail__submit}>
             Далее
           </Button>
         </form>

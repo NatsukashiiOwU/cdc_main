@@ -47,10 +47,10 @@ const CodeClass = ({
           </div>
         </div>
         <div className={styles.codeClass__buttons}>
-          <Button classname={styles.codeClass__button} href="/code-classes/detail/news">
+          <Button className={styles.codeClass__button} href="/code-classes/detail/news">
             подробнее
           </Button>
-          <Button classname={styles.codeClass__buttonContextMenu}>
+          <Button className={styles.codeClass__buttonContextMenu}>
             <img src={buttonImage} alt="context menu" />
           </Button>
         </div>

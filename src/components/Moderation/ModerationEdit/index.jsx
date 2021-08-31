@@ -176,7 +176,7 @@ const ModerationEdit = () => {
       </tr>
       <tr>
         <th>
-          <Button classname={styles.moderationEdit__submitButton}>
+          <Button className={styles.moderationEdit__submitButton}>
             опубликовать
           </Button>
         </th>
