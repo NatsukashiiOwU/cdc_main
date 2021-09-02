@@ -1,5 +1,5 @@
 .footer {
-  padding: 141px 0 209px 0;
+  padding: 141px 0 209px 13px;
   display: flex;
   justify-content: center;
   background-color: #f2f2f2;
@@ -13,7 +13,7 @@
 
   &__linksChapterSite {
     display: flex;
-    margin-top: 35px;
+    margin-top: 41px;
     margin-left: 2px;
   }
 
@@ -61,7 +61,7 @@
   }
 
   &__linksMenu {
-    margin-right: 92px;
+    margin-right: 86px;
     margin-top: 7px;
 
     span {
@@ -116,7 +116,7 @@
   &__copyright {
     max-width: 445px;
     width: 100%;
-    margin-top: 136px;
+    margin-top: 107px;
     margin-left: 3px;
     font-weight: 500;
     font-size: 16px;
@@ -127,7 +127,7 @@
 
   &__form {
     margin-left: 86px;
-    max-width: 567px;
+    max-width: 562px;
     width: 100%;
   }
 

@@ -31,7 +31,7 @@ const DATA = {
     {
       id: 0,
       title: '50+',
-      description: 'код-классов',
+      description: 'КОД-КЛАССОВ',
       sprite: 'mappoint',
     },
     {
@@ -110,7 +110,7 @@ const Basics = () => {
       </div>
       <div className={styles.basics__info}>
         {DATA.items.map((item) => (
-          <div key={item.id} className={styles.basics__infoItem}>
+          <div key={item.id} className={cn(styles.basics__infoItem, styles[`basics__infoItem_${item.sprite}`])}>
             <Icon className={styles.basics__infoCircle} view={item.sprite} />
             <div className={styles.basics__itemContent}>
               <div className={styles.basics__itemTitle}>{item.title}</div>
