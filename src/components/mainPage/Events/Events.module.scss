@@ -1,6 +1,6 @@
 .events {
   background: #2F1893;
-  padding: 62px 19% 110px 11%;
+  padding: 70px 19% 125px 11%;
   position: relative;
 
   &__desc {
@@ -40,7 +40,7 @@
     color: #F2F2F2;
     border: 1px solid #F2F2F2;
     font-weight: 500;
-    font-size: 19px;
+    font-size: 18px;
     line-height: 26px;
   }
 
@@ -87,7 +87,8 @@
   }
 
   &__ItemDateNumber {
-    font-weight: 500;
+    font-weight: 700;
+    letter-spacing: -1px;
     font-size: 48px;
     line-height: 62px;
     color: #FFFFFF;
@@ -129,7 +130,8 @@
     width: auto;
     height: auto;
     position: absolute;
-    right: 23.8%;
+    right: 24.5%;
+    bottom: 105px;
   }
 
   &__sliderButtonsWrapper {

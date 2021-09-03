@@ -18,8 +18,11 @@
   }
 
   &__label {
-    position: relative;
     cursor: default;
+  }
+  
+  &__placeholderBlock {
+    position: relative;
   }
 
   &__errorText {
