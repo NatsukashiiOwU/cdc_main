@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Button from '../../UI/Button';
 import styles from './Events.module.scss';
 
@@ -105,7 +106,7 @@ const Events = () => (
                 </div>
               </div>
               <div className={styles.events__itemDescription}>
-                <span>{item.description}</span>
+                <Link to="/events">{item.description}</Link>
               </div>
             </div>
           </div>
@@ -114,8 +115,8 @@ const Events = () => (
     </div>
     <div className={styles.events__sliderButtons}>
       <div className={styles.events__sliderButtonsWrapper}>
-        <div className={styles.events__sliderButtonUp} />
-        <div className={styles.events__sliderButtonDown} />
+        <Button className={styles.events__sliderButtonUp} />
+        <Button className={styles.events__sliderButtonDown} />
       </div>
     </div>
   </section>
