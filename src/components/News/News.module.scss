@@ -1,7 +1,7 @@
 .news {
   width: 100%;
-  padding-top: 98px;
-  padding-bottom: 154px;
+  padding-top: 91px;
+  padding-bottom: 160px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +42,7 @@
       font-size: 18px;
       line-height: 26px;
       margin-top: 24px;
-      padding: 12px 36px 12px 53px;
+      padding: 12px 44px 12px 44px;
       align-self: flex-end;
     }
 
@@ -93,6 +93,8 @@
     img {
       width: 100%;
       height: 100%;
+      object-fit: cover;      
+      border-radius: 21px;
     }
   }
 
@@ -167,10 +169,7 @@
   }
 
   &__date {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 14px;
-
+    font: 500 12px/14px Roboto, sans-serif;
     color: #E0E0E0;
   }
 
@@ -212,6 +211,8 @@
     img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
+      border-radius: 21px;
     }
   }
 

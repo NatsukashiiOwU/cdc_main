@@ -11,9 +11,9 @@ import img2 from '../../assets/images/Basics/img2.png';
 const DATA = {
   content: [
     {
-      title: 'Код-классы',
+      title: 'КОД–КЛАССЫ',
       description: 'Ульяновского\u00a0Государственного\u00a0Университета',
-      textContent: ['Деятельность организована в рамках реализации стратегического проекта «Развитие сообщества Код-классов партнерских школ УлГУ»', 'Код-класс — клуб программирования на базе школы или учреждения дополнительного образования региона.'],
+      textContent: ['Деятельность организована в рамках реализации стратегического проекта «Развитие сообщества Код-классов партнерских школ УлГУ»', 'Код-класс – клуб программирования на базе школы или учреждения дополнительного образования региона.'],
       image: img1,
     },
     {
@@ -31,7 +31,7 @@ const DATA = {
     {
       id: 0,
       title: '50+',
-      description: 'код-классов',
+      description: 'КОД-КЛАССОВ',
       sprite: 'mappoint',
     },
     {
@@ -64,8 +64,7 @@ const Basics = () => {
         <div className={styles.basics__images} style={{ transform: `translateX(calc(${imagePosition} * -50%))` }}>
           {
             DATA.content.map((item, index) => (
-              <div key={item.image} className={styles.basics__contentWrapper}>
-                <img className={styles.basics__img} src={item.image} alt="О нас" />
+              <div key={item.image} className={styles.basics__contentWrapper} style={{ background: `url(${item.image})` }}>
                 <div
                   className={
                     cn(
@@ -110,7 +109,7 @@ const Basics = () => {
       </div>
       <div className={styles.basics__info}>
         {DATA.items.map((item) => (
-          <div key={item.id} className={styles.basics__infoItem}>
+          <div key={item.id} className={cn(styles.basics__infoItem, styles[`basics__infoItem_${item.sprite}`])}>
             <Icon className={styles.basics__infoCircle} view={item.sprite} />
             <div className={styles.basics__itemContent}>
               <div className={styles.basics__itemTitle}>{item.title}</div>

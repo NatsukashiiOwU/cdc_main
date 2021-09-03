@@ -74,8 +74,8 @@ const Footer = () => (
               ФИО
               <input type="name" id="name" placeholder="Ваше имя" />
             </label>
-            <div className={styles.footer__formButton}>
-              <Button type="submit">Отправить </Button>
+            <div className={styles.footer__formBlockButton}>
+              <Button type="submit" className={styles.footer__formButton}>Отправить</Button>
             </div>
           </div>
         </form>

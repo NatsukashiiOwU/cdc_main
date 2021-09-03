@@ -1,5 +1,5 @@
 .footer {
-  padding: 141px 0 209px 0;
+  padding: 141px 0 209px 13px;
   display: flex;
   justify-content: center;
   background-color: #f2f2f2;
@@ -13,7 +13,7 @@
 
   &__linksChapterSite {
     display: flex;
-    margin-top: 35px;
+    margin-top: 41px;
     margin-left: 2px;
   }
 
@@ -61,7 +61,7 @@
   }
 
   &__linksMenu {
-    margin-right: 92px;
+    margin-right: 86px;
     margin-top: 7px;
 
     span {
@@ -116,7 +116,7 @@
   &__copyright {
     max-width: 445px;
     width: 100%;
-    margin-top: 136px;
+    margin-top: 107px;
     margin-left: 3px;
     font-weight: 500;
     font-size: 16px;
@@ -127,7 +127,7 @@
 
   &__form {
     margin-left: 86px;
-    max-width: 567px;
+    max-width: 562px;
     width: 100%;
   }
 
@@ -239,20 +239,19 @@
     margin-top: 30px;
   }
 
-  &__formButton {
+  &__formBlockButton {
     margin-top: 36px;
+  }
 
-    button {
-      width: 132px;
-      height: 50px;
-      background-color: #25dac5;
-      border-radius: 100px;
-      border: none;
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 26px;
-      color: #fff;
-    }
+  &__formButton {
+    padding: 12px 17px;
+    background-color: #25dac5;
+    border-radius: 100px;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: #fff;
   }
 
   @media (max-width: 1440px) {
@@ -374,7 +373,7 @@
       width: 100%;
     }
 
-    &__formButton {
+    &__formBlockButton {
       margin-top: 31px;
     }
   }

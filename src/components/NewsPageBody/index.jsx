@@ -44,7 +44,7 @@ const NewsPageBody = () => (
       </div>
       <div>
         { TEXT_CONTENT.map((text) => (
-          <div className={styles.newsPageBody__textContent}>{ text }</div>
+          <p className={styles.newsPageBody__textContent}>{ text }</p>
         ))}
       </div>
       <img src={img} alt="Картинка" className={styles.newsPageBody__mainSlideImg} />
