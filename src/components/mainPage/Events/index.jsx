@@ -17,7 +17,7 @@ import logo_png from '../../../assets/images/Events/logo.png';
 
 const EVENTS = [
   {
-    dateNumber: '31-23',
+    dateNumber: '31–23',
     dateMonth_one: 'апреля',
     dateMonth_two: 'мая',
     imgWebp: img1_webp,
@@ -28,7 +28,7 @@ const EVENTS = [
     description: 'Центр ДНК им. Ж.И. Алферова продолжает цикл мероприятий в рамках Международной акции «ALL DIGITAL WEEK-2021»',
   },
   {
-    dateNumber: '31-23',
+    dateNumber: '31–23',
     dateMonth_one: 'апреля',
     dateMonth_two: 'мая',
     imgWebp: img2_webp,
@@ -39,7 +39,7 @@ const EVENTS = [
     description: 'Центр ДНК им. Ж.И. Алферова продолжает цикл мероприятий в рамках Международной акции «ALL DIGITAL WEEK-2021»',
   },
   {
-    dateNumber: '31-23',
+    dateNumber: '31–23',
     dateMonth_one: 'апреля',
     dateMonth_two: 'мая',
     imgWebp: img3_webp,
