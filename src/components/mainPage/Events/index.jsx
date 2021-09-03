@@ -77,7 +77,7 @@ const Events = () => (
       </div>
       <div className={styles.events__eventList}>
         {EVENTS.map((item) => (
-          <div className={styles.events__item} key={item.imgWebp}>
+          <Link to="/events" className={styles.events__item} key={item.imgWebp}>
             <div className={styles.events__itemImage}>
               <picture>
                 <source srcSet={item.imgWebp} type="image/webp" />
@@ -106,10 +106,10 @@ const Events = () => (
                 </div>
               </div>
               <div className={styles.events__itemDescription}>
-                <Link to="/events">{item.description}</Link>
+                <span>{item.description}</span>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
