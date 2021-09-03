@@ -79,7 +79,6 @@ const Navbar = () => {
       <nav
         className={
           cn(styles.navbar,
-            isOpenModal && styles.navbar_fixed,
             user.isAuth && styles.navbar_isAuth)
         }
       >
@@ -87,7 +86,12 @@ const Navbar = () => {
           <ul>
             {LINKS.map((item) => (
               <li>
-                <Link to={item.link} className={styles.navbar__link} key={item.img}>
+                <Link
+                  to={item.link}
+                  className={cn(styles.navbar__link,
+                    user.isAuth && styles.navbar__link_isAuth)}
+                  key={item.img}
+                >
                   <Icon
                     className={styles.navbar__linkIcon}
                     view={item.icon}

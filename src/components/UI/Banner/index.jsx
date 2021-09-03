@@ -13,7 +13,7 @@ const Banner = ({ imagePng, imageWebp, title }) => (
     <div className={styles.banner__title}>
       <div className={styles.banner__textWrapper}>
         <div className={styles.banner__text}>
-          <h1>Код-классы</h1>
+          <h1>Код–классы</h1>
           <span>Ульяновского Государственного Университета</span>
         </div>
         <h2 className={styles.banner__pageTitle}>
@@ -25,4 +25,4 @@ const Banner = ({ imagePng, imageWebp, title }) => (
   </section>
 );
 
-export default Banner;
+export default React.memo(Banner);

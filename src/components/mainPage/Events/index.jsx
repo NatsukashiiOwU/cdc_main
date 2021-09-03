@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Button from '../../UI/Button';
 import styles from './Events.module.scss';
 
@@ -76,7 +77,7 @@ const Events = () => (
       </div>
       <div className={styles.events__eventList}>
         {EVENTS.map((item) => (
-          <div className={styles.events__item} key={item.imgWebp}>
+          <Link to="/events" className={styles.events__item} key={item.imgWebp}>
             <div className={styles.events__itemImage}>
               <picture>
                 <source srcSet={item.imgWebp} type="image/webp" />
@@ -108,14 +109,14 @@ const Events = () => (
                 <span>{item.description}</span>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
     <div className={styles.events__sliderButtons}>
       <div className={styles.events__sliderButtonsWrapper}>
-        <div className={styles.events__sliderButtonUp} />
-        <div className={styles.events__sliderButtonDown} />
+        <Button className={styles.events__sliderButtonUp} />
+        <Button className={styles.events__sliderButtonDown} />
       </div>
     </div>
   </section>

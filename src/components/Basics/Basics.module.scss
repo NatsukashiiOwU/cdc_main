@@ -98,9 +98,15 @@
     }
 
     &_0 {
+<<<<<<< HEAD
       width: 590px;
       top: 200px;
       right: 154px;
+=======
+      width: 531px;
+      top: 203px;
+      right: calc(50% - 678px);
+>>>>>>> hotfix/visual
     }
 
     &_1 {
@@ -194,6 +200,18 @@
     &:last-of-type::after {
       display: none;
     }
+
+    &_mappoint {
+      padding: 0px 13px 4px 23px;
+    }
+
+    &_database {
+      padding: 0 0 4px 38px;
+
+      &::after {
+        right: -10%;
+      }
+    }
   }
 
   &__infoCircle {
@@ -230,6 +248,5 @@
     font-weight: 500;
     font-size: 20px;
     color: #4F5665;
-    text-transform: uppercase;
   }
 }
