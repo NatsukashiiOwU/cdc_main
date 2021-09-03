@@ -1,7 +1,8 @@
 .newsPageBody {
   display: flex;
   justify-content: center;
-  margin-top: 42px;
+  margin-left: 16px;
+  margin-top: 45px;
 
   &__actualNews {
     display: flex;
@@ -9,7 +10,7 @@
   }
 
   &__actualNewsTitle {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     font-weight: bold;
     font-size: 14px;
     line-height: 26px;
@@ -33,7 +34,7 @@
     flex: 0 0 170px;
     width: 170px;
     height: 105px;
-    margin-right: 14px;
+    margin-right: 19px;
     border-radius: 10px;
   }
 
@@ -77,14 +78,14 @@
     font-weight: 900;
     font-size: 42px;
     line-height: 52px;
-    letter-spacing: -1.85px;
+    letter-spacing: -0.6px;
     color: #1E0E62;
-    margin-bottom: 38px;
+    margin-bottom: 40px;
   }
 
   &__info {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 
   &__date {
@@ -99,9 +100,10 @@
 
   &__people {
     display: flex;
-    padding-left: 8px;
-    font-size: 14px;
-    line-height: 26px;
+    font-weight: 400;
+    padding-left: 11px;
+    font-size: 12px;
+    line-height: 24px;
     color: #9A9CAD;
     border: 1px solid #9A9CAD;
     border-radius: 5px;
@@ -110,6 +112,10 @@
   &__numberPeople {
     margin-left: 10.3px;
     padding: 0 2.7px 0 4.3px;
+    letter-spacing: 2px;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 700;
     background: #AEB0C2;
     border-radius: 5px 0 0 5px;
     color: #FFFFFF;
@@ -119,11 +125,12 @@
     display: flex;
     align-items: center;
     width: 100%;
-    margin-bottom: 28.2px;
-    padding: 22px 0;
+    margin-bottom: 25.2px;
+    padding: 22px 0 18px 0;
     color: rgba(21, 20, 57, 0.4);
     font-size: 16px;
     line-height: 26px;
+    letter-spacing: 0.1px;
     border-top: 1px solid #9A9CAD;
     border-bottom: 1px solid #9A9CAD;
   }
@@ -143,7 +150,7 @@
     margin-bottom: 10px;
 
     &:last-of-type {
-      margin-bottom: 26px;
+      margin-bottom: 30px;
     }
   }
 
@@ -201,7 +208,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 90px;
+    margin-bottom: 86px;
   }
 
   &__prevNews {
@@ -243,7 +250,7 @@
   &__iconWrapper {
     display: flex;
     align-items: center;
-    margin-right: -20px;
+    margin-right: -36px;
   }
 
   &__circleIcon {
@@ -258,8 +265,8 @@
     }
 
     svg {
-      height: 90%;
-      width: 90%;
+      height: 100%;
+      width: 100%;
     }
   }
 }
