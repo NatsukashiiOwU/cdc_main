@@ -1,7 +1,7 @@
 .tasks {
   min-height: 535px;
   position: relative;
-  padding-top: 170px;
+  padding-top: 180px;
   background-color: #F2F6F9;
   z-index: -1;
   padding-left: 6px;
@@ -28,12 +28,13 @@
     display: flex;
     list-style: none;
     flex-wrap: wrap;
+    white-space: break-spaces;
   }
 
   &__listItem {
     position: relative;
     width: 28.7%;
-    margin-bottom: 116px;
+    margin-bottom: 110px;
     margin-right: 51px;
 
     &:nth-child(2) {
@@ -61,7 +62,7 @@
     }
 
     &_number {
-      font-weight: 500;
+      font-weight: 900;
       font-size: 96px;
       line-height: 150%;
       color: #E0E0E0;

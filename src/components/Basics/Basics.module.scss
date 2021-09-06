@@ -98,9 +98,9 @@
     }
 
     &_0 {
-      width: 531px;
-      top: 203px;
-      right: calc(50% - 678px);
+      width: 590px;
+      top: 200px;
+      right: 154px;
     }
 
     &_1 {
@@ -111,15 +111,16 @@
   }
 
   &__title {
+    text-transform: uppercase;
     font-weight: 900;
     font-size: 72px;
     line-height: 90px;
   }
 
   &__description {
-    font-size: 20px;
-    line-height: 20px;
-    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: 700;
 
     #{$self}__textContent_1 & {
       margin-top: 26px;
@@ -131,9 +132,14 @@
   &__content {
     margin-left: 5px;
     font-size: 24px;
-    line-height: 31px;
-    margin-top: 41px;
+    line-height: 34px;
+    margin-top: 34px;
     letter-spacing: 0.025em;
+
+    &:last-child {
+      margin-top: 60px;
+      margin-bottom: 20px;
+    }
 
     #{$self}__textContent_1 & {
       margin-top: 32px;
