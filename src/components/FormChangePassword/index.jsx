@@ -36,7 +36,7 @@ const FormChangePassword = () => {
               name="email"
               icon="inputEmail"
               placeholder="Email"
-              onChange={(event) => enterEmail(event.target.value)}
+              onChange={enterEmail}
               text={email}
               error="Заполните поле"
             />

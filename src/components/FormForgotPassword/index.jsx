@@ -43,7 +43,7 @@ const FormForgotPassword = ({ className }) => {
             error="Заполните поле"
           />
           <Button className={styles.formForgotPassword__submit}>
-            Вход
+            Изменить пароль
           </Button>
         </form>
       </div>

@@ -1,6 +1,6 @@
 .codeClass {
   margin-right: 30px;
-  margin-bottom: 22px;
+  margin-bottom: 32px;
   border: 2px solid #EBEAED;
   box-sizing: border-box;
   border-radius: 9px;
@@ -45,7 +45,7 @@
 
   &__description {
     width: 79%;
-    padding: 17px 11px 23px 30px;
+    padding: 17px 11px 17px 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -56,6 +56,11 @@
   &__buttons {
     display: flex;
     align-items: center;
+  }
+
+  &__buttons {
+    margin-top: 7px;
+    margin-right: -7px;
   }
 
   &__info {
@@ -71,7 +76,9 @@
   }
 
   &__button {
+    padding: 7px 20px;
     background-color: #fff;
+    font-size: 18px;
     color: #1E0E62;
     border: 2px solid #EBEAED;
     box-sizing: border-box;

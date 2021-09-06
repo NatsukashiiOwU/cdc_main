@@ -13,21 +13,23 @@ const Article = ({
 }) => (
   <div className={styles.article}>
     <div className={styles.article__wrapper}>
-      <h3 className={styles.article__articleName}>
-        {title}
-      </h3>
-      <div className={styles.article__date}>
-        <img src={Vector} alt="vector" />
-        <div className={styles.article__dateText}>
-          {date}
+      <div className={styles.article__titleWrapper}>
+        <h3 className={styles.article__articleName}>
+          {title}
+        </h3>
+        <div className={styles.article__date}>
+          <img src={Vector} alt="vector" />
+          <div className={styles.article__dateText}>
+            {date}
+          </div>
+          |
+          <div className={styles.article__cityName}>
+            {cityName}
+          </div>
         </div>
-        |
-        <div className={styles.article__cityName}>
-          {cityName}
+        <div className={styles.article__textTitle}>
+          {textTitle}
         </div>
-      </div>
-      <div className={styles.article__textTitle}>
-        {textTitle}
       </div>
       <div
         className={styles.article__textDescription}
