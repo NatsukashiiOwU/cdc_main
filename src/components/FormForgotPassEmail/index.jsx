@@ -33,7 +33,7 @@ const FormForgotPassEmail = ({ changeForm, className }) => {
             text={email}
           />
           <Button className={styles.formForgotPassEmail__submit}>
-            Далее
+            Изменить пароль
           </Button>
         </form>
       </div>

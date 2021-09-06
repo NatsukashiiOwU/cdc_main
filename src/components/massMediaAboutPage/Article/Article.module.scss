@@ -9,7 +9,7 @@
   &__wrapper {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
   }
 
   &__articleName {
@@ -55,19 +55,22 @@
     color: #828282;
   }
 
+  &__titleWrapper {
+    margin-left: -9px;
+  }
+
   &__textDescription a  {
-    font-weight: 500;
+    font-weight: 700;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.15px;
     color: #828282;
-    text-decoration: none;
   }
 
   &__pictureWrapper {
     display: flex;
     flex-wrap: wrap;
-    margin: -19px -16px;
+    margin: -19px -25px;
   }
 
   &__pictureItem {

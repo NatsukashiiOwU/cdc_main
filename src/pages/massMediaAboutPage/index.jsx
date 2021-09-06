@@ -21,7 +21,7 @@ const massMediaAboutPage = () => (
       title="СМИ о нас"
     />
     <section className={styles.smiAboutUs}>
-      <Adresses adresses={['Главная', 'СМИ о нас']} className={styles.smiAboutUs__smiAboutUsMap} />
+      <Adresses adresses={['Главная', 'СМИ О НАС']} className={styles.smiAboutUs__smiAboutUsMap} />
 
       <div className={styles.smiAboutUs__wrapper}>
         {data.map((item) => (

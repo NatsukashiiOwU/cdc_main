@@ -1,5 +1,5 @@
 .footer {
-  padding: 141px 0 209px 13px;
+  padding: 137px 0 209px 0;
   display: flex;
   justify-content: center;
   background-color: #f2f2f2;
@@ -77,8 +77,7 @@
   }
 
   &__linksChapter {
-    max-width: 317px;
-    width: 100%;
+    max-width: 340px;
     margin-top: 6px;
 
     ul {
@@ -116,8 +115,8 @@
   &__copyright {
     max-width: 445px;
     width: 100%;
-    margin-top: 107px;
-    margin-left: 3px;
+    margin-top: 136px;
+    margin-left: 1px;
     font-weight: 500;
     font-size: 16px;
     line-height: 30px;
@@ -126,7 +125,7 @@
   }
 
   &__form {
-    margin-left: 86px;
+    margin-left: 62px;
     max-width: 562px;
     width: 100%;
   }
@@ -139,7 +138,7 @@
     font-weight: bold;
     font-size: 42px;
     line-height: 52px;
-    letter-spacing: 2.2px;
+    letter-spacing: -0.6px;
     color: #828282;
     margin: 0 0 23px 0;
   }

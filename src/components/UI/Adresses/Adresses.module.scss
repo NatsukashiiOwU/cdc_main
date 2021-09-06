@@ -1,10 +1,11 @@
 .adresses {
   display: flex;
+  align-items: center;
 
   &__adress {
     display: block;
     position: relative;
-    margin-right: 12px;
+    margin-right: 17px;
     font-weight: 500;
     font-size: 16px;
     line-height: 16px;
@@ -22,13 +23,12 @@
     &:after {
       content: "";
       display: inline-block;
-      width: 5px;
-      height: 5px;
+      width: 7px;
+      height: 7px;
       border-bottom: 2px solid rgba(0, 0, 0, 0.54);
       border-right: 2px solid rgba(0, 0, 0, 0.54);
-      margin-left: 8px;
+      margin-left: 12px;
       transform: rotate(-45deg);
-      margin-bottom: 3px;
     }
   }
 }
