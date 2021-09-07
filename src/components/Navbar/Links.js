@@ -29,7 +29,7 @@ export const LINKS = [
 export const ADMIN_LINKS = [
   {
     title: 'Настройка профиля',
-    link: '#',
+    link: '/code-classes/detail/profile-user',
   },
   {
     title: 'Добавить мероприятие',
@@ -56,7 +56,7 @@ export const ADMIN_LINKS = [
 export const AUTH_LINKS = [
   {
     title: 'Настройка профиля',
-    link: '#',
+    link: '/code-classes/detail/profile-user',
   },
   {
     title: 'Добавить мероприятие',
