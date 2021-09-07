@@ -93,12 +93,14 @@
   }
 
   div > &__tooltipMenu {
+    width: 131px;
+    height: 92px;
     left: 70px;
     top: 6px;
     padding: 12.5px 14px;
     border-radius: 3px;
-    background-color: #E5E5E5;
-    --border-color: #E5E5E5;
+    background-color: #fff;
+    --border-color: #fff;
 
     &:after {
       left: -8px;

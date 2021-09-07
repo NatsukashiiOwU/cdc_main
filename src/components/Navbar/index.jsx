@@ -20,6 +20,7 @@ import { LINKS, AUTH_LINKS, ADMIN_LINKS } from './Links';
 import useClickOutside from '../../hooks/useClickOutside';
 
 import img from '../../assets/images/NewsPage/img2.png';
+import Button from '../UI/Button';
 
 const Navbar = () => {
   const store = useStore();
@@ -62,6 +63,7 @@ const Navbar = () => {
   const USER_BUTTONS = [
     {
       text: 'Настройки профиля',
+      path: '/code-classes/detail/profile-user',
     },
     {
       text: 'Смена пароля',
@@ -138,9 +140,9 @@ const Navbar = () => {
               <div className={styles.navbar__tooltipUserButtons}>
                 {
                   USER_BUTTONS.map((item) => (
-                    <button onClick={item.onClick} type="button" className={styles.navbar__tooltipUserButton}>
+                    <Button onClick={item.onClick} href={item.path} type="button" className={styles.navbar__tooltipUserButton}>
                       {item.text}
-                    </button>
+                    </Button>
                   ))
                 }
               </div>
