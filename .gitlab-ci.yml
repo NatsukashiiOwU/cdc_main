@@ -16,7 +16,7 @@ demo:
     - chmod 400 ~/.ssh/id_rsa
   script:
     - CONTAINER_NAME=$( echo ${CONTAINER_NAME} | tr _ - | tr . - | tr / _ )
-    - CONTAINER_NAME=container_cdc_${CONTAINER_NAME} docker-compose -p=${CI_PROJECT_NAME}_${CONTAINER_NAME} up -d --build
+    - docker-compose -p=cdc_${CONTAINER_NAME} up -d --build
   except:
     variables:
       - $CI_MERGE_REQUEST_TITLE !~ /^BUILD:\[\d+\](.+)$/
