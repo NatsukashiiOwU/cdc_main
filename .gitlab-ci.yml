@@ -1,23 +1,27 @@
 stages:
-  - pages
+  - demo
 
-pages:
-  image: node:14-alpine
-  stage: pages
-  before_script:
-    - yarn install
-  script:
-    - CI=false && npm run build
-    - rm -rf public
-    - mv build public
-  artifacts:
-    paths:
-      - public
+demo:
+  stage: demo
+  image: docker/compose:latest
+  services:
+    - docker:dind
   variables:
-    PUBLIC_URL: "https://mst-dev-ops.gitlab.io/cdc/"
-    REACT_APP_ROUTER_BASENAME: "/cdc"
-  environment:
-    name: staging
-    url: https://mst-dev-ops.gitlab.io/cdc
+    DOCKER_HOST: "ssh://$SSH_DEMO_USER@$SSH_DEMO_HOST"
+    CONTAINER_NAME: "$CI_COMMIT_REF_NAME"
+  before_script:
+    - mkdir -p ~/.ssh/
+    - echo -e 'Host *\n\tStrictHostKeyChecking no\n\n' > ~/.ssh/config
+    - echo "$SSH_DEMO_KEY" > ~/.ssh/id_rsa
+    - chmod 400 ~/.ssh/id_rsa
+  script:
+    - CONTAINER_NAME=$( echo ${CONTAINER_NAME} | tr _ - | tr . - | tr / _ )
+    - CONTAINER_NAME=container_cdc_${CONTAINER_NAME} docker-compose -p=${CI_PROJECT_NAME}_${CONTAINER_NAME} up -d --build
+  except:
+    variables:
+      - $CI_MERGE_REQUEST_TITLE !~ /^BUILD:\[\d+\](.+)$/
   only:
-    - develop
+    refs:
+      - merge_requests
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
