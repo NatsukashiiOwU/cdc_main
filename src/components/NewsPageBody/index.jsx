@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Adresses from '../UI/Adresses';
 
@@ -20,74 +20,114 @@ const ICON = ['facebook', 'vk', 'instagram', 'share'];
 
 const ADRESSES = ['Главная', 'Новости', 'МОУ СОШ п. Поливаново МО " Барышский район"'];
 
-const NewsPageBody = () => (
-  <div className={styles.newsPageBody}>
-    <div className={styles.newsPageBody__content}>
-      <Adresses className={styles.newsPageBody__adresses} adresses={ADRESSES} />
-      <div className={styles.newsPageBody__title}>
-        День открытых дверей с УЛГУ
-      </div>
-      <div className={styles.newsPageBody__info}>
-        <div className={styles.newsPageBody__date}>
-          22 Апр, 2021
+const fetchURL = 'http://localhost:8080/news';
+const getItems = () => fetch(fetchURL).then((res) => res.json());
+
+function NewsPageBody() {
+  const [items, setItems] = useState([[], []]);
+
+  useEffect(() => {
+    getItems().then((data) => setItems(data));
+  }, []);
+
+  console.log(items);
+  // eslint-disable-next-line no-shadow
+  const [actualid, setCount] = useState(0);
+  const nextnews = () => {
+    // eslint-disable-next-line no-shadow
+    setCount((actualid) => actualid + 1);
+  };
+  const prevnews = () => {
+    // eslint-disable-next-line no-shadow
+    setCount((actualid) => actualid - 1);
+  };
+  /* function prevnews() {
+    // eslint-disable-next-line no-plusplus
+    actualid--;
+    console.log(actualid);
+  }
+  function nextnews() {
+    // eslint-disable-next-line no-plusplus
+    actualid++;
+    console.log(actualid);
+  } */
+  // eslint-disable-next-line no-return-assign
+  return (
+    <div className={styles.newsPageBody}>
+      <div className={styles.newsPageBody__content}>
+        <Adresses className={styles.newsPageBody__adresses} adresses={ADRESSES} />
+        <div className={styles.newsPageBody__title}>
+          <div>{items[actualid].title}</div>
         </div>
-        <div className={styles.newsPageBody__people}>
-          участников
-          <div className={styles.newsPageBody__numberPeople}>
-            300
+        <div className={styles.newsPageBody__info}>
+          <div className={styles.newsPageBody__date}>
+            {items[actualid].date}
+          </div>
+          <div className={styles.newsPageBody__people}>
+            участников
+            <div className={styles.newsPageBody__numberPeople}>
+              300
+            </div>
           </div>
         </div>
-      </div>
-      <div className={styles.newsPageBody__area}>
-        <img src={img2} className={styles.newsPageBody__iconImage} alt="icon" />
-        МОУ СОШ п. Поливаново МО &quot;Барышский район&quot;
-      </div>
-      <div>
-        { TEXT_CONTENT.map((text) => (
-          <p className={styles.newsPageBody__textContent}>{ text }</p>
-        ))}
-      </div>
-      <img src={img} alt="Картинка" className={styles.newsPageBody__mainSlideImg} />
-      <div className={styles.newsPageBody__sliderWrapper}>
-        <Icon view="arrowPrev" className={cn(styles.newsPageBody__arrow, styles.newsPageBody__arrow_arrowPrev)} />
-        { Array.from({ length: 3 }, () => (
-          <img src={img} alt="Картинка" className={styles.newsPageBody__sliderImg} />
-        ))}
-        <Icon view="arrowNext" className={cn(styles.newsPageBody__arrow, styles.newsPageBody__arrow_arrowNext)} />
-      </div>
-      <div className={styles.newsPageBody__footer}>
-        <div>
-          <span className={styles.newsPageBody__prevNews}>ПРЕДЫДУЩИЙ ПОСТ</span>
-          <span className={styles.newsPageBody__nextNews}>СЛЕДУЮЩИЙ ПОСТ</span>
+        <div className={styles.newsPageBody__area}>
+          <img src={img2} className={styles.newsPageBody__iconImage} alt="icon" />
+          {items[actualid].clc_rel}
         </div>
-        <div className={styles.newsPageBody__iconWrapper}>
-          { ICON.map((icon, index) => (
-            <SocialIcon
-              key={icon}
-              inCircle={ICON.length - 1 !== index}
-              className={styles.newsPageBody__circleIcon}
-              view={icon}
-            />
+        <div>
+          {/* eslint-disable-next-line no-unused-vars */}
+          { TEXT_CONTENT.map((text) => (
+            <p className={styles.newsPageBody__textContent}>{items[actualid].content}</p>
           ))}
         </div>
-      </div>
-    </div>
-    <div className={styles.newsPageBody__actualNews}>
-      <div className={styles.newsPageBody__actualNewsTitle}>Актуальные новости</div>
-      {Array.from({ length: 5 }, () => (
-        <div className={styles.newsPageBody__newsCard}>
-          <img src={img} alt="Картинка" className={styles.newsPageBody__newsCardImg} />
+        <img src={img} alt="Картинка" className={styles.newsPageBody__mainSlideImg} />
+        <div className={styles.newsPageBody__sliderWrapper}>
+          <Icon view="arrowPrev" className={cn(styles.newsPageBody__arrow, styles.newsPageBody__arrow_arrowPrev)} />
+          { Array.from({ length: 3 }, () => (
+            <img src={img} alt="Картинка" className={styles.newsPageBody__sliderImg} />
+          ))}
+          <Icon view="arrowNext" className={cn(styles.newsPageBody__arrow, styles.newsPageBody__arrow_arrowNext)} />
+        </div>
+        <div className={styles.newsPageBody__footer}>
           <div>
-            <div className={styles.newsPageBody__newsCardTitle}>
-              Занятия код-класса «Процессор»
-            </div>
-            <div className={styles.newsPageBody__newsCardDate}>14 июнь</div>
+            {/* eslint-disable-next-line max-len */}
+            {/* eslint-disable-next-line max-len,jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
+            <span className={styles.newsPageBody__prevNews} onClick={prevnews}>ПРЕДЫДУЩИЙ ПОСТ</span>
+            {/* eslint-disable-next-line max-len */}
+            {/* eslint-disable-next-line max-len,jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
+            <span className={styles.newsPageBody__nextNews} onClick={nextnews}>СЛЕДУЮЩИЙ ПОСТ</span>
+          </div>
+          <div className={styles.newsPageBody__iconWrapper}>
+            { ICON.map((icon, index) => (
+              <SocialIcon
+                key={icon}
+                inCircle={ICON.length - 1 !== index}
+                className={styles.newsPageBody__circleIcon}
+                view={icon}
+              />
+            ))}
           </div>
         </div>
-      ))}
-      <Button className={styles.newsPageBody__button}>Показать больше</Button>
+      </div>
+
+      <div className={styles.newsPageBody__actualNews}>
+        <div className={styles.newsPageBody__actualNewsTitle}>Актуальные новости</div>
+        {/* eslint-disable-next-line no-shadow */}
+        {Array.from(items, (item) => (
+          <div className={styles.newsPageBody__newsCard}>
+            <img src={img} alt="Картинка" className={styles.newsPageBody__newsCardImg} />
+            <div>
+              <div className={styles.newsPageBody__newsCardTitle}>
+                {item.title}
+              </div>
+              <div className={styles.newsPageBody__newsCardDate}>14 июнь</div>
+            </div>
+          </div>
+        ))}
+        <Button className={styles.newsPageBody__button}>Показать больше</Button>
+      </div>
     </div>
-  </div>
-);
+  );
+}
 
 export default React.memo(NewsPageBody);
