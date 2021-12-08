@@ -22,8 +22,8 @@ const DATA = [{
   title: 'Муниципальное бюджетное общеобразовательное учреждение города Ульяновска "Средняя школа № 81 имени Героя Советского Союза генерала Д.М. Карбышева" г. Ульяновск',
   personImageWebp: img4Webp,
   personimagePng: img4Png,
-  personSurname: 'Газизова',
-  personName: 'Лениза Ривальевна',
+  personSurname: 'John',
+  personName: 'Titor',
 },
 {
   color: null,
@@ -32,8 +32,8 @@ const DATA = [{
   title: 'Губернаторский инженерный лицей 102',
   personImageWebp: img5Webp,
   personimagePng: img5Png,
-  personSurname: 'Газизова',
-  personName: 'Лениза Ривальевна',
+  personSurname: 'John',
+  personName: 'Titor',
 },
 {
   color: '#F2C94C',
@@ -42,8 +42,8 @@ const DATA = [{
   title: 'МБОО Старомайнская СШ №1 Старая Майна',
   personImageWebp: img6Webp,
   personimagePng: img6Png,
-  personSurname: 'Газизова',
-  personName: 'Лениза Ривальевна',
+  personSurname: 'John',
+  personName: 'Titor',
 },
 {
   color: '#F2994A',
@@ -52,8 +52,8 @@ const DATA = [{
   title: 'МБОУ "Средняя школа № 15 имени Героя Советского Союза Д.Я. Старостина"',
   personImageWebp: img7Webp,
   personimagePng: img7Png,
-  personSurname: 'Газизова',
-  personName: 'Лениза Ривальевна',
+  personSurname: 'John',
+  personName: 'Titor',
 },
 {
   color: '#56CCF2',
@@ -62,8 +62,8 @@ const DATA = [{
   title: 'МБОУ СОШ № 4 МО "Барышский район"',
   personImageWebp: img4Webp,
   personimagePng: img4Png,
-  personSurname: 'Газизова',
-  personName: 'Лениза Ривальевна',
+  personSurname: 'John',
+  personName: 'Titor',
 },
 {
   color: null,
@@ -72,8 +72,8 @@ const DATA = [{
   title: 'МКОО Большекандалинская СШ Старомайнского района Ульяновской области',
   personImageWebp: img8Webp,
   personimagePng: img8Png,
-  personSurname: 'Газизова',
-  personName: 'Лениза Ривальевна',
+  personSurname: 'John',
+  personName: 'Titor',
 },
 {
   color: null,
@@ -82,8 +82,8 @@ const DATA = [{
   title: 'Муниципальное бюджетное общеобразовательное учреждение города Ульяновска "Средняя школа № 81 имени Героя Советского Союза генерала Д.М. Карбышева" г. Ульяновск',
   personImageWebp: img4Webp,
   personimagePng: img4Png,
-  personSurname: 'Газизова',
-  personName: 'Лениза Ривальевна',
+  personSurname: 'John',
+  personName: 'Titor',
 },
 ];
 
