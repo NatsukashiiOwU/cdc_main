@@ -1,7 +1,6 @@
 /* eslint-disable camelcase */
 import React, { memo, useState } from 'react';
-import { useSelector } from 'react-redux';
-import axios from 'axios';
+import { useDispatch, useStore } from 'react-redux';
 import Banner from '../../../components/UI/Banner';
 import Toggle from '../../../components/Toggle';
 import Adresses from '../../../components/UI/Adresses';
@@ -20,13 +19,12 @@ import Press from '../../../components/Press';
 import Management from '../../../components/Management';
 import Profile from './profile';
 import ProfileUser from './profile-user';
-import authHeader from '../../../services/auth-header';
-// import { logIn } from '../../../store';
+import { logIn, token } from '../../../store/action';
 
-/* if (!token) {
+if (!token) {
   const dispatch = useDispatch();
   dispatch(logIn());
-} */
+}
 
 // eslint-disable-next-line no-unused-vars
 const routeAuth = [
@@ -101,25 +99,10 @@ const routeNotAuth = [
 
 const ADDRESS_TITLE = ['Главная', 'Код классы', 'МОУ СОШ п. Поливаново МО " Барышский район', 'Новости Код-класса'];
 
-const cdc_url = 'http://localhost:8080/api/cdc';
-
 const CodeClassesDetail = () => {
-  const { user } = useSelector((state) => state.auth);
-
-  const [isLoading, setLoading] = useState(true);
-  const [cdc, setCdc] = React.useState();
-
-  React.useEffect(() => {
-    // eslint-disable-next-line camelcase
-    axios.get(`${cdc_url}/${user.cdc_id}`, { headers: authHeader() }).then((response) => {
-      setCdc(response.data);
-      setLoading(false);
-    });
-  }, []);
-
-  if (isLoading) {
-    return <div className="App">Loading...</div>;
-  }
+  const store = useStore();
+  const [user, setUser] = useState([]);
+  store.subscribe(() => setUser(store.getState()));
 
   return (
     <div className={styles.codeClassesDetail}>
@@ -150,7 +133,7 @@ const CodeClassesDetail = () => {
           <div className={styles.codeClassesDetail__card}>
             <DirectorCard
               place="Руководитель клуба"
-              name={cdc.cdcAdminName}
+              name="ФИО"
               eventCount="0"
               userCount="0"
             />

@@ -2,7 +2,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import cn from 'classnames';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import { useSelector, useStore } from 'react-redux';
+import { useStore } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.scss';
 import Modal from '../UI/Modal';
@@ -21,7 +21,6 @@ import useClickOutside from '../../hooks/useClickOutside';
 
 import img from '../../assets/images/NewsPage/img2.png';
 import Button from '../UI/Button';
-import auth from '../../store/reducers/auth';
 
 const Navbar = () => {
   const store = useStore();
@@ -31,17 +30,12 @@ const Navbar = () => {
   const [openForm, setOpenForm] = useState('');
   const [isOpenSmallModal, setIsOpenSmallModal] = useState(false);
   const [menu, setMenu] = useState([]);
-  // const [user, setUser] = useState([]);
-  // store.subscribe(() => setUser(store.getState()));
-
-  const { isLoggedIn } = useSelector((state) => state.auth);
-  const { user } = useSelector((state) => state.auth);
-  // alert(JSON.stringify(isLoggedIn) + JSON.stringify(user));
-  // useSelector((state) => state.auth);
+  const [user, setUser] = useState([]);
+  store.subscribe(() => setUser(store.getState()));
 
   useEffect(() => {
     setMenu(AUTH_LINKS);
-    if (isLoggedIn) {
+    if (user.isAuth) {
       setMenu((prev) => ([...prev, ...ADMIN_LINKS]));
     }
   }, [user]);
@@ -87,7 +81,7 @@ const Navbar = () => {
       <nav
         className={
           cn(styles.navbar,
-            isLoggedIn && styles.navbar_isAuth)
+            user.isAuth && styles.navbar_isAuth)
         }
       >
         <div className={styles.navbar__links}>
@@ -97,7 +91,7 @@ const Navbar = () => {
                 <Link
                   to={item.link}
                   className={cn(styles.navbar__link,
-                    isLoggedIn && styles.navbar__link_isAuth)}
+                    user.isAuth && styles.navbar__link_isAuth)}
                   key={item.img}
                 >
                   <Icon
@@ -119,17 +113,17 @@ const Navbar = () => {
           className={
             cn(
               styles.navbar__modalButton,
-              isLoggedIn && styles.navbar__modalButton_isAuth,
+              user.isAuth && styles.navbar__modalButton_isAuth,
               styles.navbar__button,
             )
           }
           type="button"
           onClick={() => openModal(isOpenModal ? 'close' : '')}
         >
-          { !isLoggedIn && <Icon className={styles.navbar__icon} view="login" /> }
-          { isLoggedIn && <Icon className={cn(styles.navbar__icon, styles[`navbar__icon_${isOpenModal ? 'cross' : 'burder'}`])} view={isOpenModal ? 'closeMenu' : 'burger'} /> }
+          { !user.isAuth && <Icon className={styles.navbar__icon} view="login" /> }
+          { user.isAuth && <Icon className={cn(styles.navbar__icon, styles[`navbar__icon_${isOpenModal ? 'cross' : 'burder'}`])} view={isOpenModal ? 'closeMenu' : 'burger'} /> }
         </button>
-        {isLoggedIn && (
+        {user.isAuth && (
           <div ref={label} className={styles.navbar__profileWrapper}>
             <button className={styles.navbar__profile} type="button" onClick={() => setIsOpenToolTip(!isOpenToolTip)}>
               <img src={img} alt="Аватар" />
@@ -138,8 +132,8 @@ const Navbar = () => {
               <div className={styles.navbar__tooltipHeader}>
                 <img className={styles.navbar__tooltipIcon} src={img} alt="Аватар" />
                 <div className={styles.navbar__tooltipName}>
-                  <div>{user.username}</div>
-                  <div>{user.email}</div>
+                  <div>Костишко</div>
+                  <div>Алла Евгеньевна</div>
                 </div>
               </div>
               <a className={styles.navbar__tooltipLink} href="http://cdc.ulsu.ru/users/lenizahotbox-ru/">http://cdc.ulsu.ru/users/lenizahotbox-ru/</a>
@@ -158,7 +152,7 @@ const Navbar = () => {
       </nav>
       <Modal
         isOpen={isOpenModal}
-        isFull={!(isLoggedIn && openForm === '')}
+        isFull={!(user.isAuth && openForm === '')}
       >
         <TransitionGroup className={styles.navbar__form}>
           {openForm === '' && (
@@ -173,7 +167,7 @@ const Navbar = () => {
                 exitDone: styles.navbar__form_exitDone,
               }}
             >
-              {isLoggedIn
+              {user.isAuth
                 ? <ProfileMenu content={menu} />
                 : <FormAuthorization changeForm={setOpenForm} />}
             </CSSTransition>
@@ -232,7 +226,7 @@ const Navbar = () => {
                 exitDone: styles.navbar__form_exitDone,
               }}
             >
-              {isLoggedIn ? <FormChangePassword /> : (
+              {user.isAuth ? <FormChangePassword /> : (
                 <FormForgotPassword
                   changeForm={setOpenForm}
                   className={styles.navbar__formForgotPassword}
