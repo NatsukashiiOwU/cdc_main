@@ -35,12 +35,21 @@ function NewsPageBody() {
   // eslint-disable-next-line no-unused-vars
   const [isLoading, setLoading] = useState(true);
 
+  // eslint-disable-next-line no-unused-vars
   const { user } = useSelector((state) => state.auth);
   const [news, setNews] = React.useState();
 
-  React.useEffect(() => {
+  /* React.useEffect(() => {
     // eslint-disable-next-line camelcase
     axios.get(`${news_url}/${user.cdc_id}`, { headers: authHeader() }).then((response) => {
+      setNews(response.data);
+      setLoading(false);
+    });
+  }, []); */
+
+  React.useEffect(() => {
+    // eslint-disable-next-line camelcase
+    axios.get(news_url, { headers: authHeader() }).then((response) => {
       setNews(response.data);
       setLoading(false);
     });

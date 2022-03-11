@@ -5,8 +5,9 @@ import { Redirect } from 'react-router-dom';
 import cn from 'classnames';
 
 import Form from 'react-validation/build/form';
-import Input from 'react-validation/build/input';
 import CheckButton from 'react-validation/build/button';
+import Input from '../UI/Input';
+// import Input from 'react-validation/build/input';
 
 import { login } from '../../store/action/auth';
 
@@ -66,7 +67,7 @@ const FormAuthorization = ({ props, changeForm, className }) => {
     setPassword(password);
   };
 
-  const handleLogin = (e) => {
+  /* const handleLogin = (e) => {
     e.preventDefault();
 
     setLoading(true);
@@ -86,6 +87,24 @@ const FormAuthorization = ({ props, changeForm, className }) => {
     } else {
       setLoading(false);
     }
+  };
+  */
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    form.current.validateAll();
+
+    // eslint-disable-next-line no-underscore-dangle
+    dispatch(login(username, password))
+      .then(() => {
+        props.history.push('/');
+        window.location.reload();
+      })
+      .catch(() => {
+        setLoading(false);
+      });
   };
 
   if (isLoggedIn) {

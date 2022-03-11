@@ -2,7 +2,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import cn from 'classnames';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import { useSelector, useStore } from 'react-redux';
+import { useDispatch, useSelector, useStore } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.scss';
 import Modal from '../UI/Modal';
@@ -16,6 +16,7 @@ import ProfileMenu from '../ProfileMenu';
 import FormChangePassword from '../FormChangePassword';
 import Tooltip from '../UI/Tooltip';
 import { LINKS, AUTH_LINKS, ADMIN_LINKS } from './Links';
+import { logout } from '../../store/action/auth';
 
 import useClickOutside from '../../hooks/useClickOutside';
 
@@ -24,6 +25,7 @@ import Button from '../UI/Button';
 import auth from '../../store/reducers/auth';
 
 const Navbar = () => {
+  const dispatch = useDispatch();
   const store = useStore();
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isOpenToolTip, setIsOpenToolTip] = useState(false);
@@ -79,6 +81,10 @@ const Navbar = () => {
       },
     }, {
       text: 'Выйти',
+      onClick: () => {
+        dispatch(logout());
+        setIsOpenToolTip(false);
+      },
     },
   ];
 
