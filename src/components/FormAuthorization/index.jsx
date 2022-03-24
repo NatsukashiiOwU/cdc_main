@@ -49,7 +49,7 @@ const FormAuthorization = ({ props, changeForm, className }) => {
   const [user, setUser] = useState([]);
   store.subscribe(() => setUser(store.getState()));
 
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -57,8 +57,8 @@ const FormAuthorization = ({ props, changeForm, className }) => {
 
   const onChangeUsername = (e) => {
     // eslint-disable-next-line no-shadow
-    const username = e.target.value;
-    setUsername(username);
+    const email = e.target.value;
+    setEmail(email);
   };
 
   const onChangePassword = (e) => {
@@ -97,7 +97,7 @@ const FormAuthorization = ({ props, changeForm, className }) => {
     form.current.validateAll();
 
     // eslint-disable-next-line no-underscore-dangle
-    dispatch(login(username, password))
+    dispatch(login(email, password))
       .then(() => {
         props.history.push('/');
         window.location.reload();
@@ -125,10 +125,10 @@ const FormAuthorization = ({ props, changeForm, className }) => {
             name="email"
             icon="inputEmail"
             placeholder="Email"
-            value={username}
+            value={email}
             onChange={onChangeUsername}
             validations={[required]}
-            text={username}
+            text={email}
             error="Заполните поле"
           />
           <Input

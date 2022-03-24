@@ -8,9 +8,9 @@ const register = (username, email, university) => axios.post(`${API_URL}signup`,
   university,
 });
 
-const login = (username, password) => axios
+const login = (email, password) => axios
   .post(`${API_URL}signin`, {
-    username,
+    email,
     password,
   })
   .then((response) => {

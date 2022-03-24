@@ -44,7 +44,7 @@ export const register = (username, email, university) => (dispatch) => AuthServi
 );
 
 // eslint-disable-next-line max-len
-export const login = (username, password) => (dispatch) => AuthService.login(username, password).then(
+export const login = (email, password) => (dispatch) => AuthService.login(email, password).then(
   (data) => {
     dispatch({
       type: LOGIN_SUCCESS,
